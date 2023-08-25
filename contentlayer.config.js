@@ -22,17 +22,25 @@ export const Doc = defineDocumentType(() => ({
       required: true,
     },
     description: {
-        type: "string"
+      type: "string",
     },
     videoPath: {
-        type: "string"
-    
-    }
+      type: "string",
+    },
+    rainbow: {
+      type: "boolean",
+    },
+    triColor: {
+      type: "boolean",
+    },
+    purple: {
+      type: "boolean",
+    },
   },
   computedFields,
 }));
 
 export default makeSource({
-    contentDirPath: "src/content",
-    documentTypes: [Doc],
-})
+  contentDirPath: "src/content",
+  documentTypes: [Doc],
+});

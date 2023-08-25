@@ -5,8 +5,67 @@
 .projectCardText {
   font-size: clamp(3rem, 6vw, 6rem);
 }
-
-.clipBox {
-  clip-path: circle(0% at 100% 100%);
+.gapProjectCard {
+  gap: clamp(1rem, 10vw - 2.75rem, 6rem);
 }
 
+.clipBoxProject {
+  clip-path: circle(14% at 14% 38%);
+}
+.clipBoxProjectOverlay {
+  clip-path: circle(15% at 15% 39%);
+}
+
+.nanting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photoSliderWidth {
+  width: clamp(5rem, 30vw + 5rem, 40rem); /*bra för 1920x1080*/
+}
+
+@media (max-width: 768px) {
+  .photoSliderWidth {
+    width: 100%; /*bra för 1920x1080*/
+  }
+}
+
+.T-120 {
+  font-size: clamp(1rem, 2vw, 2.25rem);
+}
+
+.VHS {
+  font-size: clamp(1rem, 2vw + 0.75rem, 3rem);
+}
+
+.clipBox {
+  clip-path: circle(140% at 50% 0);}
+
+.clipBoxNavOpen {
+  clip-path: circle(140% at 100% 50%);
+}
+
+.clipBoxNavOpen {
+  clip-path: circle(140% at 50% 0);
+}
+
+.clipBoxNavClosed {
+  clip-path: circle(0% at 100% 50%);
+}
+
+.textClip {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.textClipLarge {
+  clip-path: polygon(0 0, 100% 0, 100% 140%, 0% 140%);
+}
+
+/* .clipBoxProject {
+  clip-path: polygon(8% 8%, 90% 8%, 90% 90%, 8% 90%);
+} */
+
+.videoBackground {
+  background-image: url(#noiseFilter);
+}

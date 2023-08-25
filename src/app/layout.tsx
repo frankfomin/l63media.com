@@ -1,6 +1,11 @@
+import Footer from "@/components/Footer";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Montserrat, Playfair_Display } from "next/font/google";
+import AnimationCard from "@/components/HomeAnimationCard";
+import { type } from "os";
+import Framertest from "@/components/Framertest";
+import NavMenu from "@/components/nav/NavMenu";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -26,7 +31,9 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${playfair.variable} bg-primary text-textColor font-montserrat overflow-x-hidden`}
       >
-        {children}
+          <NavMenu />
+          {children}
+          <Footer />
       </body>
     </html>
   );

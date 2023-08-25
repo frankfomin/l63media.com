@@ -16,6 +16,9 @@ export type Doc = {
   projectName: string
   description?: string | undefined
   videoPath?: string | undefined
+  rainbow?: boolean | undefined
+  triColor?: boolean | undefined
+  purple?: boolean | undefined
   /** MDX file body */
   body: MDX
   slug: string
