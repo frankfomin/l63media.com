@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../contentlayer.config.js"],
+  "sourcesContent": ["import { defineDocumentType, makeSource } from \"contentlayer/source-files\";\n\n/** @type {import(\"contentlayer/source-files\").ComputedFields} */\nconst ComputedFields = {\n  slug: {\n    type: \"string\",\n    resolve: (doc) => `/${doc._raw.flattenedPath}`,\n  },\n  slugAsParams: {\n    type: \"string\",\n    resolve: (doc) => doc._raw.flattenedPath.split(\"/\").slice(1).join(\"/\"),\n  },\n};\n\nexport const Doc = defineDocumentType(() => ({\n  name: \"Doc\",\n  filePathPattern: \"project-data/**/*.mdx\",\n  contentType: \"mdx\",\n  fields: {\n    projectName: {\n      type: \"string\",\n      required: true,\n    },\n    description: {\n        type: \"string\"\n    },\n    videoPath: {\n        type: \"string\"\n    \n    }\n  },\n}));\n"],
+  "mappings": ";AAAA,SAAS,oBAAoB,kBAAkB;AAcxC,IAAM,MAAM,mBAAmB,OAAO;AAAA,EAC3C,MAAM;AAAA,EACN,iBAAiB;AAAA,EACjB,aAAa;AAAA,EACb,QAAQ;AAAA,IACN,aAAa;AAAA,MACX,MAAM;AAAA,MACN,UAAU;AAAA,IACZ;AAAA,IACA,aAAa;AAAA,MACT,MAAM;AAAA,IACV;AAAA,IACA,WAAW;AAAA,MACP,MAAM;AAAA,IAEV;AAAA,EACF;AACF,EAAE;",
+  "names": []
+}
