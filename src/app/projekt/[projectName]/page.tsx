@@ -8,8 +8,9 @@ import { ProjectCard } from "@/components/projectCard/ProjectCard";
 import ProjectHeader from "@/components/ProjectHeader";
 import AnimationCard from "@/components/HomeAnimationCard";
 import Framertest from "@/components/Framertest";
-import ProjectHeader2 from "@/components/prototypes/ProjectHeader2";
+import ProjectHeader3 from "@/components/prototypes/ProjectHeader3";
 import { ProjectMobileCard } from "@/components/projectCard/ProjectMobileCard";
+import ProjectHeader2 from "@/components/prototypes/ProjectHeader2";
 
 type Params = {
   params: {

@@ -50,14 +50,42 @@ export default function ProjectHeader2() {
   return (
     <>
       {isMounted ? (
-        <header className="  relative uppercase h-[100svh]">
-          <div className="flex justify-center">
-            <h1 className=" text-9xl font-playfair font-semibold absolute">
-              Clean Drink
-            </h1>
+        <header className=" relative uppercase h-[100svh]">
+          <div
+            ref={playButtonRef}
+            className="flex justify-center  w-full z-10 h-full items-center absolute"
+          >
+            <div className="flex gap-4 ">
+              <span className="text-[10rem] font-playfair font-semibold">
+                Clean
+              </span>
+              <div className="flex items-center justify-center mt-4">
+                <div
+                  onClick={handlePlay}
+                  className=" hover:cursor-pointer relative  rounded-[50%] border-4 p-5  flex justify-center items-center z-10"
+                >
+                  <div className="">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="100"
+                      height="100"
+                      fill="white"
+                      className="bi bi-play-fill ml-2 "
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
+                    </svg>
+                    <div className=" bg-black rounded-[50%] w-full h-full -z-10 absolute opacity-80 left-0 top-0" />
+                  </div>
+                </div>
+              </div>
+              <span className="text-[10rem] font-playfair font-semibold">
+                Drink
+              </span>
+            </div>
           </div>
           <div className="flex justify-center items-center h-full">
-            <div className="relative rounded-[2rem] overflow-hidden aspect-[9/16] w-[35%] mt-20  flex justify-center items-center">
+            <div className="relative rounded-[2rem] overflow-hidden aspect-[9/16] w-[35%] max-w-[40rem]  flex justify-center items-center">
               <ReactPlayer
                 ref={(player) => (reactPlayerRef.current = player)}
                 url="https://vimeo.com/858377940"
@@ -89,25 +117,6 @@ export default function ProjectHeader2() {
                 <div className="flex justify-between ">
                   <div>SP</div>
                   <Counter />
-                </div>
-              </div>
-              <div
-                onClick={handlePlay}
-                ref={playButtonRef}
-                className=" hover:cursor-pointer  rounded-[50%]    border-4  flex justify-center items-center z-10 absolute"
-              >
-                <div className="relative">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="100"
-                    height="100"
-                    fill="white"
-                    className="bi bi-play-fill ml-2 p-3 "
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
-                  </svg>
-                  <div className=" bg-black rounded-[50%] w-full h-full -z-10 absolute opacity-80 left-0 top-0" />
                 </div>
               </div>
             </div>

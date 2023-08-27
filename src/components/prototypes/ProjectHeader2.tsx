@@ -56,7 +56,7 @@ export default function ProjectHeader2() {
             <div className="relative rounded-[4rem] overflow-hidden h-[95%] w-[95%] flex justify-center items-center">
               <ReactPlayer
                 ref={(player) => (reactPlayerRef.current = player)}
-                url="https://vimeo.com/858377940"
+                url="https://vimeo.com/858377870"
                 playing
                 loop
                 muted={muted}
