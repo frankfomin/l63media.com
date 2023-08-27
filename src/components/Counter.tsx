@@ -7,7 +7,6 @@ export default function Counter() {
       setCounter((prevCounter) => prevCounter + 1);
     }, 1000);
     // Disable scrolling when the component mounts
-    document.body.style.overflow = "hidden";
 
     return () => {
       clearInterval(interval);
@@ -26,7 +25,5 @@ export default function Counter() {
     return number < 10 ? `0${number}` : number;
   }
 
-  return (
-    <div>{formatTime(counter)}</div>
-  )
+  return <div>{formatTime(counter)}</div>;
 }

@@ -31,9 +31,8 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${playfair.variable} bg-primary text-textColor font-montserrat overflow-x-hidden`}
       >
-          <NavMenu />
-          {children}
-          <Footer />
+        <NavMenu />
+        {children}
       </body>
     </html>
   );

@@ -41,12 +41,7 @@ export default async function HomePage({ params }: { params: Params }) {
             FILMER
           </h4>
           <div className="flex flex-col md:gap-10 gap-6 ">
-           {/*  {allProjects.map((project) => (
-              <>
-                <ProjectMobileCard>{project.projectName}</ProjectMobileCard>
-              </>
-            ))} */}
-              {allProjects.map((project) => (
+            {allProjects.map((project) => (
               <>
                 <ProjectCard
                   key={project._id}
@@ -57,9 +52,18 @@ export default async function HomePage({ params }: { params: Params }) {
                 >
                   {project.projectName}
                 </ProjectCard>
+                <div className=" ">
+                  <ProjectMobileCard
+                    key={project._id}
+                    rainbow={project.rainbow}
+                    triColor={project.triColor}
+                    purple={project.purple}
+                  >
+                    {project.projectName}
+                  </ProjectMobileCard>
+                </div>
               </>
             ))}
-            <div className="flex justify-center"></div>
           </div>
         </section>
         <section className=" text-center flex flex-col gap-16">

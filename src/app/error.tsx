@@ -20,9 +20,7 @@ const Error = ({ error, reset }: { error: Error; reset: () => void }) => {
     <main className=" h-[100svh] uppercase flex flex-col justify-center gap-96">
       <div className="flex justify-between mx-40 text-3xl font-medium">
         <div className="flex items-center">
-          <div>
-            Play
-          </div>
+          <div>Play</div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"

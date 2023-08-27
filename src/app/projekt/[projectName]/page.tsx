@@ -8,6 +8,8 @@ import { ProjectCard } from "@/components/projectCard/ProjectCard";
 import ProjectHeader from "@/components/ProjectHeader";
 import AnimationCard from "@/components/HomeAnimationCard";
 import Framertest from "@/components/Framertest";
+import ProjectHeader2 from "@/components/prototypes/ProjectHeader2";
+import { ProjectMobileCard } from "@/components/projectCard/ProjectMobileCard";
 
 type Params = {
   params: {
@@ -37,17 +39,17 @@ export default async function ProjectPage({ params }: Params) {
   }
 
   return (
-    <Framertest>
-      <main className="uppercase">
-        <ProjectHeader />
-        <section className="flex flex-col items-center gap-16 mt-60">
-          <h2 className=" text-center text-8xl font-playfair font-semibold">
-            Mer Filmer
-          </h2>
+    <main className="uppercase">
+      <ProjectHeader2 />
+      <section className="flex flex-col items-center gap-16 mt-60">
+        <h2 className=" text-center text-8xl font-playfair font-semibold">
+          Mer Filmer
+        </h2>
 
-          <div className="flex md:flex-col md:gap-10 gap-8 md:mx-6">
-            <Suspense fallback={<div>Loading...</div>}>
-              {allProjects.map((project) => (
+        <div className="flex flex-col md:gap-10 gap-6 ">
+          <Suspense fallback={<div>Loading...</div>}>
+            {allProjects.map((project) => (
+              <>
                 <ProjectCard
                   key={project._id}
                   rainbow={project.rainbow ? 1 : null}
@@ -57,11 +59,19 @@ export default async function ProjectPage({ params }: Params) {
                 >
                   {project.projectName}
                 </ProjectCard>
-              ))}
-            </Suspense>
-          </div>
-        </section>
-      </main>
-    </Framertest>
+                <ProjectMobileCard
+                  key={project._id}
+                  triColor={project.triColor}
+                  purple={project.purple}
+                  rainbow={project.rainbow}
+                >
+                  {project.projectName}
+                </ProjectMobileCard>
+              </>
+            ))}
+          </Suspense>
+        </div>
+      </section>
+    </main>
   );
 }

@@ -18,10 +18,10 @@ const linkArray = [
     name: "Kontakt",
   },
   {
-    name: "Produktfoto",
+    name: "Foto",
   },
   {
-    name: "ReklamFilm",
+    name: "Film",
   },
 ];
 export default function NavMenu() {
@@ -34,7 +34,6 @@ export default function NavMenu() {
   const rightImageContainerRef = useRef<HTMLDivElement>(null);
   const navMenuRef = useRef<HTMLDivElement>(null);
   const myTextRef = useRef<HTMLDivElement>(null);
-
 
   function onHover(i: number) {
     setActiveIndex(i);
@@ -178,7 +177,7 @@ export default function NavMenu() {
       <div className=" w-full h-full flex justify-center  relative ">
         <div
           ref={leftImageContainerRef}
-          className="flex absolute -left-20 -top-56 -z-10 gap-[0.6rem]  bg-black"
+          className="flex absolute lg:-left-20 sm:-left-80 -left-96  -top-56 -z-10 gap-[0.6rem]  bg-black"
         >
           <div className="flex bg-black">
             <div className=" flex flex-col gap-24 whitespace-nowrap mx-5">
@@ -266,7 +265,7 @@ export default function NavMenu() {
         </div>
         <div
           className="flex flex-col gap-4 font-medium
-         justify-center ml-72 h-full text-8xl  "
+         justify-center ml-72 h-full lg:text-8xl sm:text-7xl text-5xl  "
         >
           {linkArray.map((link, i) => (
             <div key={i}>
@@ -289,7 +288,7 @@ export default function NavMenu() {
                   viewBox="0 0 24 24"
                   strokeWidth="2"
                   stroke="currentColor"
-                  className={`nav-link w-28 h-28 cursor-pointer ${
+                  className={`nav-link lg:w-28 lg:h-28 md:w-20 md:h-20 w-14 h-14 cursor-pointer ${
                     i === activeIndex ? "text-gray-600" : ""
                   }`}
                 >
