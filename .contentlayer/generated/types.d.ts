@@ -15,7 +15,10 @@ export type Doc = {
   type: 'Doc'
   projectName: string
   description?: string | undefined
+  vimeoPath?: number | undefined
   videoPath?: string | undefined
+  path?: string | undefined
+  mobile?: boolean | undefined
   rainbow?: boolean | undefined
   triColor?: boolean | undefined
   purple?: boolean | undefined

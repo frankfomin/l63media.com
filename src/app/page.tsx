@@ -43,9 +43,11 @@ export default async function HomePage({ params }: { params: Params }) {
           <div className="flex flex-col md:gap-10 gap-6 ">
             {allProjects.map((project) => (
               <>
+
                 <ProjectCard
+                  videoPath={project.videoPath}
+                  path={project.path}
                   key={project._id}
-                  url={`/projekt/clean-drink`}
                   rainbow={project.rainbow ? 1 : null}
                   triColor={project.triColor ? 1 : null}
                   purple={project.purple ? 1 : null}
@@ -54,6 +56,7 @@ export default async function HomePage({ params }: { params: Params }) {
                 </ProjectCard>
                 <div className=" ">
                   <ProjectMobileCard
+                    path={project.path ? project.path : "/"}
                     key={project._id}
                     rainbow={project.rainbow}
                     triColor={project.triColor}

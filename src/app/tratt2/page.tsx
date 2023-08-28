@@ -1,5 +1,5 @@
-import ProjectHeader2 from "@/components/prototypes/ProjectHeader2";
-import ProjectHeader3 from "@/components/prototypes/ProjectHeader3";
+import ProjectHeader2 from "@/components/prototypes/ProjectHeader";
+import ProjectHeader3 from "@/components/prototypes/ProjectMobileHeader";
 import React from "react";
 
 export default function Page() {

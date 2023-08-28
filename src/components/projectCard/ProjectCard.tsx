@@ -37,20 +37,23 @@ export const size = cva("", {
 });
 
 interface ProjectCardProps extends ColorProps {
-  url: string;
+  path?: string,
+  videoPath?: string,
+
   children: React.ReactNode;
 }
 
 const ProjectCard: FC<ProjectCardProps> = ({
   children,
-  url,
+  path,
   rainbow,
   triColor,
   purple,
+  videoPath,
 }) => {
   return (
-    <Link href={url}>
-      <AnimationPopup>
+    <Link href={`/projekt/${path}`}>
+      <AnimationPopup videoPath={videoPath}>
         <div className=" rotate-90 flex flex-col-reverse items-center lg:gap-4  lg:pb-12 pb-2">
           <div className=" text-5xl VHS font-semibold border-[1px]  text-center  ">vhs</div>
           <div className=" text-4xl T-120 font-medium lg:block hidden">T-120</div>

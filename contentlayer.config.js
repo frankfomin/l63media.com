@@ -24,8 +24,17 @@ export const Doc = defineDocumentType(() => ({
     description: {
       type: "string",
     },
+    vimeoPath: {
+      type: "number",
+    },
     videoPath: {
       type: "string",
+    },
+    path: {
+      type: "string",
+    },
+    mobile: {
+      type: "boolean",
     },
     rainbow: {
       type: "boolean",
