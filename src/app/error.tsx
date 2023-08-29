@@ -1,6 +1,6 @@
 "use client";
 
-import Counter from "@/components/Counter";
+import Counter from "@/components/ui/Counter";
 import Button from "@/components/ui/Button";
 import { useEffect } from "react";
 

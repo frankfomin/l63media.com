@@ -17,7 +17,7 @@ export type Doc = {
   description?: string | undefined
   vimeoPath?: number | undefined
   videoPath?: string | undefined
-  path?: string | undefined
+  path: string
   mobile?: boolean | undefined
   rainbow?: boolean | undefined
   triColor?: boolean | undefined

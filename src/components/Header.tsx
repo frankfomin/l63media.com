@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { VideoPlayer } from "./VideoPlayer";
 import { gsap } from "gsap";
 
 export default function Header() {

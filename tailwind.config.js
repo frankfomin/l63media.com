@@ -32,7 +32,9 @@ module.exports = {
         mobileCardVHS: "clamp(2rem, 20vw - 3rem, 2.5rem)",
         mobileCardVD: "clamp(1.5rem, 20vw - 3rem, 1.875rem)",
         mobileCardRAP: "clamp(1.2rem, 20vw - 3rem, 1.5rem)",
-        projectHeaderTitle: "clamp(4rem, 20vw - 4rem, 8rem)",
+        projectHeaderTitle: "clamp(4rem, 22vw - 5rem, 10rem)",
+        projectMerFilmer: "clamp(3rem, 24vw - 3.5rem, 8rem)",
+
       },
     },
   },

@@ -32,6 +32,7 @@ export const Doc = defineDocumentType(() => ({
     },
     path: {
       type: "string",
+      required: true,
     },
     mobile: {
       type: "boolean",
