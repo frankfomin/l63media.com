@@ -2,9 +2,6 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Montserrat, Playfair_Display } from "next/font/google";
-import AnimationCard from "@/components/HomeAnimationCard";
-import { type } from "os";
-import Framertest from "@/components/Framertest";
 import NavMenu from "@/components/nav/NavMenu";
 
 const montserrat = Montserrat({
@@ -33,6 +30,7 @@ export default function RootLayout({
       >
         <NavMenu />
         {children}
+        <Footer />
       </body>
     </html>
   );
