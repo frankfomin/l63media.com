@@ -155,7 +155,10 @@ export default function MobileVideoPlayer({
       {isMounted ? (
         <header className="relative uppercase h-[100svh] flex justify-center items-center ">
           <div className="absolute aspect-[9/16] max-w-[45rem] h-[80%] rounded-[2rem]  flex justify-center items-center">
-            <div onClick={videoIsPlaying ? handlePause : handlePlay} className=" absolute w-full h-full  rounded-[2rem] hover:cursor-pointer" /> 
+            <div
+              onClick={videoIsPlaying ? handlePause : handlePlay}
+              className=" absolute w-full h-full  rounded-[2rem] hover:cursor-pointer"
+            />
             <div
               ref={pauseButtonRef}
               onClick={videoIsPlaying ? handlePause : handlePlay}
@@ -240,8 +243,8 @@ export default function MobileVideoPlayer({
               muted={muted}
               width="100%"
               height="100%"
-              
-              
+              vimeoConfig={{ iframeParams: { fullscreen: 0 } }}
+            
             />
             <div
               ref={videoTextRef}
