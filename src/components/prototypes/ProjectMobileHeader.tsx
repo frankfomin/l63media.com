@@ -146,7 +146,7 @@ export default function ProjectMobileHeader({
           <div className="flex  flex-col justify-center w-full z-10 h-full items-center absolute">
             <h1
               ref={h1Ref}
-              className=" text-[10rem] leading-none font-playfair font-semibold"
+              className=" whitespace-nowrap text-projectHeaderTitle leading-none font-playfair font-semibold"
             >
               {title}
             </h1>
@@ -228,9 +228,9 @@ export default function ProjectMobileHeader({
               />
               <div
                 ref={videoTextRef}
-                className="flex flex-col absolute justify-between p-12 h-full w-full text-2xl font-medium"
+                className="flex flex-col absolute justify-between p-projectHeaderPadding h-full w-full text-2xl font-medium"
               >
-                <div className="flex justify-between ">
+                <div className="flex items-center justify-between ">
                   <div className="flex items-center ">
                     <div> {videoIsPlaying ? "Pause" : "Play"}</div>
                     <svg

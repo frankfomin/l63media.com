@@ -43,7 +43,6 @@ export default async function HomePage({ params }: { params: Params }) {
           <div className="flex flex-col md:gap-10 gap-6 ">
             {allProjects.map((project) => (
               <>
-
                 <ProjectCard
                   videoPath={project.videoPath}
                   path={project.path}
