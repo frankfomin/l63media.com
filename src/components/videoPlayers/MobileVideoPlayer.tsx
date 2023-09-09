@@ -32,12 +32,21 @@ export default function MobileVideoPlayer({
   }, []);
 
   function handlePause() {
-    gsapAnim();
-    if (!muted) {
-      setMuted(true);
-    }
-    if (muted) {
-      setMuted(false);
+    const reactPlayer = reactPlayerRef.current;
+
+    if (reactPlayer) {
+      const internalPlayer = reactPlayer.getInternalPlayer();
+      gsapAnim();
+      if (internalPlayer) {
+        if (!muted) {
+          setMuted(true);
+          internalPlayer.pause();
+        }
+        if (muted) {
+          setMuted(false);
+          internalPlayer.play();
+        }
+      }
     }
   }
 
@@ -228,13 +237,14 @@ export default function MobileVideoPlayer({
             <ReactPlayer
               ref={(player) => (reactPlayerRef.current = player)}
               url={`https://vimeo.com/${vimeoPath}`}
-              playing={muted}
+              playing
               loop
               controls={false}
               muted={muted}
               width="100%"
               height="100%"
-              vimeoConfig={{ iframeParams: { fullscreen: 0 } }}
+              
+            
             />
             <div
               ref={videoTextRef}
