@@ -250,17 +250,18 @@ export default function VideoPlayer({ title, vimeoPath }: VideoPlayerProps) {
               loop
               className="w-full h-full absolute opacity-70  rounded-[4rem] aspect-video"
               preload="auto"
+              controlsList="nofullscreen"
             />
-            <ReactPlayer
-              ref={(player) => (reactPlayerRef.current = player)}
-              url={`https://vimeo.com/858377870`}
-              playing
-              loop
-              controls={false}
-              muted={muted}
-              width="100%"
-              height="100%"
-            />
+              <ReactPlayer
+                ref={(player) => (reactPlayerRef.current = player)}
+                url={`https://vimeo.com/858377870`}
+                playing
+                loop
+                controls={false}
+                muted={muted}
+                width="100%"
+                height="100%"
+              />
           </div>
         </header>
       ) : (

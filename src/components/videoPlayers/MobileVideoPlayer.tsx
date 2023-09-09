@@ -17,6 +17,7 @@ export default function MobileVideoPlayer({
   const videoRef = useRef<HTMLVideoElement>(null);
   const playButtonRef = useRef<HTMLDivElement>(null);
   const reactPlayerRef = useRef<ReactPlayer | null>(null); // Initialize as null
+  const videoPlayerRef = useRef<HTMLVideoElement>(null);
   const h1Ref = useRef<HTMLHeadingElement>(null);
   const pauseButtonRef = useRef<HTMLDivElement>(null);
   const blurOverlayRef = useRef<HTMLDivElement>(null);
@@ -32,20 +33,17 @@ export default function MobileVideoPlayer({
   }, []);
 
   function handlePause() {
-    const reactPlayer = reactPlayerRef.current;
+    const videoPlayer = videoPlayerRef.current;
 
-    if (reactPlayer) {
-      const internalPlayer = reactPlayer.getInternalPlayer();
+    if (videoPlayer) {
       gsapAnim();
-      if (internalPlayer) {
-        if (!muted) {
-          setMuted(true);
-          internalPlayer.pause();
-        }
-        if (muted) {
-          setMuted(false);
-          internalPlayer.play();
-        }
+      if (!muted) {
+        setMuted(true);
+        videoPlayer.pause();
+      }
+      if (muted) {
+        setMuted(false);
+        videoPlayer.play();
       }
     }
   }
@@ -88,6 +86,7 @@ export default function MobileVideoPlayer({
       });
       gsap.to(h1, {
         opacity: 0,
+        zIndex: -2,
         ease: "easeOut",
       });
       gsap.to(videoText, {
@@ -120,6 +119,7 @@ export default function MobileVideoPlayer({
           y: 0,
           ease: "easeOut",
           delay: 0.05,
+          zIndex: 0,
         }
       );
       gsap.to(playButton, {
@@ -130,7 +130,7 @@ export default function MobileVideoPlayer({
     }
   }
   function handlePlay() {
-    const reactPlayer = reactPlayerRef.current;
+    const videoPlayer = videoPlayerRef.current;
     setTimeout(() => {
       setVideoIsPlaying(true);
     }, 400);
@@ -141,14 +141,10 @@ export default function MobileVideoPlayer({
       duration: 1,
     });
 
-    if (reactPlayer) {
-      const internalPlayer = reactPlayer.getInternalPlayer();
-      if (internalPlayer) {
-        setMuted(false);
-        reactPlayer.seekTo(0);
-        internalPlayer.play(); // Play the video
-        internalPlayer.allowFullscreen = false;
-      }
+    if (videoPlayer) {
+      videoPlayer.currentTime = 0;
+      setMuted(false);
+      videoPlayer.play();
     }
   }
   return (
@@ -234,16 +230,27 @@ export default function MobileVideoPlayer({
               loop
               className="w-full h-full object-cover absolute opacity-70 rounded-[2rem] aspect-[9/16]"
               preload="auto"
+              controlsList="nofullscreen"
             />
-            <ReactPlayer
-              ref={(player) => (reactPlayerRef.current = player)}
-              url={`https://vimeo.com/${vimeoPath}`}
-              playing
+            {/*   <ReactPlayer
+                ref={(player) => (reactPlayerRef.current = player)}
+                url={`https://vimeo.com/${vimeoPath}`}
+                playing
+                loop
+                controls={false}
+                muted={muted}
+                width="100%"
+                height="100%"
+              /> */}
+            <video
+              ref={videoPlayerRef}
+              src="/videos/cleanDrink.mp4"
+              autoPlay
               loop
-              controls={false}
+              preload="auto"
               muted={muted}
-              width="100%"
-              height="100%"
+              controls={false}
+              controlsList="nofullscreen"
             />
             <div
               ref={videoTextRef}
