@@ -147,6 +147,7 @@ export default function MobileVideoPlayer({
         setMuted(false);
         reactPlayer.seekTo(0);
         internalPlayer.play(); // Play the video
+        internalPlayer.allowFullscreen = false;
       }
     }
   }
@@ -243,8 +244,6 @@ export default function MobileVideoPlayer({
               muted={muted}
               width="100%"
               height="100%"
-              
-            
             />
             <div
               ref={videoTextRef}
