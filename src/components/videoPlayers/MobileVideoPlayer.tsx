@@ -30,6 +30,18 @@ export default function MobileVideoPlayer({
 
   useEffect(() => {
     setIsMounted(true);
+    setMuted(true)
+
+    const video = videoPlayerRef.current
+
+    if (video) {
+      video.addEventListener("fullscreenchange", handleFullscreenChange);
+
+      // Clean up the event listener when the component unmounts
+      return () => {
+        video.removeEventListener("fullscreenchange", handleFullscreenChange);
+      };
+    }
   }, []);
 
   function handlePause() {
@@ -45,6 +57,15 @@ export default function MobileVideoPlayer({
         setMuted(false);
         videoPlayer.play();
       }
+    }
+  }
+
+  function handleFullscreenChange(event: Event) {
+    const videoElement = event.target as HTMLVideoElement;
+
+    if (document.fullscreenElement === videoElement) {
+      // Prevent fullscreen
+      document.exitFullscreen(); // Exit fullscreen if it's attempted
     }
   }
 
@@ -230,7 +251,8 @@ export default function MobileVideoPlayer({
               loop
               className="w-full h-full object-cover absolute opacity-70 rounded-[2rem] aspect-[9/16] pointer-events-none touch-none"
               preload="auto"
-              controlsList="nofullscreen"
+              controlsList="nofullscreen nodownload"
+
             />
             {/*   <ReactPlayer
                 ref={(player) => (reactPlayerRef.current = player)}
@@ -251,7 +273,7 @@ export default function MobileVideoPlayer({
               preload="auto"
               muted={muted}
               controls={false}
-              controlsList="nofullscreen"
+              controlsList="nofullscreen nodownload"
             />
             <div
               ref={videoTextRef}
