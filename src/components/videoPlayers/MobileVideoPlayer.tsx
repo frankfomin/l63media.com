@@ -32,16 +32,7 @@ export default function MobileVideoPlayer({
     setIsMounted(true);
     setMuted(true)
 
-    const video = videoPlayerRef.current
 
-    if (video) {
-      video.addEventListener("fullscreenchange", handleFullscreenChange);
-
-      // Clean up the event listener when the component unmounts
-      return () => {
-        video.removeEventListener("fullscreenchange", handleFullscreenChange);
-      };
-    }
   }, []);
 
   function handlePause() {

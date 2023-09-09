@@ -208,7 +208,7 @@ export default function NavMenu() {
             <div className="flex flex-col gap-[1.05rem]">
               {Array.from({ length: 120 }, (_, i) => (
                 <div
-                  className="aspect-[1.9/1] bg-white p-2 rounded-sm"
+                  className="aspect-[1.9/1] bg-white sm:p-2 p-1 rounded-sm"
                   key={i}
                 />
               ))}
@@ -232,7 +232,7 @@ export default function NavMenu() {
             <div className="flex flex-col gap-[1.05rem]">
               {Array.from({ length: 120 }, (_, i) => (
                 <div
-                  className="aspect-[1.9/1] bg-white p-2 rounded-sm"
+                  className="aspect-[1.9/1] bg-white sm:p-2 p-[0.4rem] rounded-sm"
                   key={i}
                 />
               ))}
