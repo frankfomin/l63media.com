@@ -228,7 +228,7 @@ export default function MobileVideoPlayer({
               muted
               autoPlay
               loop
-              className="w-full h-full object-cover absolute opacity-70 rounded-[2rem] aspect-[9/16]"
+              className="w-full h-full object-cover absolute opacity-70 rounded-[2rem] aspect-[9/16] pointer-events-none touch-none"
               preload="auto"
               controlsList="nofullscreen"
             />
@@ -247,6 +247,7 @@ export default function MobileVideoPlayer({
               src="/videos/cleanDrink.mp4"
               autoPlay
               loop
+              className="pointer-events-none touch-none"
               preload="auto"
               muted={muted}
               controls={false}
