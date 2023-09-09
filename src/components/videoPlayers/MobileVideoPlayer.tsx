@@ -217,7 +217,7 @@ export default function MobileVideoPlayer({
             )}
           </div>
 
-          <div className=" absolute aspect-[9/16] pointer-events-none overflow-hidden max-w-[45rem] h-[80%] rounded-[2rem] -z-10  flex justify-center items-center">
+          <div className=" absolute touch-none aspect-[9/16] pointer-events-none overflow-hidden max-w-[45rem] h-[80%] rounded-[2rem] -z-10  flex justify-center items-center">
             <div
               ref={blurOverlayRef}
               onClick={videoIsPlaying ? handlePause : handlePlay}
