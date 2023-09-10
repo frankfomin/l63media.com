@@ -33,21 +33,23 @@ export default function MobileVideoPlayer({
   }, []);
 
   function handlePause() {
-    const videoPlayer = videoPlayerRef.current;
+    const reactPlayer = reactPlayerRef.current;
 
-    if (videoPlayer) {
+    if (reactPlayer) {
+      const internalPlayer = reactPlayer.getInternalPlayer();
       gsapAnim();
-      if (!muted) {
-        setMuted(true);
-        videoPlayer.pause();
-      }
-      if (muted) {
-        setMuted(false);
-        videoPlayer.play();
+      if (internalPlayer) {
+        if (!muted) {
+          setMuted(true);
+          internalPlayer.pause();
+        }
+        if (muted) {
+          setMuted(false);
+          internalPlayer.play();
+        }
       }
     }
   }
-
 
   useEffect(() => {
     const tl = gsap.timeline({
@@ -131,7 +133,8 @@ export default function MobileVideoPlayer({
     }
   }
   function handlePlay() {
-    const videoPlayer = videoPlayerRef.current;
+    const reactPlayer = reactPlayerRef.current;
+
     setTimeout(() => {
       setVideoIsPlaying(true);
     }, 400);
@@ -142,10 +145,13 @@ export default function MobileVideoPlayer({
       duration: 1,
     });
 
-    if (videoPlayer) {
-      videoPlayer.currentTime = 0;
-      setMuted(false);
-      videoPlayer.play();
+    if (reactPlayer) {
+      const internalPlayer = reactPlayer.getInternalPlayer();
+      if (internalPlayer) {
+        setMuted(false);
+        reactPlayer.seekTo(0);
+        internalPlayer.play(); // Play the video
+      }
     }
   }
   return (
@@ -234,27 +240,16 @@ export default function MobileVideoPlayer({
               preload="auto"
               controlsList="nofullscreen nodownload"
             />
-            {/*   <ReactPlayer
-                ref={(player) => (reactPlayerRef.current = player)}
-                url={`https://vimeo.com/${vimeoPath}`}
-                playing
-                loop
-                controls={false}
-                muted={muted}
-                width="100%"
-                height="100%"
-              /> */}
-            <video
-              ref={videoPlayerRef}
-              src="/videos/cleanDrink.mp4"
-              autoPlay
+            <ReactPlayer
+              ref={(player) => (reactPlayerRef.current = player)}
+              url={`https://vimeo.com/${vimeoPath}`}
+              playing
               loop
-              className="pointer-events-none touch-none"
-              preload="auto"
-              muted={muted}
-              playsInline
               controls={false}
-              controlsList="nofullscreen nodownload"
+              muted={muted}
+              width="100%"
+              height="100%"
+              playsinline
             />
             <div
               ref={videoTextRef}
