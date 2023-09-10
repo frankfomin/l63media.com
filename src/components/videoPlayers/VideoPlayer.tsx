@@ -252,7 +252,7 @@ export default function VideoPlayer({ title, vimeoPath }: VideoPlayerProps) {
               preload="auto"
               controlsList="nofullscreen"
             />
-        
+
             <ReactPlayer
               ref={(player) => (reactPlayerRef.current = player)}
               url={`https://vimeo.com/858377870`}
