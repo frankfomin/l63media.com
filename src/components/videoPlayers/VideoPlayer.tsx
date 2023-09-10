@@ -133,11 +133,12 @@ export default function VideoPlayer({ title, vimeoPath }: VideoPlayerProps) {
     }, 400);
 
     gsapAnim();
-    gsap.to(pauseButtonRef.current, {
-      opacity: 1,
-      ease: "easeOut",
-      duration: 1,
-    });
+    if (window.innerWidth > 640)
+      gsap.to(pauseButtonRef.current, {
+        opacity: 1,
+        ease: "easeOut",
+        duration: 1,
+      });
     if (reactPlayer) {
       const internalPlayer = reactPlayer.getInternalPlayer();
       if (internalPlayer) {
@@ -156,7 +157,7 @@ export default function VideoPlayer({ title, vimeoPath }: VideoPlayerProps) {
             <div
               ref={pauseButtonRef}
               onClick={videoIsPlaying ? handlePause : handlePlay}
-              className=" absolute -bottom-10 opacity-0 z-30"
+              className=" absolute sm:-bottom-10 -bottom-12 sm:opacity-0 opacity-100 z-30"
             >
               <div className=" hover:cursor-pointer relative  rounded-[50%] border-4 p-1  flex justify-center items-center  ">
                 {muted ? (
@@ -183,13 +184,13 @@ export default function VideoPlayer({ title, vimeoPath }: VideoPlayerProps) {
             </div>
           </div>
 
-          <div className="absolute w-[85%] max-w-[100rem] aspect-video overflow-hidden rounded-[4rem]  flex justify-center items-center">
+          <div className="absolute sm:w-[85%] w-full  max-w-[100rem] aspect-video overflow-hidden sm:rounded-[4rem] rounded-3xl  flex justify-center items-center">
             <div
               ref={blurOverlayRef}
               onClick={videoIsPlaying ? handlePause : handlePlay}
-              className=" absolute w-full h-full z-20  rounded-[4rem] hover:cursor-pointer"
+              className=" absolute w-full h-full z-20  sm:rounded-[4rem] overflow-hidden rounded-3xl hover:cursor-pointer"
             >
-              <div className="shadow-[inset_0px_0px_10px_10px_#1d1a1a] rounded-[4rem] absolute h-full w-full" />
+              <div className="shadow-[inset_0px_0px_10px_10px_#1d1a1a] sm:rounded-[4rem] rounded-3xl absolute h-full w-full" />
             </div>
             <div className="flex flex-col w-full items-center absolute">
               <h1
@@ -202,7 +203,7 @@ export default function VideoPlayer({ title, vimeoPath }: VideoPlayerProps) {
                 <div
                   onClick={handlePlay}
                   ref={playButtonRef}
-                  className=" hover:cursor-pointer rounded-[50%]  border-4  flex justify-center items-center z-20"
+                  className=" hover:cursor-pointer rounded-[50%] hidden sm:flex  border-4   justify-center items-center z-20"
                 >
                   <div className="relative">
                     <svg
@@ -220,7 +221,7 @@ export default function VideoPlayer({ title, vimeoPath }: VideoPlayerProps) {
             </div>
             <div
               ref={videoTextRef}
-              className="flex flex-col z-10 absolute justify-between h-full md:px-48 md:py-24 sm:px-24 px-10 py-10  w-full  text-3xl font-medium"
+              className="flex flex-col z-10 absolute justify-between h-full md:px-28 md:py-16 sm:px-24 sm:py-10 px-8 py-8  w-full  sm:text-3xl text-2xl font-medium"
             >
               <div className="flex justify-between items-center">
                 <div className="flex items-center  ">
@@ -248,7 +249,7 @@ export default function VideoPlayer({ title, vimeoPath }: VideoPlayerProps) {
               muted
               autoPlay
               loop
-              className="w-full h-full absolute opacity-70  rounded-[4rem] aspect-video"
+              className="w-full h-full absolute opacity-70  sm:rounded-[4rem] rounded-3xl aspect-video"
               preload="auto"
               controlsList="nofullscreen"
             />
