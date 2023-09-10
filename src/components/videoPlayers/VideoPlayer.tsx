@@ -248,6 +248,7 @@ export default function VideoPlayer({ title, vimeoPath }: VideoPlayerProps) {
               muted
               autoPlay
               loop
+              playsInline
               className="w-full h-full absolute opacity-70  rounded-[4rem] aspect-video"
               preload="auto"
               controlsList="nofullscreen"
@@ -257,6 +258,7 @@ export default function VideoPlayer({ title, vimeoPath }: VideoPlayerProps) {
                 url={`https://vimeo.com/858377870`}
                 playing
                 loop
+                playsInline
                 controls={false}
                 muted={muted}
                 width="100%"
