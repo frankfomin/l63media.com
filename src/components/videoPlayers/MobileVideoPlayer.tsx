@@ -30,7 +30,6 @@ export default function MobileVideoPlayer({
 
   useEffect(() => {
     setIsMounted(true);
-    setMuted(true);
   }, []);
 
   function handlePause() {
@@ -49,14 +48,6 @@ export default function MobileVideoPlayer({
     }
   }
 
-  function handleFullscreenChange(event: Event) {
-    const videoElement = event.target as HTMLVideoElement;
-
-    if (document.fullscreenElement === videoElement) {
-      // Prevent fullscreen
-      document.exitFullscreen(); // Exit fullscreen if it's attempted
-    }
-  }
 
   useEffect(() => {
     const tl = gsap.timeline({
