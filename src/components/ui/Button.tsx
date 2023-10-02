@@ -1,17 +1,20 @@
 import Link from "next/link";
 
-export default function Button() {
+export default function Button({ children }: { children: React.ReactNode }) {
   return (
-    <Link href="" className="flex justify-center">
-      <button className="uppercase text-3xl bg-transparent border-2 px-5 py-1 rounded-full flex justify-center items-center gap-1">
-        Kontakt
+    <div className="flex justify-center font-montserrat">
+      <button
+        type="submit"
+        className="uppercase group text-button bg-transparent border-2 px-5 py-1 rounded-full flex justify-center items-center gap-1"
+      >
+        {children}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth="2"
-          stroke="#C2F970"
-          className="w-8 z-10"
+          stroke="#FAA916"
+          className="sm:w-8 md:w-10 w-6 z-10 group-hover:rotate-45 transition-transform"
         >
           <path
             strokeLinecap="round"
@@ -20,6 +23,6 @@ export default function Button() {
           />
         </svg>
       </button>
-    </Link>
+    </div>
   );
 }

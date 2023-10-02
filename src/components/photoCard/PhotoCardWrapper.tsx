@@ -16,8 +16,8 @@ export default function PhotoCardWrapper({
         <div className=" flex gap-24 whitespace-nowrap mx-5">
           {Array.from({ length: 12 }, (_, i) => (
             <div className="flex gap-28" key={i}>
-              <div className="flex items-center" >
-                <span>25A</span>
+              <div className="flex items-center">
+                <span>{`2${5 + i}A`}</span>
                 <svg
                   width="19"
                   height="10"
@@ -54,8 +54,8 @@ export default function PhotoCardWrapper({
         <div className=" flex gap-24 whitespace-nowrap mx-5">
           {Array.from({ length: 12 }, (_, i) => (
             <div className="flex gap-28" key={i}>
-              <div className="flex items-center" >
-                <span>25A</span>
+              <div className="flex items-center">
+                <span>{`2${5 + i}A`}</span>
                 <svg
                   width="19"
                   height="10"

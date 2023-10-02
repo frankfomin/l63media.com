@@ -31,15 +31,15 @@ export const PhotoScrollSlider: FC = () => {
       <div className=" overflow-hidden rotate-[-1.5deg] ">
         <div
           ref={sliderRef}
-          className="flex bg-black p-3 gap-3 w-max relative  "
+          className="flex bg-[#020202] p-3 gap-3 w-max relative  "
         >
           {imagesArray.map((image, index) => (
             <div
-              className="relative aspect-[3/4] w-[30rem] flex-shrink-0"
+              className="relative aspect-[3/4] w-[25rem] flex-shrink-0"
               key={index}
 
             >
-              <div className=" shadow-[inset_0px_0px_3px_3px_#000000] absolute h-full w-full" />
+              <div className=" shadow-[inset_0px_0px_3px_3px_#020202] absolute h-full w-full" />
               <Image
                 className=" h-full w-full object-cover  rounded-md pointer-events-none"
                 src={image.src}

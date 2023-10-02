@@ -22,7 +22,7 @@ export default function MobileVideoPlayer({
   const pauseButtonRef = useRef<HTMLDivElement>(null);
   const blurOverlayRef = useRef<HTMLDivElement>(null);
 
-  const pauseBlinkRef = useRef<SVGSVGElement>(null);
+  const pauseBlinkRef = useRef<HTMLDivElement>(null);
   const currentDate = new Date();
   const [isMounted, setIsMounted] = useState(false);
   const [muted, setMuted] = useState(true);
@@ -168,26 +168,23 @@ export default function MobileVideoPlayer({
               onClick={videoIsPlaying ? handlePause : handlePlay}
               className=" absolute -bottom-10 opacity-0 z-30"
             >
-              <div className=" hover:cursor-pointer relative  rounded-[50%] border-4 p-1  flex justify-center items-center  ">
-                {muted ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="white"
-                    className="bi bi-play-fill ml-2 w-[4.5rem] h-[4.5rem] p-2"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
-                  </svg>
-                ) : (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="white"
-                    className="bi bi-pause w-[4.5rem] h-[4.5rem] p-2   "
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M6 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5zm4 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5z" />
-                  </svg>
-                )}
+              <div className=" hover:cursor-pointer relative overflow-hidden  rounded-[50%] border-4 p-1  flex justify-center items-center  ">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="white"
+                  className={`bi bi-play-fill ml-2 w-[4.5rem] h-[4.5rem] p-2 absolute transition-all ${muted ? "translate-x-full" : " translate-x-0"}`}
+                  viewBox="0 0 16 16"
+                >
+                  <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="white"
+                  className={`bi bi-pause w-[4.5rem] h-[4.5rem] p-2 transition-all ${muted ? " translate-x-0" : "-translate-x-full"} }`}
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M6 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5zm4 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5z" />
+                </svg>
                 <div className=" bg-black rounded-[50%] w-full h-full -z-10 absolute opacity-80 left-0 top-0" />
               </div>
             </div>
@@ -256,10 +253,9 @@ export default function MobileVideoPlayer({
               className="flex flex-col absolute justify-between h-full p-projectHeaderPadding  w-full  text-2xl font-medium"
             >
               <div className="flex justify-between items-center">
-                <div className="flex items-center  ">
+                <div ref={pauseBlinkRef} className="flex items-center  ">
                   <div> {videoIsPlaying ? "Pause" : "Play"}</div>
                   <svg
-                    ref={pauseBlinkRef}
                     xmlns="http://www.w3.org/2000/svg"
                     fill="white"
                     className="bi bi-play-fill w-10 h-10 "

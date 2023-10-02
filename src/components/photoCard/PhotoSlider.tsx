@@ -35,7 +35,7 @@ export default function PhotoSlider2() {
         },
       }}
     >
-      <motion.div className="bg-[#020202]" whileTap={{ cursor: "grabbing" }}>
+      <motion.div className=" bg-[#020202]" whileTap={{ cursor: "grabbing" }}>
         <PhotoCardWrapper>
           <SplideTrack className="">
             {imagesArray.map((image, index) => (
@@ -58,3 +58,5 @@ export default function PhotoSlider2() {
     </Splide>
   );
 }
+
+
