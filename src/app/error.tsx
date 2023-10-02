@@ -35,7 +35,7 @@ const Error = ({ error, reset }: { error: Error; reset: () => void }) => {
       <div className=" flex flex-col items-center gap-4">
         <h1 className=" font-semibold text-9xl leading-none">Error 404</h1>
         <h2 className=" text-4xl">Är du vilse?</h2>
-        <Button></Button>
+        <Button>Gå tillbaka</Button>
       </div>
       <div className="flex justify-between mx-40 text-3xl font-medium">
         <div>SP</div>
