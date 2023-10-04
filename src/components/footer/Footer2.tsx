@@ -31,16 +31,26 @@ export default function Footer2() {
             </div>
             <div>Samarbeta</div>
             <div className=" mt-10">
-              <Button>HÖR AV DIG</Button>
+              <Link href="/kontakt">
+                <Button>HÖR AV DIG</Button>
+              </Link>
             </div>
           </div>
         </div>
         <hr className=" p-2 w-[80%]" />
-        <div className="flex w-full justify-between sm:px-14 px-6 sm:mb-14 mb-8 font-montserrat text-footerLink">
+        <div className="flex w-full justify-between items-center sm:px-14 px-6 sm:mb-14 mb-8 font-montserrat text-footerLink">
           <Mail />
-          <div className="flex sm:gap-10 gap-3">
-            <LinkComp>TikTok</LinkComp>
-            <LinkComp>Instagram</LinkComp>
+          <div className="flex  sm:gap-4 gap-3">
+            <div className="text-paragraph px-5  relative overflow-hidden">
+              <LinkComp width="w-8" height="h-8" href="https://www.tiktok.com/">
+                TikTok
+              </LinkComp>
+            </div>
+            <div className="text-paragraph px-5  relative overflow-hidden">
+              <LinkComp width="w-8" height="h-8" href="https://www.instagram.com/">
+                Instagram
+              </LinkComp>
+            </div>
           </div>
         </div>
       </footer>

@@ -164,7 +164,7 @@ export default function VideoPlayer({ title, vimeoPath }: VideoPlayerProps) {
                   xmlns="http://www.w3.org/2000/svg"
                   fill="white"
                   className={`bi bi-play-fill ml-2 w-[4.5rem] h-[4.5rem] p-2 absolute transition-all ${
-                    muted ? "translate-x-full" : " translate-x-0"
+                    muted ? "translate-x-0" : " translate-x-full"
                   }`}
                   viewBox="0 0 16 16"
                 >
@@ -174,7 +174,7 @@ export default function VideoPlayer({ title, vimeoPath }: VideoPlayerProps) {
                   xmlns="http://www.w3.org/2000/svg"
                   fill="white"
                   className={`bi bi-pause w-[4.5rem] h-[4.5rem] p-2 transition-all ${
-                    muted ? " translate-x-0" : "-translate-x-full"
+                    muted ? "-translate-x-full" : "-translate-x-0"
                   } }`}
                   viewBox="0 0 16 16"
                 >

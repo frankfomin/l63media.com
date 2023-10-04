@@ -6,22 +6,20 @@ import { useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
 import { imagesArray2 } from "@/lib/imagesArray2";
 import { useStore } from "@/state/menuState";
+import DropDown from "../ui/DropDown";
 
 const linkArray = [
   {
     name: "Hem",
+    href: "/",
   },
   {
     name: "Om mig",
+    href: "/asda",
   },
   {
     name: "Kontakt",
-  },
-  {
-    name: "Foto",
-  },
-  {
-    name: "Film",
+    href: "/kontakt",
   },
 ];
 export default function NavMenu() {
@@ -170,7 +168,7 @@ export default function NavMenu() {
       ref={navMenuRef}
       className={`${
         clipStyle ? "clipBoxNavClosed" : "clipBoxNavOpen"
-      } uppercase h-screen overflow-hidden fixed -top-full w-full bg-primary z-50 `}
+      } uppercase h-[100svh] overflow-hidden fixed -top-full w-full bg-primary z-50 `}
     >
       <div className=" w-full h-full flex justify-center  relative ">
         <div
@@ -274,7 +272,7 @@ export default function NavMenu() {
               <div className="flex items-center  absolute transition-all duration-300 ease-in-out group-hover:translate-x-full translate-x-0">
                 <Link
                   className="nav-link whitespace-nowrap group-hover:opacity-60"
-                  href="#"
+                  href={link.href ? link.href : "#"}
                 >
                   {link.name}
                 </Link>
@@ -296,7 +294,7 @@ export default function NavMenu() {
               <div className="flex items-center absolute transition-all duration-300 ease-in-out group-hover:translate-x-0 -translate-x-[120%]">
                 <Link
                   className="nav-link whitespace-nowrap group-hover:opacity-60"
-                  href="#"
+                  href={link.href ? link.href : "#"}
                 >
                   {link.name}
                 </Link>
@@ -316,7 +314,10 @@ export default function NavMenu() {
                 </svg>
               </div>
               <div className="flex items-center opacity-0 ">
-                <Link className=" whitespace-nowrap " href="#">
+                <Link
+                  className=" whitespace-nowrap "
+                  href={link.href ? link.href : "#"}
+                >
                   {link.name}
                 </Link>
                 <svg
@@ -336,6 +337,7 @@ export default function NavMenu() {
               </div>
             </div>
           ))}
+          <DropDown />
         </div>
         <div ref={myTextRef} className=" absolute bottom-10 right-10">
           Design & Dev | Frank Fomin

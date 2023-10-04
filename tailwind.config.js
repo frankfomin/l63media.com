@@ -19,6 +19,7 @@ module.exports = {
         primary: "#1D1A1A",
         textColor: "#F2ECEC",
         project: "#0D0D0C",
+        paragraph: "#B1B1B1"
 
       },
       fontFamily: {

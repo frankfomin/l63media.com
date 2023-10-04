@@ -1,19 +1,42 @@
 import Link from "next/link";
 import LinkSvg from "./LinkSvg";
 
-export default function LinkComp({ children }: { children: React.ReactNode }) {
+export default function LinkComp({
+  children,
+  href,
+  width,
+  height,
+  classes,
+  link,
+}: {
+  children: React.ReactNode;
+  href: string;
+  width: string;
+  height: string;
+  classes?: string;
+  link?: string;
+}) {
   return (
-    <div className="group pl-2 relative overflow-hidden ">
-      <LinkSvg classes="group-hover:translate-x-full group-hover:opacity-60 translate-x-0">
+    <div className={`group relative ${link}`}>
+      <LinkSvg
+        width={width}
+        height={height}
+        classes={`group-hover:translate-x-[120%] group-hover:opacity-60 translate-x-0 ${classes}`}
+      >
         {children}
       </LinkSvg>
-      <LinkSvg classes="group-hover:translate-x-0  group-hover:opacity-60 -translate-x-[120%]">
+      <LinkSvg
+        width={width}
+        height={height}
+        classes={`group-hover:translate-x-0  group-hover:opacity-60 -translate-x-[120%] ${classes} `}
+      >
         {children}
       </LinkSvg>
-      <div className="flex items-center opacity-0 overflow-hidden">
-        <Link className="" href="#">
+      <div className="flex items-center opacity-0 ">
+        <Link className="" href={href}>
           {children}
         </Link>
+
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

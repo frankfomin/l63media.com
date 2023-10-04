@@ -1,9 +1,17 @@
 import Link from "next/link";
+import { ButtonHTMLAttributes } from "react";
 
-export default function Button({ children }: { children: React.ReactNode }) {
+
+
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
+
+
+export default function Button({ className, children, ...props }: ButtonProps) {
+
   return (
     <div className="flex justify-center font-montserrat">
       <button
+        {...props}
         type="submit"
         className="uppercase group text-button bg-transparent border-2 px-5 py-1 rounded-full flex justify-center items-center gap-1"
       >

@@ -1,10 +1,17 @@
-"use client"
+"use client";
 
 export default function Mail() {
+  const email = "AdamSkold@gmail.com";
+
+  const handleEmailClick = () => {
+    window.location.href = `mailto:${email}`
+  };
+
   return (
-    //I WANT TO MAKE A CLICK TO COPY EMAIL
-    <div onClick={() => {navigator.clipboard.writeText("AdamSkold@gmail.com")}}>
-        AdamSkold@gmail.com
+    <div>
+      <a href={`mailto:${email}`} onClick={handleEmailClick}>
+        {email}
+      </a>
     </div>
-  )
+  );
 }

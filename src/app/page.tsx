@@ -6,14 +6,13 @@ import { allDocs } from "contentlayer/generated";
 import { ProjectMobileCard } from "@/components/projectCard/ProjectMobileCard";
 import PhotoSlider from "@/components/photoCard/PhotoSlider";
 import Button from "@/components/ui/Button";
+import Link from "next/link";
 
 async function getAllProjects() {
   const allProjects = allDocs.map((doc) => doc);
 
   return allProjects;
 }
-
-
 
 export default async function HomePage() {
   const allProjects = await getAllProjects();
@@ -62,13 +61,17 @@ export default async function HomePage() {
               </div>
             </>
           ))}
-          <Button>Alla Filmer</Button>
+          <Link href="/reklamfilmer">
+            <Button>Alla Filmer</Button>
+          </Link>
         </div>
       </section>
       <section className=" text-center flex flex-col gap-6">
         <h5 className=" text-subHeading font-playfair font-semibold">FOTO</h5>
         <PhotoSlider />
-        <Button>Alla Foton</Button>
+        <Link href="/foto">
+          <Button>Alla Foton</Button>
+        </Link>
       </section>
     </main>
   );
