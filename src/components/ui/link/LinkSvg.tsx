@@ -9,8 +9,6 @@ export default function LinkSvg({
   width: string;
   height: string;
 }) {
-
-
   return (
     <div
       className={`flex items-center duration-300 ease-in-out transition-all absolute ${classes}`}

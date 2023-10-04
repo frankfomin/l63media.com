@@ -38,16 +38,24 @@ export default function Footer2() {
           </div>
         </div>
         <hr className=" p-2 w-[80%]" />
-        <div className="flex w-full justify-between items-center sm:px-14 px-6 sm:mb-14 mb-8 font-montserrat text-footerLink">
+        <div className="flex w-full items-center justify-between sm:px-14 px-4 sm:mb-14 mb-4 font-montserrat text-footerLink">
           <Mail />
-          <div className="flex  sm:gap-4 gap-3">
-            <div className="text-paragraph px-5  relative overflow-hidden">
-              <LinkComp width="w-8" height="h-8" href="https://www.tiktok.com/">
+          <div className="flex sm:gap-5 gap-1">
+            <div className="relative overflow-hidden">
+              <LinkComp
+                width="sm:w-8 w-4 "
+                height="sm:h-8 h-4"
+                href="https://www.tiktok.com/"
+              >
                 TikTok
               </LinkComp>
             </div>
-            <div className="text-paragraph px-5  relative overflow-hidden">
-              <LinkComp width="w-8" height="h-8" href="https://www.instagram.com/">
+            <div className="relative overflow-hidden">
+              <LinkComp
+                width="sm:w-8 w-4 "
+                height="sm:h-8 h-4"
+                href="https://www.instagram.com/"
+              >
                 Instagram
               </LinkComp>
             </div>

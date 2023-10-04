@@ -17,7 +17,7 @@ export default function LinkComp({
   link?: string;
 }) {
   return (
-    <div className={`group relative ${link}`}>
+    <div className={`group relative flex items-center ${link}`}>
       <LinkSvg
         width={width}
         height={height}
@@ -43,7 +43,7 @@ export default function LinkComp({
           viewBox="0 0 24 24"
           strokeWidth="2"
           stroke="currentColor"
-          className={` w-8 h-8 cursor-pointer group-hover:opacity-60`}
+          className={` ${width} ${height} cursor-pointer group-hover:opacity-60`}
         >
           <path
             strokeLinecap="round"

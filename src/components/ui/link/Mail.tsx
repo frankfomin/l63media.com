@@ -4,11 +4,11 @@ export default function Mail() {
   const email = "AdamSkold@gmail.com";
 
   const handleEmailClick = () => {
-    window.location.href = `mailto:${email}`
+    window.location.href = `mailto:${email}`;
   };
 
   return (
-    <div>
+    <div className="flex items-center">
       <a href={`mailto:${email}`} onClick={handleEmailClick}>
         {email}
       </a>

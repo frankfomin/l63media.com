@@ -46,10 +46,10 @@ export default function DropDown() {
   }
 
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col gap-1 nav-link">
       <div
         onClick={handleClick}
-        className="flex items-center hover:cursor-pointer hover:opacity-60 transition-all duration-300 pl-10 pr-2"
+        className="flex items-center hover:cursor-pointer hover:opacity-60 transition-all duration-300 pl-10 pr-2 k"
       >
         <span className=" select-none">Tjänster</span>
         <svg
