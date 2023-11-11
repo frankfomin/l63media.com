@@ -1,4 +1,4 @@
-import { contactSchema } from "@/lib/validators/contact";
+/* import { contactSchema } from "@/lib/validators/contact";
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
@@ -32,3 +32,4 @@ export async function POST(req: Request) {
       : { success: true }
   );
 }
+ */
