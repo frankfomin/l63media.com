@@ -46,6 +46,9 @@ export const Doc = defineDocumentType(() => ({
     purple: {
       type: "boolean",
     },
+    imagePath: {
+      type: "string",
+    },
   },
   computedFields,
 }));

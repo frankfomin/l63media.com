@@ -8,6 +8,7 @@ export default function LinkComp({
   height,
   classes,
   link,
+  target,
 }: {
   children: React.ReactNode;
   href: string;
@@ -15,6 +16,7 @@ export default function LinkComp({
   height: string;
   classes?: string;
   link?: string;
+  target?: string;
 }) {
   return (
     <div className={`group relative flex items-center ${link}`}>
@@ -33,7 +35,7 @@ export default function LinkComp({
         {children}
       </LinkSvg>
       <div className="flex items-center opacity-0 ">
-        <Link className="" href={href}>
+        <Link className="" href={href} target={target}>
           {children}
         </Link>
 

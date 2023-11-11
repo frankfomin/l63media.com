@@ -5,8 +5,10 @@ import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
 import { imagesArray2 } from "@/lib/imagesArray2";
-import { useStore } from "@/state/menuState";
-import DropDown from "../ui/DropDown";
+import { useStore } from "@/context/menuState";
+import DropDown from "./DropDown";
+import { usePathname } from "next/navigation";
+import AnimatedLink from "../ui/AnimatedLink";
 
 const linkArray = [
   {
@@ -23,7 +25,14 @@ const linkArray = [
   },
 ];
 export default function NavMenu() {
-  const { isOpen } = useStore();
+  const { isOpen, setIsOpen } = useStore();
+  const path = usePathname();
+
+  useEffect(() => {
+    setIsOpen(false);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [path]);
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [clipStyle, setClipStyle] = useState(false);
@@ -62,7 +71,7 @@ export default function NavMenu() {
           ease: "easeOut",
           duration: 0.35,
           delay: 0.4,
-          y: "100%",
+          y: "-100%",
         });
         gsap.from(navMenu, {
           clipPath: "circle(0% at 50% 0%)",
@@ -173,7 +182,7 @@ export default function NavMenu() {
       <div className=" w-full h-full flex justify-center  relative ">
         <div
           ref={leftImageContainerRef}
-          className="flex absolute lg:-left-20 sm:-left-80 -left-96  -top-56 -z-10 gap-[0.6rem]  bg-black"
+          className="hidden sm:flex absolute lg:-left-20 sm:-left-80 -left-96  -top-56 -z-10 gap-[0.6rem]  bg-black"
         >
           <div className="flex bg-black">
             <div className=" flex flex-col gap-24 whitespace-nowrap mx-5">
@@ -261,83 +270,22 @@ export default function NavMenu() {
         </div>
         <div
           className="flex flex-col gap-4 font-medium
-         justify-center ml-72 h-full lg:text-8xl sm:text-7xl text-5xl"
+         justify-center sm:ml-72 h-full "
         >
           {linkArray.map((link, i) => (
-            <div
-              key={i}
-              onMouseEnter={() => onHover(i)}
-              className=" group w-min overflow-hidden pl-10 relative"
-            >
-              <div className="flex items-center  absolute transition-all duration-300 ease-in-out group-hover:translate-x-full translate-x-0">
-                <Link
-                  className="nav-link whitespace-nowrap group-hover:opacity-60"
-                  href={link.href ? link.href : "#"}
-                >
-                  {link.name}
-                </Link>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="2"
-                  stroke="currentColor"
-                  className={`nav-link h-full w-full cursor-pointer group-hover:opacity-60 p-3`}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
-                  />
-                </svg>
-              </div>
-              <div className="flex items-center absolute transition-all duration-300 ease-in-out group-hover:translate-x-0 -translate-x-[120%]">
-                <Link
-                  className="nav-link whitespace-nowrap group-hover:opacity-60"
-                  href={link.href ? link.href : "#"}
-                >
-                  {link.name}
-                </Link>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="2"
-                  stroke="currentColor"
-                  className={`nav-link lg:w-28 lg:h-28 md:w-20 md:h-20 w-14 h-14 cursor-pointer group-hover:opacity-60`}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
-                  />
-                </svg>
-              </div>
-              <div className="flex items-center opacity-0 ">
-                <Link
-                  className=" whitespace-nowrap "
-                  href={link.href ? link.href : "#"}
-                >
-                  {link.name}
-                </Link>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="2"
-                  stroke="currentColor"
-                  className={`nav-link lg:w-28 lg:h-28 md:w-20 md:h-20 w-14 h-14 cursor-pointer `}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
-                  />
-                </svg>
-              </div>
+            <div key={i} className="overflow-hidden">
+              <AnimatedLink
+                className="nav-link w-min whitespace-nowrap"
+                variant="xxl"
+                href={link.href}
+              >
+                {link.name}
+              </AnimatedLink>
             </div>
           ))}
-          <DropDown />
+          <div className="overflow-hidden ">
+            <DropDown />
+          </div>
         </div>
         <div ref={myTextRef} className=" absolute bottom-10 right-10">
           Design & Dev | Frank Fomin

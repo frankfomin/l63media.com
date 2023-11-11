@@ -1,4 +1,4 @@
-"use client";
+/* "use client";
 
 import { FC, useEffect, useState } from "react";
 
@@ -33,3 +33,4 @@ export const ProjectVideoPlayer: FC<ProjectVideoPlayerProps> = ({}) => {
     </>
   );
 };
+ */

@@ -22,6 +22,7 @@ export type Doc = {
   rainbow?: boolean | undefined
   triColor?: boolean | undefined
   purple?: boolean | undefined
+  imagePath?: string | undefined
   /** MDX file body */
   body: MDX
   slug: string

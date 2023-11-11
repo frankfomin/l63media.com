@@ -7,13 +7,12 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
 
 
 export default function Button({ className, children, ...props }: ButtonProps) {
-
   return (
-    <div className="flex justify-center font-montserrat">
+    <div className="flex w-min whitespace-nowrap text-5xl justify-center font-montserrat font-normal p-">
       <button
         {...props}
         type="submit"
-        className="uppercase group text-button bg-transparent border-2 px-5 py-1 rounded-full flex justify-center items-center gap-1"
+        className="uppercase group text-button bg-transparent border-2 px-5 py-2 rounded-full flex justify-center items-center gap-1"
       >
         {children}
         <svg

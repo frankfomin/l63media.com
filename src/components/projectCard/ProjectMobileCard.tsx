@@ -8,6 +8,7 @@ type ProjectMobileCardProps = {
   triColor?: boolean;
   rainbow?: boolean;
   path?: string;
+  imagePath: string;
 };
 
 export const ProjectMobileCard: FC<ProjectMobileCardProps> = ({
@@ -16,10 +17,11 @@ export const ProjectMobileCard: FC<ProjectMobileCardProps> = ({
   rainbow,
   purple,
   path,
+  imagePath,
 }) => {
   return (
-    <Link href={`/projekt/${path}`}>
-      <div className="md:hidden block bg-black uppercase rounded-lg ">
+    <Link className="flex flex-col items-center" href={`/projekt/${path}`}>
+      <div className="md:hidden max-w-[95%]  bg-black uppercase rounded-lg ">
         <div className="text-mobileCardTitle text-center font-medium font-playfair ">
           {children}
         </div>
@@ -29,9 +31,9 @@ export const ProjectMobileCard: FC<ProjectMobileCardProps> = ({
           <Image
             width={300}
             height={300}
-            className=" w-full object-cover  max-h-[30rem]"
+            className=" w-full object-cover max-h-[30rem]"
             alt="cool image"
-            src="https://images.unsplash.com/photo-1586348943529-beaae6c28db9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=715&q=80"
+            src={imagePath}
           />
         </div>
         <div className="">
@@ -73,14 +75,11 @@ export const ProjectMobileCard: FC<ProjectMobileCardProps> = ({
             <div className=" text-mobileCardVD font-medium text-center ml-4">
               video cassette
             </div>
-            <div className=" text-mobileCardRAD leading-none  flex justify-between text-gray-300 ml-4">
+            <div className=" text-mobileCardRAP leading-none  flex justify-between text-gray-300 ml-4">
               <span>recording</span>
               <span>and</span>
               <span>playback</span>
             </div>
-          </div>
-          <div className="lowercase rotate-90 text-[0.75rem] sm:block hidden ">
-            246mm
           </div>
         </div>
       </div>

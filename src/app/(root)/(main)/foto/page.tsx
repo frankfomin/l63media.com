@@ -87,14 +87,14 @@ export default function PhotoPage() {
 
   return (
     <main className="flex flex-col gap-14 items-center justify-center">
-      <header className="flex items-center flex-col gap-7 mt-16">
-        <h1 className="text-center text-9xl font-playfair font-semibold">
+      <header className="flex items-center flex-col gap-1 mt-16">
+        <h1 className="text-center leading-tight text-longHeading font-playfair font-semibold">
           ProduktFoto
         </h1>
-        <span className="max-w-2xl text-center">
-          Urna sed magna mauris sem pellentesque penatibus praesent. Imperdiet
-          consectetur fermentum eget enim commodo tempor. Dictumst tristique a
-          sed est et sit.
+        <span className="max-w-2xl text-center lowercase text-paragraph">
+          <span className="uppercase">U</span>rna sed magna mauris sem
+          pellentesque penatibus praesent. Imperdiet consectetur fermentum eget
+          enim commodo tempor. Dictumst tristique a sed est et sit.
         </span>
       </header>
       <div className="flex flex-col items-center  gap-36">
@@ -114,12 +114,12 @@ export default function PhotoPage() {
             {produktFotoArray.map((image, i) => (
               <SplideSlide
                 key={i}
-                className="rounded-3xl   relative  pointer-events-none touch-none"
+                className="rounded-3xl relative pointer-events-none touch-none"
               >
                 <div className="flex-shrink-0 relative w-full h-full overflow-hidden ">
                   <Image
                     ref={isInViewRef}
-                    className=" h-full w-full object-contain rounded-3xl  max-h-[70svh] "
+                    className=" h-full w-full object-contain max-h-[70svh] "
                     src={image.src}
                     width={1000}
                     height={1000}
@@ -131,8 +131,11 @@ export default function PhotoPage() {
             ))}
           </Splide>
         </div>
-        <div ref={lineRef} className="w-[30%]  relative flex items-center ">
-          <hr className="bg-white  w-full" />
+        <div
+          ref={lineRef}
+          className="lg:w-[30%] md:w-[40%] sm:w-[50%] w-[80%]  relative flex items-center "
+        >
+          <hr className="bg-white w-full" />
           <div ref={ballRef} className="absolute flex justify-center">
             <div className="aspect-square rounded-md w-[6rem]  absolute -top-28  ">
               <Image
@@ -143,7 +146,7 @@ export default function PhotoPage() {
                 alt="saodkaso"
               />
             </div>
-            <div className="rounded-[50%] translate-x-[] aspect-square p-2   bg-white" />
+            <div className="rounded-[50%]  aspect-square p-2   bg-white" />
           </div>
         </div>
       </div>

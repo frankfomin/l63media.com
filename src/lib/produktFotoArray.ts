@@ -1,14 +1,14 @@
 export const produktFotoArray = [
   {
-    src: "/eros.jpg",
+    src: "/images/eros.webp",
     alt: "parfym",
   },
   {
-    src: "/hanowa.jpg",
+    src: "/images/hanowa.webp",
     alt: "klocka",
   },
   {
-    src: "/iskaffe.jpg",
+    src: "/images/iskaffe.webp",
     alt: "kaffe",
   },
 ];

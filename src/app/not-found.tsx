@@ -7,7 +7,7 @@ export default function notFound() {
 
  
   return (
-    <main className=" h-[100svh] uppercase flex flex-col justify-center font-playfair font gap-96 text-textColor">
+    <main className=" h-[100svh] uppercase flex flex-col justify-between text-textColor">
       <div className="flex justify-between mx-40 text-3xl font-medium">
         <div className="flex items-center">
           <div>Play</div>
@@ -23,10 +23,10 @@ export default function notFound() {
         <div>{currentDate.toLocaleDateString("en-US")}</div>
       </div>
       <div className=" flex flex-col items-center gap-8">
-        <h1 className=" font-semibold text-9xl leading-none font-playfair">
+        <h1 className=" font-semibold text-[12vw] leading-none ">
           Error 404
         </h1>
-        <h2 className=" text-4xl">Är du vilse?</h2>
+        <h2 className=" text-2xl sm:text-4xl">Är du vilse?</h2>
         <Button>Gå tillbaka</Button>
       </div>
       <div className="flex justify-between mx-40 text-3xl font-medium">

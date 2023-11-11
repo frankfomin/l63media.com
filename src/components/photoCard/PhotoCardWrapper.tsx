@@ -1,15 +1,8 @@
-import { imagesArray } from "@/lib/imagesArray";
-
 export default function PhotoCardWrapper({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const repeatedImagesArray = Array.from(
-    { length: 9 },
-    () => imagesArray
-  ).flat();
-
   return (
     <div className="flex flex-col gap-[0.6rem]">
       <div className="overflow-hidden">

@@ -1,23 +1,28 @@
 "use client";
 
-import LinkComp from "./link/LinkComp";
-import { useEffect, useState } from "react";
+import LinkComp from "../ui/link/LinkComp";
+import { use, useEffect, useState } from "react";
 import { gsap } from "gsap";
+import { usePathname } from "next/navigation";
+import { useStore } from "@/context/menuState";
+import AnimatedLink from "../ui/AnimatedLink";
 
 export default function DropDown() {
   const [isOpen, setIsOpen] = useState(false);
+  const { isOpen: menuIsOpen } = useStore();
 
   useEffect(() => {
     const links = document.querySelectorAll(".link");
-    gsap.set(links, {
-      opacity: 0,
-      y: "300%",
-    });
-  }, []);
-  function handleClick() {
+    gsap.set(
+      links,
+      { y: "-300%" } // final position
+    );
+    setIsOpen(false);
+  }, [menuIsOpen]);
+
+  useEffect(() => {
     const links = document.querySelectorAll(".link");
-    setIsOpen((prev) => !prev);
-    if (isOpen) {
+    if (!isOpen) {
       gsap.to(links, {
         duration: 0.35,
         delay: 0.1,
@@ -31,7 +36,6 @@ export default function DropDown() {
         links,
         {
           opacity: 1,
-          y: "300%",
         },
         {
           duration: 0.35,
@@ -43,20 +47,22 @@ export default function DropDown() {
         }
       );
     }
-  }
+  }, [isOpen]);
 
   return (
     <div className="flex flex-col gap-1 nav-link">
       <div
-        onClick={handleClick}
-        className="flex items-center hover:cursor-pointer hover:opacity-60 transition-all duration-300 pl-10 pr-2 k"
+        onClick={() => setIsOpen((prev) => !prev)}
+        className="flex items-center hover:cursor-pointer hover:opacity-60 transition-all duration-300"
       >
-        <span className=" select-none">Tjänster</span>
+        <span className=" select-none lg:text-8xl sm:text-7xl text-5xl">
+          Tjänster
+        </span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 14 8"
           fill="none"
-          className={`w-32 h-32 transition-all duration-300  p-3  ${
+          className={`lg:w-20 lg:h-20 sm:w-16 sm:h-16 w-14 h-14 transition-all duration-300 ${
             isOpen ? " -rotate-180" : ""
           }`}
         >
@@ -69,14 +75,13 @@ export default function DropDown() {
           />
         </svg>
       </div>
-      <div className="flex text-paragraph flex-col gap-3 ml-32 text-6xl relative overflow-hidden">
-        <LinkComp classes=" " link="link" width="w-14" height="h-14" href="/">
-          Reklamfilmer
-        </LinkComp>
-
-        <LinkComp link="link" classes="  " width="w-14" height="h-14" href="/">
-          Produktfoto
-        </LinkComp>
+      <div className="flex text-paragraph flex-col gap-3  ml-14 w-min relative overflow-hidden">
+        <AnimatedLink variant="lg" className="link w-min" href="/reklamfilmer">
+          reklamfilmer
+        </AnimatedLink>
+        <AnimatedLink variant="lg" className="link w-min" href="/foto">
+          produktfoto
+        </AnimatedLink>
       </div>
     </div>
   );

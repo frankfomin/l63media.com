@@ -1,13 +1,13 @@
 "use client";
-import { FC, useRef, useEffect } from "react";
-import { imagesArray } from "../../lib/imagesArray";
+import { useRef, useEffect } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { aboutImages } from "@/constants/constants";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const PhotoScrollSlider: FC = () => {
+export default function PhotoScrollSlider() {
   const sliderRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -33,13 +33,12 @@ export const PhotoScrollSlider: FC = () => {
           ref={sliderRef}
           className="flex bg-[#020202] p-3 gap-3 w-max relative  "
         >
-          {imagesArray.map((image, index) => (
+          {aboutImages.map((image, index) => (
             <div
-              className="relative aspect-[3/4] w-[25rem] flex-shrink-0"
+              className="relative aspect-[3/3.5] w-[22rem] flex-shrink-0"
               key={index}
-
             >
-              <div className=" shadow-[inset_0px_0px_3px_3px_#020202] absolute h-full w-full" />
+              <div className=" shadow-[inset_0px_0px_5px_5px_#020202] absolute h-full w-full" />
               <Image
                 className=" h-full w-full object-cover  rounded-md pointer-events-none"
                 src={image.src}
@@ -53,4 +52,4 @@ export const PhotoScrollSlider: FC = () => {
       </div>
     </>
   );
-};
+}

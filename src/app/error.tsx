@@ -8,13 +8,8 @@ const Error = ({ error, reset }: { error: Error; reset: () => void }) => {
   const currentDate = new Date();
 
   useEffect(() => {
-    // Disable scrolling when the component mounts
     document.body.style.overflow = "hidden";
   }, []);
-
-  // Function to format time in HH:MM:SS format
-
-  // Function to pad a number with leading zero if less than 10
 
   return (
     <main className=" h-[100svh] uppercase flex flex-col justify-center gap-96">

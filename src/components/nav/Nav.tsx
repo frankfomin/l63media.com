@@ -1,5 +1,5 @@
 "use client";
-import { useStore } from "@/state/menuState";
+import { useStore } from "@/context/menuState";
 import { motion } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";

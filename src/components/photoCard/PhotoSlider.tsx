@@ -1,11 +1,10 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import { imagesArray } from "@/lib/imagesArray";
 import PhotoCardWrapper from "./PhotoCardWrapper";
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
+import { aboutImages, productPhotos } from "@/constants/constants";
 
 export default function PhotoSlider2() {
   return (
@@ -38,7 +37,7 @@ export default function PhotoSlider2() {
       <motion.div className=" bg-[#020202]" whileTap={{ cursor: "grabbing" }}>
         <PhotoCardWrapper>
           <SplideTrack className="">
-            {imagesArray.map((image, index) => (
+            {productPhotos.map((image, index) => (
               <SplideSlide key={index} className="relative">
                 <div className="flex-shrink-0 relative w-full h-full overflow-hidden">
                   <div className="shadow-[inset_0px_0px_10px_10px_#000000] absolute h-full w-full" />

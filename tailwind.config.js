@@ -33,21 +33,24 @@ module.exports = {
       },
 
       fontSize: {
-        mobileCardTitle: "clamp(3rem, 12vw - 0.2rem, 4.5rem)",
+      
+        //projectMobileCard
+        mobileCardTitle: "clamp(3rem, 10vw - 0.8rem, 4.5rem)",
         mobileCardVHS: "clamp(2rem, 20vw - 3rem, 2.5rem)",
-        mobileCardVD: "clamp(1.5rem, 20vw - 3rem, 1.875rem)",
-        mobileCardRAP: "clamp(1.2rem, 20vw - 3rem, 1.5rem)",
+        mobileCardVD: "clamp(0.3rem, 5vw , 1.875rem)",
+        mobileCardRAP: "clamp(0.2rem, 3vw , 1.5rem)",
+
 
         projectHeaderTitle: "clamp(3rem, 13vw, 7rem)",
-        subHeading: "clamp(3rem, 14vw, 6rem)",
+        subHeading: "clamp(2rem, 16vw, 7rem)",
+        longHeading: "clamp(2rem, 10vw, 7rem)",
 
         //button
         button: "clamp(1.2rem, 4vw - 0.4rem, 2.25rem)",
 
-        //footer
-
-        coordinates: "clamp(1rem, 4vw - 0.4rem, 2.25rem)",
-        footerLink: "clamp(0.8rem, 4vw - 0.4rem, 2.25rem)",
+        //footer 
+        coordinates: "clamp(0.7rem, 4vw - 0.4rem, 2.25rem)",
+        footerLink: "clamp(0.5rem, 4vw - 0.4rem, 2.25rem)",
       },
     },
   },

@@ -1,4 +1,4 @@
-import { contactSchema } from "@/lib/types";
+import { contactSchema } from "@/lib/validators/contact";
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
@@ -6,11 +6,10 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   const body: unknown = await req.json();
-  console.log("BODY", body);
 
   const result = contactSchema.safeParse(body);
 
-  console.log("RESULT", result);
+
   let zodErrors = {};
   if (!result.success) {
     result.error.issues.forEach((issue) => {
@@ -21,7 +20,7 @@ export async function POST(req: Request) {
 
     resend.emails.send({
       from: "onboarding@resend.dev",
-      to: "l63mediase@gmail.com",
+      to: "frank.fomin@gmail.com",
       subject: "Hello World",
       html: `<p> ${parsedData.email} ${parsedData.name} ${parsedData.services} ${parsedData.message}<strong>first email</strong>!</p>`,
     });
