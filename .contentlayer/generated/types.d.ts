@@ -15,14 +15,18 @@ export type Doc = {
   type: 'Doc'
   projectName: string
   description?: string | undefined
-  vimeoPath?: number | undefined
-  videoPath?: string | undefined
+  vimeoPath: number
+  videoPath: string
   path: string
   mobile?: boolean | undefined
-  rainbow?: boolean | undefined
-  triColor?: boolean | undefined
-  purple?: boolean | undefined
+  projectStyle: string
   imagePath?: string | undefined
+  bg1: string
+  bg2: string
+  rotation: string
+  bg3: string
+  order: number
+  lineSpacing: string
   /** MDX file body */
   body: MDX
   slug: string

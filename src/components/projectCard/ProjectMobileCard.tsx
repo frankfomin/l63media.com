@@ -1,24 +1,31 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FC } from "react";
+import ProjectLines from "./ProjectLines";
 
 type ProjectMobileCardProps = {
   children: React.ReactNode;
-  purple?: boolean;
-  triColor?: boolean;
-  rainbow?: boolean;
-  path?: string;
+  projectStyle: string;
+  bg1: string;
+  bg2: string;
+  bg3: string;
+  path: string;
+  rotation: string;
+  videoPath: string;
+  lineSpacing: string;
   imagePath: string;
 };
 
-export const ProjectMobileCard: FC<ProjectMobileCardProps> = ({
+export default function ProjectMobileCard({
   children,
-  triColor,
-  rainbow,
-  purple,
+  bg1,
+  bg2,
+  bg3,
+  projectStyle,
+  rotation,
+  lineSpacing,
   path,
   imagePath,
-}) => {
+}: ProjectMobileCardProps) {
   return (
     <Link className="flex flex-col items-center" href={`/projekt/${path}`}>
       <div className="md:hidden max-w-[95%]  bg-black uppercase rounded-lg ">
@@ -36,37 +43,17 @@ export const ProjectMobileCard: FC<ProjectMobileCardProps> = ({
             src={imagePath}
           />
         </div>
-        <div className="">
-          {triColor && (
-            <div className=" h-28">
-              <div className="h-[33.3%] pl-3 font-semibold text-4xl flex items-center bg-[#BE3C42]">
-                T-120
-              </div>
+        <ProjectLines
+          bg1={bg1}
+          bg2={bg2}
+          bg3={bg3}
+          projectStyle={projectStyle}
+          rotation="level"
+          lineSpacing={lineSpacing}
+          device="mobile"
+          lineSize="mobile"
+        />
 
-              <div className="h-[33.3%] bg-[#E68526]"></div>
-              <div className="h-[33.3%] bg-[#E8B053]"></div>
-            </div>
-          )}
-          {rainbow && (
-            <div className="flex justify-between flex-col gap-5 mt-3 h-28">
-              <div className="h-[13%] w-full bg-[#4A4C83]" />
-              <div className="h-[13%] w-full bg-[#4C8418] " />
-              <div className="h-[13%] w-full bg-[#D38300]" />
-              <div className="h-[13%] w-full bg-[#C83900]" />
-              <div className="h-[13%] w-full bg-[#D82C05]" />
-            </div>
-          )}
-          {purple && (
-            <div className=" h-28">
-              <div className="h-[33.3%] pl-3 font-semibold text-4xl flex items-center bg-[#4A305E]">
-                T-120
-              </div>
-
-              <div className="h-[33.3%] bg-[#4A4C83]"></div>
-              <div className="h-[33.3%] bg-[#4C8418]"></div>
-            </div>
-          )}
-        </div>
         <div className=" flex items-center justify-between p-1">
           <div className="border-[1px] text-mobileCardVHS leading-none line font-semibold">
             VHS
@@ -85,4 +72,4 @@ export const ProjectMobileCard: FC<ProjectMobileCardProps> = ({
       </div>
     </Link>
   );
-};
+}

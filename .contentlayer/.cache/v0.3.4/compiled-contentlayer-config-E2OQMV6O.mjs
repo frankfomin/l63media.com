@@ -1,80 +1,78 @@
+// contentlayer.config.js
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
-
-/** @type {import("contentlayer/source-files").ComputedFields} */
-const computedFields = {
+var computedFields = {
   slug: {
     type: "string",
-    resolve: (doc) => `/${doc._raw.flattenedPath}`,
+    resolve: (doc) => `/${doc._raw.flattenedPath}`
   },
   slugAsParams: {
     type: "string",
-    resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
-  },
+    resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/")
+  }
 };
-
-export const Doc = defineDocumentType(() => ({
+var Doc = defineDocumentType(() => ({
   name: "Doc",
   filePathPattern: "project/**/*.mdx",
   contentType: "mdx",
   fields: {
     projectName: {
       type: "string",
-      required: true,
+      required: true
     },
     description: {
-      type: "string",
+      type: "string"
     },
     vimeoPath: {
       type: "number",
-      required: true,
+      required: true
     },
     videoPath: {
       type: "string",
-      required: true,
+      required: true
     },
     path: {
       type: "string",
-      required: true,
+      required: true
     },
     mobile: {
-      type: "boolean",
+      type: "boolean"
     },
     projectStyle: {
       type: "string",
-      required: true,
+      required: true
     },
     imagePath: {
-      type: "string",
+      type: "string"
     },
     bg1: {
       type: "string",
-      required: true,
+      required: true
     },
     bg2: {
       type: "string",
-      required: true,
+      required: true
     },
     rotation: {
       type: "string",
-      required: true,
+      required: true
     },
     bg3: {
       type: "string",
-      required: true,
-    },
-    order: {
-      type: "number",
-      required: true,
+      required: true
     },
     lineSpacing: {
       type: "string",
-      required: true,
-    },
+      required: true
+    }
   },
-  computedFields,
+  computedFields
 }));
-
-export default makeSource({
+var contentlayer_config_default = makeSource({
   contentDirPath: "src/content",
-  documentTypes: [Doc],
+  documentTypes: [Doc]
 });
+export {
+  Doc,
+  contentlayer_config_default as default
+};
+//# sourceMappingURL=compiled-contentlayer-config-E2OQMV6O.mjs.map
