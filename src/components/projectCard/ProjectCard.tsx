@@ -27,8 +27,6 @@ export default function ProjectCard({
   videoPath,
   lineSpacing,
 }: ProjectCardProps) {
-  console.log(rotation)
-  console.log("PROJECOASOPDKOASD", rotation)
   return (
     <Link href={`/projekt/${path}`}>
       <AnimationPopup videoPath={videoPath}>
@@ -50,8 +48,8 @@ export default function ProjectCard({
             bg2={bg2}
             bg3={bg3}
             projectStyle={projectStyle}
-            rotation={rotation}
-            lineSpacing={lineSpacing}
+            rotation={rotation as any}
+            lineSpacing={lineSpacing as any}
             device="desktop"
             lineSize="desktop"
           />
