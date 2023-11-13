@@ -49,7 +49,7 @@ export default function ProjectMobileCard({
           bg3={bg3}
           projectStyle={projectStyle}
           rotation="level"
-          lineSpacing={lineSpacing}
+          lineSpacing={lineSpacing as any}
           device="mobile"
           lineSize="mobile"
         />
