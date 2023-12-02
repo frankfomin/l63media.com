@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { TcontactSchema, contactSchema } from "@/lib/validators/contact";
@@ -9,6 +9,11 @@ import Button from "../ui/Button";
 import { useRouter } from "next/navigation";
 
 export default function ContactForm() {
+  const [isMounted, setIsMounted] = React.useState(false);
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const router = useRouter();
   const {
     reset,
@@ -50,84 +55,95 @@ export default function ContactForm() {
   };
   return (
     <>
-      {errors.root && (
-        <p className=" text-red-500 text-center mb-2">{`${errors.root.message}`}</p>
-      )}
-      <form onSubmit={handleSubmit(onSubmit)} className="flex justify-center">
-        <div className="flex flex-col gap-4">
-          <div className="flex flex-col sm:flex-row gap-4">
-            <div className=" relative flex flex-col justify-center">
-              <input
-                {...register("name")}
-                placeholder="Name"
-                className={`peer transition-all placeholder:text-transparent py-3 px-4 text-xl
+      {isMounted && (
+        <>
+          {errors.root && (
+            <p className="text-red-500 text-center mb-2">{`${errors.root.message}`}</p>
+          )}
+
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="flex justify-center"
+          >
+            <div className="flex flex-col gap-4">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <div className=" relative flex flex-col justify-center">
+                  <input
+                    {...register("name")}
+                    placeholder="Name"
+                    className={`peer transition-all placeholder:text-transparent py-3 px-4 text-xl
             [&:not(:placeholder-shown)]:pb-1 [&:not(:placeholder-shown)]:pt-5 bg-transparent 
-            border rounded-xl outline-none text-paragraph ${
+            border rounded-xl outline-none text-textColor ${
               errors.name ? "border-red-500" : ""
             }`}
-                type="text"
-              />
+                    type="text"
+                  />
 
-              <label className="absolute py-3  px-4  peer-placeholder-shown:translate-y-0 -translate-y-3 peer-placeholder-shown:text-xl text-sm  pointer-events-none transition-all ease-motion ">
-                Ditt Namn
-              </label>
-              {/*   {errors.name && (
+                  <label className="absolute py-3  px-4  peer-placeholder-shown:translate-y-0 -translate-y-3 peer-placeholder-shown:text-xl text-sm  pointer-events-none transition-all ease-motion ">
+                    Ditt Namn
+                  </label>
+                  {/*   {errors.name && (
                 <p className=" text-red-500">{`${errors.name.message}`}</p>
               )} */}
-            </div>
-            <div className=" relative flex items-center">
-              <input
-                {...register("email")}
-                placeholder="Email"
-                className={`peer w-full transition-all placeholder:text-transparent py-3 px-4 text-xl
+                </div>
+                <div className=" relative flex items-center">
+                  <input
+                    {...register("email")}
+                    placeholder="Email"
+                    className={`peer w-full transition-all placeholder:text-transparent py-3 px-4 text-xl
             [&:not(:placeholder-shown)]:pb-1 [&:not(:placeholder-shown)]:pt-5 bg-transparent 
-            border rounded-xl outline-none text-paragraph ${
+            border rounded-xl outline-none text-textColor ${
               errors.email ? "border-red-500" : ""
             }`}
-                type="text"
-              />
-              <label className="absolute py-3 px-4  peer-placeholder-shown:translate-y-0 -translate-y-3 peer-placeholder-shown:text-xl text-sm  pointer-events-none transition-all ease-motion ">
-                Din mail
-              </label>
+                    type="text"
+                  />
+                  <label className="absolute py-3 px-4  peer-placeholder-shown:translate-y-0 -translate-y-3 peer-placeholder-shown:text-xl text-sm  pointer-events-none transition-all ease-motion ">
+                    Din mail
+                  </label>
+                </div>
+              </div>
+              <div
+                className={`flex flex-col justify-center border rounded-xl px-4 py-3 ${
+                  errors.services ? "border-red-500" : ""
+                }`}
+              >
+                <label className="  text-xl  pointer-events-none transition-all ease-motion  ">
+                  Vilka tjänster söker du?
+                </label>
+                <input
+                  {...register("services")}
+                  placeholder="Produktfoto, Reklamfilmer..."
+                  className="text-xl bg-transparent outline-none w-full placeholder-paragraph text-textColor"
+                  type="text"
+                />
+              </div>
+              <div
+                className={`flex flex-col justify-center border rounded-xl px-4 py-3   ${
+                  errors.message ? "border-red-500" : ""
+                }`}
+              >
+                <label className="  text-xl  pointer-events-none transition-all ease-motion  ">
+                  Ditt Meddelande
+                </label>
+                <textarea
+                  {...register("message")}
+                  rows={8}
+                  placeholder="Hej Adam kan du hjälpa mig med..."
+                  className="text-xl bg-transparent outline-none placeholder-paragraph text-textColor"
+                />
+              </div>
+              <div className=" flex justify-center">
+                <Button disabled={isSubmitting} type="submit">
+                  Skicka
+                </Button>
+              </div>
             </div>
-          </div>
-          <div
-            className={`flex flex-col justify-center border rounded-xl px-4 py-3 ${
-              errors.services ? "border-red-500" : ""
-            }`}
-          >
-            <label className="  text-xl  pointer-events-none transition-all ease-motion  ">
-              Vilka tjänster söker du?
-            </label>
-            <input
-              {...register("services")}
-              placeholder="Produktfoto, Reklamfilmer..."
-              className="text-xl bg-transparent outline-none w-full placeholder-paragraph text-paragraph"
-              type="text"
-            />
-          </div>
-          <div
-            className={`flex flex-col justify-center border rounded-xl px-4 py-3   ${
-              errors.message ? "border-red-500" : ""
-            }`}
-          >
-            <label className="  text-xl  pointer-events-none transition-all ease-motion  ">
-              Ditt Meddelande
-            </label>
-            <textarea
-              {...register("message")}
-              rows={8}
-              placeholder="Hej Adam kan du hjälpa mig med..."
-              className="text-xl bg-transparent outline-none placeholder-paragraph text-paragraph"
-            />
-          </div>
-          <div className=" flex justify-center">
-            <Button disabled={isSubmitting} type="submit">
-              Skicka
-            </Button>
-          </div>
-        </div>
-      </form>
+          </form>
+          {errors.root && (
+            <p className=" text-red-500 text-center mb-2">{`${errors.root.message}`}</p>
+          )}
+        </>
+      )}
     </>
   );
 }
