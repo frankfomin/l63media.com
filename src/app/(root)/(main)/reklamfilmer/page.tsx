@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 export default function FilmPage() {
   return (
     <main className="flex flex-col gap-20">
-      <header className="flex items-center flex-col gap-1 mt-16">
-        <h1 className="text-center leading-tight text-longHeading font-playfair font-semibold">
+      <header className="flex items-center flex-col gap-1 mt-24">
+        <h1 className="text-center leading-tight text-longHeading font-playfair font-semibold uppercase">
           Reklamfilmer
         </h1>
         <span className=" max-w-2xl text-center text-paragraph lowercase">

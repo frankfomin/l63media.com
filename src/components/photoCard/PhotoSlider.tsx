@@ -46,7 +46,7 @@ export default function PhotoSlider2() {
                     src={image.src} // Display the first image from the array
                     width={500}
                     height={500}
-                    alt="cool image"
+                    alt={image.alt}
                   />
                 </div>
               </SplideSlide>

@@ -1,9 +1,7 @@
 "use client";
 
-import LinkComp from "../ui/link/LinkComp";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { gsap } from "gsap";
-import { usePathname } from "next/navigation";
 import { useStore } from "@/context/menuState";
 import AnimatedLink from "../ui/AnimatedLink";
 
@@ -53,7 +51,7 @@ export default function DropDown() {
     <div className="flex flex-col gap-1 nav-link">
       <div
         onClick={() => setIsOpen((prev) => !prev)}
-        className="flex items-center hover:cursor-pointer hover:opacity-60 transition-all duration-300"
+        className="flex items-center hover:cursor-pointer  transition-all duration-300"
       >
         <span className=" select-none lg:text-8xl sm:text-7xl text-5xl">
           Tjänster
@@ -75,7 +73,7 @@ export default function DropDown() {
           />
         </svg>
       </div>
-      <div className="flex text-paragraph flex-col gap-3  ml-14 w-min relative overflow-hidden">
+      <div className="flex  flex-col gap-3  ml-14 w-min relative overflow-hidden">
         <AnimatedLink variant="lg" className="link w-min" href="/reklamfilmer">
           reklamfilmer
         </AnimatedLink>

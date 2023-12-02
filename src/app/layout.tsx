@@ -2,7 +2,6 @@ import NavMenu from "@/components/nav/NavMenu";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Montserrat, Playfair_Display } from "next/font/google";
-import Nav from "@/components/nav/Nav";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -26,10 +25,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.variable} ${playfair.variable} uppercase bg-primary text-textColor font-montserrat overflow-x-hidden`}
+        className={`${montserrat.variable} ${playfair.variable} bg-primary text-textColor font-montserrat overflow-x-hidden`}
       >
-        <NavMenu />
-        <Nav />
         {children}
       </body>
     </html>

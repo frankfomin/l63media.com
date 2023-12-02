@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { VariantProps, cva } from "class-variance-authority";
 import Link from "next/link";
 import React, { LinkHTMLAttributes, SVGProps } from "react";
+import ActiveText from "./ActiveText";
 
 const svgVariants = cva("group-hover:text-paragraph", {
   variants: {
@@ -23,7 +24,7 @@ const linkVariants = cva("group-hover:text-paragraph ", {
   variants: {
     variant: {
       xs: " text-base",
-      sm: "text-2xl",
+      sm: "text-2xl sm:text-base text-sm",
       md: "lg:text-4xl sm:text:2xl text-base",
       lg: "lg:text-5xl sm:text-4xl text-3xl",
       xl: "text-7xl",
@@ -69,7 +70,9 @@ export default function AnimatedLink({
           }`}
           key={i}
         >
-          <span className={`${cn(linkVariants({ variant }))}`}>{children}</span>
+          <span className={`${cn(linkVariants({ variant }))}`}>
+            <ActiveText href={href}>{children}</ActiveText>
+          </span>
 
           <svg
             xmlns="http://www.w3.org/2000/svg"

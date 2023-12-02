@@ -6,7 +6,7 @@ import AnimatedLink from "./ui/AnimatedLink";
 
 export default function Footer() {
   return (
-    <footer className="font-playfair flex flex-col items-center justify-between bg-black w-full relative min-h-[100svh] sm:rounded-[6rem] rounded-[2rem] mt-60">
+    <footer className="font-playfair uppercase flex flex-col items-center justify-between bg-black w-full relative min-h-[100svh] sm:rounded-[6rem] rounded-[2rem] mt-60">
       <div />
       <div />
       <div className="text-subHeading leading-none flex justify-center items-center ">
@@ -14,7 +14,7 @@ export default function Footer() {
           <div className="flex justify-between  items-center w-full">
             <h1>Låt</h1>
             <Image
-              src="https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
+              src="/images/adam-kamera-alv.webp"
               width={400}
               height={400}
               alt="cool image"
@@ -22,7 +22,7 @@ export default function Footer() {
             />
             <h2>Oss</h2>
           </div>
-          <div className=" mt-4 lg:mt-8 font-montserrat font-normal opacity-100 text-coordinates flex justify-center gap-4  w-full items-center">
+          <div className=" mt-4 lg:mt-8 font-montserrat font-normal opacity-100 lg:text-4xl sm:text:2xl text-base flex justify-center gap-4  w-full items-center">
             <span className="opacity-60">{`63°49'44.002"N`}</span>
             <span className=" opacity-70">Umeå</span>
             <span className="opacity-60">{`20°15'25.268"E`}</span>
@@ -35,11 +35,13 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <hr className=" p-2 w-[80%]" />
-      <div className="flex w-full items-center justify-between sm:px-14 px-4 sm:mb-14 mb-4 font-montserrat text-footerLink">
-        <Link href="mailto: johndoe@gmail.com">jonas@gmail.com</Link>
+      <hr className="hidden sm:block p-2 w-[80%]" />
+      <div className="flex w-full items-center sm:justify-between sm:flex-row-reverse flex-col sm:gap-0 gap-4 sm:px-14 px-4 sm:mb-14 mb-4 font-montserrat ">
+        <hr className="sm:hidden block p-2 w-[80%]" />
+
         <div className="flex sm:gap-5 gap-1">
           <AnimatedLink
+            className=""
             variant="md"
             target="_blank"
             href="https://www.tiktok.com"
@@ -54,6 +56,12 @@ export default function Footer() {
             Instagram
           </AnimatedLink>
         </div>
+        <Link
+          className="lg:text-4xl sm:text:2xl text-base"
+          href="mailto: l63mediase@gmail.com"
+        >
+          l63mediase@gmail.com
+        </Link>
       </div>
     </footer>
   );

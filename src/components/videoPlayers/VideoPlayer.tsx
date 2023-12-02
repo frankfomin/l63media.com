@@ -157,7 +157,7 @@ export default function VideoPlayer({ title, vimeoPath }: VideoPlayerProps) {
             <div
               ref={pauseButtonRef}
               onClick={videoIsPlaying ? handlePause : handlePlay}
-              className=" absolute sm:-bottom-10 -bottom-12 sm:opacity-0 opacity-100 z-30"
+              className=" absolute sm:-bottom- -bottom-16 sm:opacity-0 opacity-100 z-30"
             >
               <div className=" hover:cursor-pointer relative overflow-hidden  rounded-[50%] border-4 p-1  flex justify-center items-center  ">
                 <svg

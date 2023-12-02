@@ -28,7 +28,7 @@ export default function ProjectMobileCard({
 }: ProjectMobileCardProps) {
   return (
     <Link className="flex flex-col items-center" href={`/projekt/${path}`}>
-      <div className="md:hidden max-w-[95%]  bg-black uppercase rounded-lg ">
+      <div className="md:hidden  xs:max-w-max  bg-black uppercase rounded-lg ">
         <div className="text-mobileCardTitle text-center font-medium font-playfair ">
           {children}
         </div>
@@ -54,15 +54,15 @@ export default function ProjectMobileCard({
           lineSize="mobile"
         />
 
-        <div className=" flex items-center justify-between p-1">
-          <div className="border-[1px] text-mobileCardVHS leading-none line font-semibold">
+        <div className=" flex items-center sm:justify-normal pb-2 px-2 w-full justify-between xs:gap-10 gap-2 ">
+          <div className="border-[1px] text-3xl leading-none line font-semibold">
             VHS
           </div>
-          <div className=" text-center">
-            <div className=" text-mobileCardVD font-medium text-center ml-4">
+          <div className=" text-right">
+            <div className=" xs:text-2xl text-base xs:whitespace-nowrap  font-medium text-center ">
               video cassette
             </div>
-            <div className=" text-mobileCardRAP leading-none  flex justify-between text-gray-300 ml-4">
+            <div className=" xs:text-sm text-xs leading-none  flex justify-between text-paragraph ">
               <span>recording</span>
               <span>and</span>
               <span>playback</span>

@@ -9,6 +9,7 @@ import { useStore } from "@/context/menuState";
 import DropDown from "./DropDown";
 import { usePathname } from "next/navigation";
 import AnimatedLink from "../ui/AnimatedLink";
+import { navImages } from "@/constants/constants";
 
 const linkArray = [
   {
@@ -17,7 +18,7 @@ const linkArray = [
   },
   {
     name: "Om mig",
-    href: "/asda",
+    href: "/om-mig",
   },
   {
     name: "Kontakt",
@@ -30,8 +31,7 @@ export default function NavMenu() {
 
   useEffect(() => {
     setIsOpen(false);
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [path]);
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -46,7 +46,7 @@ export default function NavMenu() {
   }
   useEffect(() => {
     const navMenu = navMenuRef.current;
-    const links = document.querySelectorAll(".nav-link"); // Assuming you add a class 'nav-link' to your links.
+    const links = document.querySelectorAll(".nav-link");
 
     if (navMenu) {
       if (isOpen) {
@@ -88,7 +88,7 @@ export default function NavMenu() {
     }
   }, [isOpen]);
 
-  useEffect(() => {
+  /*   useEffect(() => {
     const leftImageContainer = leftImageContainerRef.current;
     const rightImageContainer = rightImageContainerRef.current;
 
@@ -171,7 +171,7 @@ export default function NavMenu() {
       }
     }
   }, [activeIndex]);
-
+ */
   return (
     <nav
       ref={navMenuRef}
@@ -211,16 +211,16 @@ export default function NavMenu() {
             </div>
 
             <div className="flex flex-col gap-[1.05rem]">
-              {Array.from({ length: 120 }, (_, i) => (
+              {Array.from({ length: 75 }, (_, i) => (
                 <div
-                  className="aspect-[1.9/1] bg-white sm:p-2 p-1 rounded-sm"
+                  className="aspect-[1.9/1] bg-textColor sm:p-2 p-1 rounded-sm"
                   key={i}
                 />
               ))}
             </div>
           </div>
           <div className="flex flex-col gap-[0.6rem] ">
-            {imagesArray2.map((image, i) => (
+            {navImages.map((image, i) => (
               <div key={i} className="relative  ">
                 <div className="shadow-[inset_0px_0px_10px_10px_#000000] absolute h-full w-full" />
                 <Image
@@ -235,9 +235,9 @@ export default function NavMenu() {
           </div>
           <div className="flex bg-black">
             <div className="flex flex-col gap-[1.05rem]">
-              {Array.from({ length: 120 }, (_, i) => (
+              {Array.from({ length: 75 }, (_, i) => (
                 <div
-                  className="aspect-[1.9/1] bg-white sm:p-2 p-[0.4rem] rounded-sm"
+                  className="aspect-[1.9/1] bg-textColor sm:p-2 p-[0.4rem] rounded-sm"
                   key={i}
                 />
               ))}
@@ -258,11 +258,11 @@ export default function NavMenu() {
                       <path
                         d="M0.5 0.5L0.499999 7.5L18.5 4L0.5 0.5Z"
                         fill="white"
-                        fill-opacity="0.7"
+                        fillOpacity="0.7"
                       />
                     </svg>
                   </div>
-                  <div className=" rotate-90 w-0">L63 media</div>
+                  <div className="rotate-90 w-0">L63 media</div>
                 </div>
               ))}
             </div>

@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 .projectCardText {
   font-size: clamp(3rem, 6vw, 6rem);
 }
@@ -14,6 +24,10 @@
 }
 .clipBoxProjectOverlay {
   clip-path: circle(15% at 15% 39%);
+}
+
+.text-balance {
+  text-wrap: balance;
 }
 
 .nanting {
@@ -41,7 +55,8 @@
 }
 
 .clipBox {
-  clip-path: circle(140% at 50% 0);}
+  clip-path: circle(140% at 50% 0);
+}
 
 .clipBoxNavOpen {
   clip-path: circle(140% at 100% 50%);

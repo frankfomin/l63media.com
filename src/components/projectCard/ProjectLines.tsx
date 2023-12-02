@@ -14,7 +14,7 @@ const LineVariants = cva("flex justify-center items-center", {
       horizontal: "py-5",
     },
     lineSize: {
-      desktop: "w-80 h-4",
+      desktop: "w-80 h-5",
       mobile: "w-[32rem] p-3",
     },
     device: {

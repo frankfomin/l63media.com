@@ -3,6 +3,7 @@ import { useStore } from "@/context/menuState";
 import { motion } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
+import Link from "next/link";
 
 export default function Nav() {
   const { isOpen, setIsOpen } = useStore();
@@ -58,16 +59,16 @@ export default function Nav() {
       initial={{ opacity: 0 }}
       transition={{ delay: 0.5 }}
       animate={{ opacity: 1 }}
-      className="flex items-center  w-full fixed top-14 z-50 text-3xl "
+      className="flex items-center  w-full fixed sm:top-14 xs:top-8 top-6  z-50 text-3xl "
     >
-      <div className="flex w-full  justify-between mx-14">
-        <div
-          id="L63"
+      <div className="flex w-full  justify-between sm:mx-14 xs:mx-8 mx-7">
+        <Link
+          href="/"
           className="font-playfair text-3xl  
         flex  justify-start items-center"
         >
           L63
-        </div>
+        </Link>
         <div
           onClick={handleClick}
           className="hover:cursor-pointer  flex 

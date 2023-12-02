@@ -58,21 +58,21 @@ export default function Header() {
   return (
     <header ref={headerRef} className="clipBox relative opacity-0 ">
       <div className="flex h-full flex-col items-center justify-center min-h-[100svh]">
-        <div className=" pb-4 overflow-hidden">
+        <div className=" sm:pb-4 overflow-hidden">
           <h1
             ref={textRef}
-            className="font-semibold text-[12vw] pb-3 font-playfair leading-none "
+            className="font-semibold text-[12vw] pb-3 font-playfair leading-none uppercase "
           >
             L63 Media
           </h1>
         </div>
-        <span ref={spanRef} className=" capitalize text-2xl opacity-0">
+        <span ref={spanRef} className=" capitalize sm:text-2xl text-xl opacity-0">
           Adam Lindsköld
         </span>
         <div className=" overflow-hidden">
-          <div className="h-[100%] w-[100%]  shadow-[inset_0px_0px_20px_20px_#1d1a1a] -z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-[4rem] "></div>
+          <div className="h-[100%] w-[100%]  xs:shadow-[inset_0px_0px_20px_20px_#1d1a1a] shadow-[inset_0px_0px_10px_10px_#1d1a1a]  -z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 sm:rounded-[4rem] rounded-[2rem] "></div>
 
-          <div className="bg-black opacity-20 h-[99%] w-[99%] -z-20 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-[4rem]  "></div>
+          <div className="bg-black opacity-20 h-[99%] w-[99%] -z-20 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 sm:rounded-[4rem] rounded-[2rem]  "></div>
           <video
             src="/videos/heroVideo.mp4"
             muted
@@ -81,7 +81,7 @@ export default function Header() {
             autoPlay
             playsInline
             className="h-[99%] w-[99%] -z-30 object-cover absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-            rounded-[4rem]"
+            sm:rounded-[4rem] rounded-[2rem]"
           />
         </div>
       </div>

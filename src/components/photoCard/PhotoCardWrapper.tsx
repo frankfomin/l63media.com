@@ -6,7 +6,7 @@ export default function PhotoCardWrapper({
   return (
     <div className="flex flex-col gap-[0.6rem]">
       <div className="overflow-hidden">
-        <div className=" flex gap-24 whitespace-nowrap mx-5">
+        <div className=" flex gap-24 whitespace-nowrap mx-5 text-textColor">
           {Array.from({ length: 12 }, (_, i) => (
             <div className="flex gap-28" key={i}>
               <div className="flex items-center">
@@ -21,8 +21,8 @@ export default function PhotoCardWrapper({
                 >
                   <path
                     d="M0.5 0.5L0.499999 7.5L18.5 4L0.5 0.5Z"
-                    fill="white"
                     fillOpacity="0.7"
+                    className="fill-textColor"
                   />
                 </svg>
               </div>
@@ -33,7 +33,7 @@ export default function PhotoCardWrapper({
 
         <div className="flex gap-[1.05rem]">
           {Array.from({ length: 120 }, (_, i) => (
-            <div className="aspect-[1/1.9] bg-white p-2 rounded-sm" key={i} />
+            <div className="aspect-[1/1.9] bg-textColor p-2 rounded-sm" key={i} />
           ))}
         </div>
       </div>
@@ -41,10 +41,10 @@ export default function PhotoCardWrapper({
       <div className=" overflow-hidden">
         <div className="flex  gap-[1.05rem]">
           {Array.from({ length: 120 }, (_, i) => (
-            <div className="aspect-[1/1.9] bg-white p-2 rounded-sm" key={i} />
+            <div className="aspect-[1/1.9] bg-textColor p-2 rounded-sm" key={i} />
           ))}
         </div>
-        <div className=" flex gap-24 whitespace-nowrap mx-5">
+        <div className=" flex gap-24 whitespace-nowrap mx-5 text-textColor">
           {Array.from({ length: 12 }, (_, i) => (
             <div className="flex gap-28" key={i}>
               <div className="flex items-center">
@@ -59,8 +59,8 @@ export default function PhotoCardWrapper({
                 >
                   <path
                     d="M0.5 0.5L0.499999 7.5L18.5 4L0.5 0.5Z"
-                    fill="white"
                     fillOpacity="0.7"
+                    className="fill-textColor"
                   />
                 </svg>
               </div>

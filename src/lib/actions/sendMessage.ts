@@ -2,36 +2,68 @@
 
 import { z } from "zod";
 import { contactSchema } from "../validators/contact";
-/* import { Resend } from "resend";
- */ import { redirect } from "next/navigation";
+import { Resend } from "resend";
+import { redirect } from "next/navigation";
+import axios from "axios";
+import { redis } from "../redis";
+import { EmailTemplate } from "@/components/email-template";
 
-/* const resend = new Resend(process.env.RESEND_API_KEY);
- */
+const resend = new Resend(process.env.RESEND_API_KEY);
+
 export async function sendMessage(data: z.infer<typeof contactSchema>) {
   try {
-    const message = {
-      name: data.name,
-      email: data.email,
-      services: data.services,
-      message: data.message,
-    };
-    const result = contactSchema.safeParse(message);
+    const ip = await axios.get("https://api.ipify.org?format=json");
+    const ipAddress = ip.data.ip;
+
+    const currentRequestCount = await redis.incr(ipAddress);
+    if (currentRequestCount > 2) {
+      return {
+        rateLimit: {
+          error: "You have exceeded the maximum number of requests",
+        },
+      };
+    }
+
+    if (currentRequestCount <= 2) {
+      await redis.expire(ipAddress, 300);
+    }
+
+    const result = contactSchema.safeParse(data);
 
     if (!result.success) {
       return {
-        errors: result.error.issues.map((issue) => {
+        parsingFailed: result.error.issues.map((issue) => {
           return { [issue.path[0]]: issue.message };
         }),
       };
     }
-    /* 
-    resend.emails.send({
+    const name = result.data.name;
+    const email = result.data.email;
+    const services = result.data.services;
+    const message = result.data.message;
+
+    const { error } = await resend.emails.send({
       from: "onboarding@resend.dev",
       to: "frank.fomin@gmail.com",
-      subject: "Hello World",
-      html: `<p> ${result.data.email} ${result.data.message} ${result.data.name} ${result.data.services}<strong>first email</strong>!</p>`,
-    }); */
+      subject: "Hello world",
+      react: EmailTemplate({
+        name,
+        email,
+        services,
+        message,
+      }) as React.ReactElement,
+    });
 
-    redirect("http://localhost:3000");
+    if (error) {
+      return {
+        failedToSendEmail: {
+          error: "Something went wrong. Please try again later",
+        },
+      };
+    }
+
+    return {
+      success: true,
+    };
   } catch (error) {}
 }

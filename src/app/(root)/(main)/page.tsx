@@ -8,20 +8,24 @@ import ProjectSection from "@/components/ProjectSection";
 
 export default async function HomePage() {
   return (
-    <main className="flex flex-col gap-72">
+    <main className="flex flex-col gap-60">
       <Header />
       <section className="flex flex-col gap-6 items-center overflow-hidden relative">
         <h2 className=" font-playfair text-subHeading font-semibold text-center">
           OM MIG
         </h2>
         <PhotoScrollSlider />
-        <p className="text-2xl opacity-90 text-center max-w-3xl font-medium lowercase text-paragraph ">
-          <span className="uppercase">A</span>dam Lindsköld är en...Velit at dis
-          turpis adipiscing blandit lacus. Phasellus risus urna metus nam orci
-          in gravida.
+        <p className="sm:text-2xl text-lg text-balance opacity-90 text-center sm:max-w-3xl max-w-[95%] font-medium text-paragraph ">
+          Adam Lindsköld är en filmskapare och marknadsförare från Umeå. Så
+          länge han kan minnas har han varit engagerad i digitalt skapande och
+          har skapat en mängd olika projekt med främst fokus på reklamfilm och
+          företagsimage.
         </p>
+        <Link href="/om-mig">
+          <Button>Läs mer</Button>
+        </Link>
       </section>
-      <section className="flex flex-col items-center  md:gap-10 gap-6 ">
+      <section className="flex flex-col uppercase items-center gap-6 ">
         <h4 className="text-center text-subHeading font-playfair font-semibold">
           Filmer
         </h4>

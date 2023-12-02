@@ -1,39 +1,67 @@
 export const aboutImages = [
   {
     src: "/images/adam-diplom.webp",
+    alt: "Adam med diplom",
   },
   {
     src: "/images/adam-kamera.webp",
+    alt: "Adam med kamera",
   },
   {
     src: "/images/adam-kamera-solnedgang.webp",
+    alt: "Adam med kamera vid solnedgång",
   },
   {
     src: "/images/eros.webp",
+    alt: "Adam Lindsköld",
   },
   {
     src: "/images/hanowa.webp",
+    alt: "Adam Lindsköld",
   },
   {
     src: "/images/adam-kamera-alv.webp",
+    alt: "Adam med kamera vid älven",
   },
   {
     src: "/images/dcor.webp",
-  }
+    alt: "Adam Lindsköld",
+  },
+];
+
+export const navImages = [
+  {
+    src: "/images/adam-kamera.webp",
+    alt: "Adam med diplom",
+  },
+  {
+    src: "/images/adam-kamera-solnedgang.webp",
+    alt: "Adam med kamera vid solnedgång",
+  },
+  {
+    src: "/images/adam-kamera-alv.webp",
+    alt: "Adam med kamera vid älven",
+  },
+  {
+    src: "/images/dcor.webp",
+    alt: "Adam Lindsköld",
+  },
 ];
 
 export const productPhotos = [
   {
     src: "/images/eros.webp",
+    alt: "Adam Lindsköld",
   },
   {
     src: "/images/hanowa.webp",
+    alt: "Adam Lindsköld",
   },
   {
     src: "/images/iskaffe.webp",
+    alt: "Adam Lindsköld",
   },
 ];
-
 
 export const projectColors = [
   {
@@ -59,5 +87,20 @@ export const projectColors = [
     bg1: "bg-[#F24134]",
     bg2: "bg-[#EC6F13]",
     bg3: "bg-[#363533]",
+  },
+];
+
+export const produktPhoto = [
+  {
+    src: "/images/eros.webp",
+    alt: "parfym",
+  },
+  {
+    src: "/images/hanowa.webp",
+    alt: "klocka",
+  },
+  {
+    src: "/images/iskaffe.webp",
+    alt: "kaffe",
   },
 ];

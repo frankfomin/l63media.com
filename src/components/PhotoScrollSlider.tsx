@@ -44,7 +44,7 @@ export default function PhotoScrollSlider() {
                 src={image.src}
                 width={500}
                 height={500}
-                alt="cool image"
+                alt={image.alt}
               />
             </div>
           ))}

@@ -1,35 +1,19 @@
 import Link from "next/link";
 import { ButtonHTMLAttributes } from "react";
-
-
+import AnimatedArrow from "./AnimatedArrow";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
 
-
 export default function Button({ className, children, ...props }: ButtonProps) {
   return (
-    <div className="flex w-min whitespace-nowrap text-5xl justify-center font-montserrat font-normal p-">
-      <button
-        {...props}
-        type="submit"
-        className="uppercase group text-button bg-transparent border-2 px-5 py-2 rounded-full flex justify-center items-center gap-1"
-      >
-        {children}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth="2"
-          stroke="#FAA916"
-          className="sm:w-8 md:w-10 w-6 z-10 group-hover:rotate-45 transition-transform"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
-          />
-        </svg>
-      </button>
-    </div>
+    <button
+      {...props}
+      type="submit"
+      className="uppercase w-min whitespace-nowrap text-5xl  font-montserrat group text-button overflow-hidden disabled:text-paragraph bg-transparent border-2
+       border-textColor disabled:border-paragraph px-5 py-2 rounded-full flex justify-center items-center gap-1 font-medium"
+    >
+      {children}
+      <AnimatedArrow />
+    </button>
   );
 }

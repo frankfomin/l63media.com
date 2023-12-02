@@ -51,10 +51,6 @@ export default async function ProjectPage({ params }: Params) {
         />
       )}
       <section className="flex flex-col items-center gap-16 mt-60">
-        <h2 className=" text-center text-subHeading font-playfair font-semibold">
-          Mer Filmer
-        </h2>
-
         <ProjectSection path={params.path} />
       </section>
     </main>
