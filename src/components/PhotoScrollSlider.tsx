@@ -33,7 +33,7 @@ export default function PhotoScrollSlider() {
           ref={sliderRef}
           className="flex bg-[#020202] p-3 gap-3 w-max relative  "
         >
-          {aboutImages.map((image, index) => (
+          {aboutImages.concat(aboutImages).map((image, index) => (
             <div
               className="relative aspect-[3/3.5] w-[22rem] flex-shrink-0"
               key={index}

@@ -14,7 +14,7 @@ export default function page() {
             alt="Adam Lindsköld"
             width={1000}
             height={1000}
-            className=" object-cover rounded-2xl max-w-[60%]"
+            className=" object-cover rounded-2xl max-w-[60%] h-full"
           />
           <div className="grid sm:gap-5 gap-2">
             <Image
