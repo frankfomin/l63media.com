@@ -1,7 +1,12 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
 
-export default function page() {
+export const metadata: Metadata = {
+  title: "Om mig | Adam Lindsköld",
+};
+
+export default function AboutPage() {
   return (
     <main className=" flex flex-col sm:gap-6 gap-3 items-center sm:mt-0 mt-24">
       <h1 className="text-longHeading font-playfair uppercase">

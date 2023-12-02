@@ -2,6 +2,12 @@ import Image from "next/image";
 import AnimatedLink from "@/components/ui/AnimatedLink";
 import Link from "next/link";
 import ContactForm from "@/components/form/ContactForm";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Kontakt | Adam Lindsköld",
+};
+
 
 export default function ContactPage() {
   return (
