@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import Button from "./ui/Button";
-import LinkComp from "./ui/link/LinkComp";
 import AnimatedLink from "./ui/AnimatedLink";
 
 export default function Footer() {
