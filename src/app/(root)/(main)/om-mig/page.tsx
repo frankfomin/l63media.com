@@ -33,7 +33,7 @@ export default function page() {
             />
           </div>
         </div>
-        <p className="sm:text-center text-balance  text-lg text-paragraph ">
+        <p className="text-center text-balance  text-lg text-paragraph ">
           Adam Lindsköld är en filmskapare och marknadsförare från Umeå. Så
           länge han kan minnas har han varit engagerad i digitalt skapande och
           har skapat en mängd olika projekt med främst fokus på reklamfilm och
