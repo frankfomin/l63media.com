@@ -3,7 +3,7 @@ import Button from "./ui/Button";
 import Counter from "./ui/Counter";
 
 export default function Error() {
-    const currentDate = new Date();
+  const currentDate = new Date();
   return (
     <main className=" h-[100svh] uppercase flex flex-col justify-center gap-96">
       <div className="flex justify-between mx-40 text-3xl font-medium">
@@ -21,8 +21,8 @@ export default function Error() {
         <div>{currentDate.toLocaleDateString("en-US")}</div>
       </div>
       <div className=" flex flex-col items-center gap-8">
-        <h1 className=" font-semibold text-9xl leading-none font-playfair">
-          Error 404
+        <h1 className=" font-semibold text-[12vw] text-center leading-none font-playfair">
+          Error
         </h1>
         <h2 className=" text-4xl">Är du vilse?</h2>
         <Button>Gå tillbaka</Button>

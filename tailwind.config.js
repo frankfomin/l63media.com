@@ -36,7 +36,7 @@ module.exports = {
       fontSize: {
       
         //projectMobileCard
-        mobileCardTitle: "clamp(3rem, 10vw - 0.8rem, 4.5rem)",
+        mobileCardTitle: "clamp(3rem, 10vw - 0.8rem, 3.5rem)",
         mobileCardVHS: "clamp(2rem, 20vw - 3rem, 2.5rem)",
         mobileCardVD: "clamp(0.3rem, 5vw , 1.875rem)",
         mobileCardRAP: "clamp(0.2rem, 3vw , 1.5rem)",

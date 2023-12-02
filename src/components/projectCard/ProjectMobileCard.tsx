@@ -25,6 +25,7 @@ export default function ProjectMobileCard({
   lineSpacing,
   path,
   imagePath,
+  videoPath,
 }: ProjectMobileCardProps) {
   return (
     <Link className="flex flex-col items-center" href={`/projekt/${path}`}>
