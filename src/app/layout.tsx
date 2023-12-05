@@ -2,6 +2,7 @@ import NavMenu from "@/components/nav/NavMenu";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Montserrat, Playfair_Display } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -28,6 +29,7 @@ export default function RootLayout({
         className={`${montserrat.variable} ${playfair.variable} bg-primary text-textColor font-montserrat overflow-x-hidden`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
