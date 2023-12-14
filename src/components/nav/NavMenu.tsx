@@ -201,7 +201,7 @@ export default function NavMenu() {
                       <path
                         d="M0.5 0.5L0.499999 7.5L18.5 4L0.5 0.5Z"
                         fill="white"
-                        fill-opacity="0.7"
+                        fillOpacity="0.7"
                       />
                     </svg>
                   </div>

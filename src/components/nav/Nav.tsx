@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Nav() {
   const { isOpen, setIsOpen } = useStore();
@@ -67,7 +68,7 @@ export default function Nav() {
           className="font-playfair text-3xl  
         flex  justify-start items-center"
         >
-          L63
+          <Image src="/images/logo.svg" width={40} height={40} alt="L63 Media" />
         </Link>
         <div
           onClick={handleClick}

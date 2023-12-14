@@ -39,11 +39,11 @@ export default function AboutPage() {
           </div>
         </div>
         <p className="text-center text-balance  text-lg text-paragraph ">
-          Adam Lindsköld är en filmskapare och marknadsförare från Umeå. Så
-          länge han kan minnas har han varit engagerad i digitalt skapande och
-          har skapat en mängd olika projekt med främst fokus på reklamfilm och
-          företagsimage. Han har även blivit tilldelad priset ”Årets Reklamfilm
-          2023” av Ung Företagsamhet Västerbotten.
+        Adam Lindsköld är en filmskapare och marknadsförare från Umeå. Så länge han 
+        kan minnas har han varit engagerad i digitalt skapande och har skapat en mängd olika projekt med främst fokus på reklamfilm och företagsimage. Han har även blivit 
+        tilldelad priset ”Årets Reklamfilm 2023” av Ung Företagsamhet Västerbotten. 
+        Med över 250 000 visningar och 35 000 gilla markeringar på sociala medier kan Adam 
+        Lindsköld garantera ett proffesionellt resultat för kundens ändamål.
         </p>
       </section>
     </main>
