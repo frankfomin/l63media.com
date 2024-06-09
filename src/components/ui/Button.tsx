@@ -9,8 +9,7 @@ export default function Button({ className, children, ...props }: ButtonProps) {
     <button
       {...props}
       type="submit"
-      className="uppercase w-min whitespace-nowrap text-5xl  font-montserrat group text-button overflow-hidden disabled:text-paragraph bg-transparent sm:border-[3px] border-2
-       border-textColor disabled:border-paragraph px-5 py-2 rounded-full flex justify-center items-center gap-1 font-normal"
+      className="group flex w-min items-center justify-center gap-1 overflow-hidden whitespace-nowrap rounded-full border-2 border-textColor bg-transparent px-5 py-2 font-montserrat text-5xl text-button font-normal uppercase disabled:border-paragraph disabled:text-paragraph"
     >
       {children}
       <AnimatedArrow />

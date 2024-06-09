@@ -10,17 +10,15 @@ export const metadata: Metadata = {
 export default function FilmPage() {
   return (
     <main className="flex flex-col gap-20">
-      <header className="flex items-center flex-col gap-1 mt-24">
-        <h1 className="text-center leading-tight text-longHeading font-playfair font-semibold uppercase">
+      <header className="mt-24 flex flex-col items-center">
+        <h1 className="text-center font-playfair text-longHeading font-semibold uppercase leading-tight">
           Reklamfilmer
         </h1>
-        <span className=" max-w-2xl text-center text-paragraph lowercase">
-          <span className="uppercase">U</span>rna sed magna mauris sem
-          pellentesque penatibus praesent. Imperdiet consectetur fermentum eget
-          enim commodo tempor. Dictumst tristique a sed est et sit. consectetur
-          fermentum eget enim commodo tempor. Dictumst tristique a sed est et
-          sit.
-        </span>
+        <p className="text-balance flex max-w-4xl flex-col gap-6 text-center text-xl font-medium">
+          Reklamfilmer från L63 Media fokuserar på att fånga tittarens intresse
+          och även behålla det med hjälp av ett starkt visuellt intryck, samt
+          hög produktionskvalitet.
+        </p>
       </header>
       <section className="flex flex-col items-center justify-center gap-16">
         <ProjectSection />

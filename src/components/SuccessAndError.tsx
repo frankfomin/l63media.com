@@ -4,19 +4,19 @@ import Link from "next/link";
 import Button from "./ui/Button";
 
 export default function SuccessAndError({
-paragraphText,
+  paragraphText,
   title,
   buttonTitle,
 }: {
   title: string;
-  paragraphText: string;   
-    buttonTitle: string;
+  paragraphText: string;
+  buttonTitle: string;
 }) {
   const currentDate = new Date();
 
   return (
-    <main className=" h-[100svh] flex flex-col justify-between text-textColor">
-      <div className="flex uppercase  justify-between text-3xl font-medium p-projectHeaderPadding">
+    <main className="flex h-[100svh] flex-col justify-between text-textColor">
+      <div className="flex justify-between p-projectHeaderPadding text-3xl font-medium uppercase">
         <div className="flex items-center">
           <div>Play</div>
           <svg
@@ -30,16 +30,18 @@ paragraphText,
         </div>
         <div>{currentDate.toLocaleDateString("en-US")}</div>
       </div>
-      <div className=" flex flex-col items-center gap-4 sm:gap-6">
+      <div className="flex flex-col items-center gap-4 sm:gap-6">
         <div className="flex flex-col items-center">
-          <h1 className=" font-semibold text-[12vw] leading-none uppercase font. ">{title}</h1>
-           <h2 className=" text-2xl sm:text-4xl">{paragraphText}</h2>
+          <h1 className="font. text-[12vw] font-semibold uppercase leading-none">
+            {title}
+          </h1>
+          <h2 className="text-2xl sm:text-4xl">{paragraphText}</h2>
         </div>
         <Link href="/">
           <Button>{buttonTitle}</Button>
         </Link>
       </div>
-      <div className="flex justify-between text-3xl font-medium p-projectHeaderPadding">
+      <div className="flex justify-between p-projectHeaderPadding text-3xl font-medium">
         <div>SP</div>
         <Counter />
       </div>
@@ -48,14 +50,14 @@ paragraphText,
         muted
         loop
         autoPlay
-        className="h-full w-full -z-10 object-cover absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 "
+        className="absolute left-1/2 top-1/2 -z-10 h-full w-full -translate-x-1/2 -translate-y-1/2 transform object-cover"
       />
       <video
         src="/vhs-overlay.mp4"
         muted
         loop
         autoPlay
-        className="h-full w-full opacity-75 -z-10 object-cover absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 "
+        className="absolute left-1/2 top-1/2 -z-10 h-full w-full -translate-x-1/2 -translate-y-1/2 transform object-cover opacity-75"
       />
     </main>
   );

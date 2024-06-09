@@ -80,12 +80,12 @@ export default function ProjectLines({
   return (
     <div
       className={`${cn(LineVariants({ device }))} ${cn(
-        LineVariants({ lineSpacing })
+        LineVariants({ lineSpacing }),
       )}`}
     >
       <div
         {...props}
-        className={`${cn(LineVariants({ lineSize }))}  ${
+        className={`${cn(LineVariants({ lineSize }))} ${
           projectColors.find((a) => a.projectStyle === projectStyle)?.bg1
         } ${cn(LineVariants({ rotation }))}`}
       />

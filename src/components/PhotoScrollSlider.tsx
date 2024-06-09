@@ -28,19 +28,19 @@ export default function PhotoScrollSlider() {
 
   return (
     <>
-      <div className=" overflow-hidden rotate-[-1.5deg] ">
+      <div className="rotate-[-1.5deg] overflow-hidden">
         <div
           ref={sliderRef}
-          className="flex bg-[#020202] p-3 gap-3 w-max relative  "
+          className="relative flex w-max gap-3 bg-[#020202] p-3"
         >
           {aboutImages.concat(aboutImages).map((image, index) => (
             <div
               className="relative aspect-[3/3.5] w-[22rem] flex-shrink-0"
               key={index}
             >
-              <div className=" shadow-[inset_0px_0px_5px_5px_#020202] absolute h-full w-full" />
+              <div className="absolute h-full w-full shadow-[inset_0px_0px_5px_5px_#020202]" />
               <Image
-                className=" h-full w-full object-cover  rounded-md pointer-events-none"
+                className="pointer-events-none h-full w-full rounded-md object-cover"
                 src={image.src}
                 width={500}
                 height={500}

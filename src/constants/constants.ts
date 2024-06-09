@@ -29,11 +29,44 @@ export const aboutImages = [
   },
 ];
 
+export const logos = [
+  {
+    src: "/images/logos/cleanDrink-logga.webp",
+    alt: "Clean Drink",
+  },
+  /*   {
+    src: "/images/logos/vaknaVibbar-logga.webp",
+  }, */
+  {
+    src: "/images/logos/vakin-logga.svg",
+    alt: "Vakin",
+  },
+  {
+    src: "/images/logos/volvo-logga.svg",
+    alt: "Volvo",
+  },
+  {
+    src: "/images/logos/engo-logga.webp",
+    alt: "Engo UF",
+  },
+  {
+    src: "/images/logos/UmeTechTalents-logga.webp",
+    alt: "Umeå Tech Talents",
+    width: 50,
+    height: 50,
+  },
+  {
+    src: "/images/logos/voir-logga.webp",
+    alt: "Voir glasses",
+  },
+];
+
 export const navImages = [
   {
     src: "/images/adam-kamera.webp",
     alt: "Adam med diplom",
   },
+
   {
     src: "/images/adam-kamera-solnedgang.webp",
     alt: "Adam med kamera vid solnedgång",

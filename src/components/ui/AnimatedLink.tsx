@@ -70,10 +70,10 @@ export default function AnimatedLink({
           }`}
           key={i}
         >
+          {/* Combine these two into a common component */}
           <span className={`${cn(linkVariants({ variant }))}`}>
             <ActiveText href={href}>{children}</ActiveText>
           </span>
-
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

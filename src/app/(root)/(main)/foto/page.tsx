@@ -21,17 +21,17 @@ export default function PhotoPage() {
   }, [index]);
 
   return (
-    <main className="flex flex-col gap-14 items-center justify-center">
-      <header className="flex items-center flex-col gap-1 mt-24">
-        <h1 className="text-center leading-tight text-longHeading font-playfair uppercase font-semibold">
-          ProduktFoto
+    <main className="flex flex-col items-center justify-center gap-14">
+      <header className="mt-24 flex flex-col items-center">
+        <h1 className="text-center font-playfair text-longHeading font-semibold uppercase leading-tight">
+          Produktfoto
         </h1>
-        <span className="max-w-2xl text-center lowercase text-paragraph">
-          <span className="uppercase">U</span>rna sed magna mauris sem
-          pellentesque penatibus praesent. Imperdiet consectetur fermentum eget
-          enim commodo tempor. Dictumst tristique a sed est et sit.
-        </span>
-      </header>
+        <p className="text-balance ty flex max-w-4xl flex-col gap-6 text-center text-xl font-medium">
+          Produktfoton från L63 Media fokuserar på att återspegla bakomliggande
+          teman hos en produkt samt företaget på ett vis som fångar blickar, men
+          även framhäver produkten.
+        </p>
+      </header>{" "}
       <Splide
         onDragging={(e) => {
           e.on("move", function () {
@@ -39,7 +39,7 @@ export default function PhotoPage() {
           });
         }}
         ref={splideRef}
-        className="hover:cursor-grab   "
+        className="hover:cursor-grab"
         options={{
           arrows: false,
           pagination: false,
@@ -60,10 +60,10 @@ export default function PhotoPage() {
         {productPhotos.map((image, i) => (
           <SplideSlide
             key={i}
-            className="rounded-3xl relative pointer-events-none touch-none lg"
+            className="lg pointer-events-none relative touch-none rounded-3xl"
           >
             <Image
-              className={`w-[40rem] h-full object-cover rounded-md `}
+              className={`h-full w-[40rem] rounded-md object-cover`}
               src={image.src}
               width={1000}
               height={1000}
@@ -80,7 +80,7 @@ export default function PhotoPage() {
               setIndex(i);
             }}
             key={i}
-            className={`p-2 hover:cursor-pointer bg-paragraph rounded-full transition-colors  ${
+            className={`rounded-full bg-paragraph p-2 transition-colors hover:cursor-pointer ${
               i === index && "bg-textColor"
             }`}
           />
