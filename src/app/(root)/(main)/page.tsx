@@ -96,9 +96,9 @@ export default async function HomePage() {
           Filmer
         </h4>
         <ProjectSection />
-        {/*  <Link className=" flex justify-center" href="/reklamfilmer">
-            <Button>Alla Filmer</Button>
-          </Link> */}
+        <Link className="flex justify-center" href="/reklamfilmer">
+          <Button>Alla Filmer</Button>
+        </Link>
       </section>
       <section className="flex flex-col gap-6 text-center">
         <h5 className="font-playfair text-subHeading font-semibold">FOTO</h5>

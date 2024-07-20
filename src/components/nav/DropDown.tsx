@@ -13,7 +13,7 @@ export default function DropDown() {
     const links = document.querySelectorAll(".link");
     gsap.set(
       links,
-      { y: "-300%" } // final position
+      { y: "-400%" }, // final position
     );
     setIsOpen(false);
   }, [menuIsOpen]);
@@ -22,11 +22,11 @@ export default function DropDown() {
     const links = document.querySelectorAll(".link");
     if (!isOpen) {
       gsap.to(links, {
-        duration: 0.35,
+        duration: 0.4,
         delay: 0.1,
         opacity: 1,
-        stagger: 0.05,
-        y: "-300%",
+        stagger: 0.025,
+        y: "-400%",
         ease: "easeOut",
       });
     } else {
@@ -36,32 +36,32 @@ export default function DropDown() {
           opacity: 1,
         },
         {
-          duration: 0.35,
+          duration: 0.4,
           delay: 0.1,
           opacity: 1,
-          stagger: 0.05,
+          stagger: 0.025,
           y: "0%",
           ease: "easeOut",
-        }
+        },
       );
     }
   }, [isOpen]);
 
   return (
-    <div className="flex flex-col gap-1 nav-link">
+    <div className="nav-link flex flex-col gap-1">
       <div
         onClick={() => setIsOpen((prev) => !prev)}
-        className="flex items-center hover:cursor-pointer  transition-all duration-300"
+        className="flex items-center transition-all duration-300 hover:cursor-pointer"
       >
-        <span className=" select-none lg:text-8xl sm:text-7xl text-5xl">
-          Tjänster
+        <span className="select-none text-5xl sm:text-7xl lg:text-8xl">
+          Arbeten
         </span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 14 8"
           fill="none"
-          className={`lg:w-20 lg:h-20 sm:w-16 sm:h-16 w-14 h-14 transition-all duration-300 ${
-            isOpen ? " -rotate-180" : ""
+          className={`h-14 w-14 transition-all duration-300 sm:h-16 sm:w-16 lg:h-20 lg:w-20 ${
+            isOpen ? "-rotate-180" : ""
           }`}
         >
           <path
@@ -73,13 +73,18 @@ export default function DropDown() {
           />
         </svg>
       </div>
-      <div className="flex  flex-col gap-3  ml-14 w-min relative overflow-hidden">
+      <div className="relative ml-14 flex w-min flex-col gap-3 overflow-hidden whitespace-nowrap">
         <AnimatedLink variant="lg" className="link w-min" href="/reklamfilmer">
-          reklamfilmer
+          Reklamfilmer
         </AnimatedLink>
         <AnimatedLink variant="lg" className="link w-min" href="/foto">
-          produktfoto
+          Produktfoto
         </AnimatedLink>
+        <AnimatedLink
+          variant="lg"
+          className="link w-min"
+          href="/foto"
+        >Event/Övrigt</AnimatedLink>
       </div>
     </div>
   );
