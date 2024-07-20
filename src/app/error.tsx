@@ -12,8 +12,8 @@ const Error = ({ error, reset }: { error: Error; reset: () => void }) => {
   }, []);
 
   return (
-    <main className=" h-[100svh] uppercase flex flex-col justify-center gap-96">
-      <div className="flex justify-between mx-40 text-3xl font-medium">
+    <main className="flex h-[100svh] flex-col justify-center gap-96 uppercase">
+      <div className="mx-40 flex justify-between text-3xl font-medium">
         <div className="flex items-center">
           <div>Play</div>
           <svg
@@ -27,12 +27,12 @@ const Error = ({ error, reset }: { error: Error; reset: () => void }) => {
         </div>
         <div>{currentDate.toLocaleDateString("en-US")}</div>
       </div>
-      <div className=" flex flex-col items-center gap-4">
-        <h1 className=" font-semibold text-9xl leading-none">Error 404</h1>
-        <h2 className=" text-4xl">Är du vilse?</h2>
+      <div className="flex flex-col items-center gap-4">
+        <h1 className="text-9xl font-semibold leading-none">Error 404</h1>
+        <h2 className="text-4xl">Är du vilse?</h2>
         <Button>Gå tillbaka</Button>
       </div>
-      <div className="flex justify-between mx-40 text-3xl font-medium">
+      <div className="mx-40 flex justify-between text-3xl font-medium">
         <div>SP</div>
         <Counter />
       </div>
@@ -41,14 +41,14 @@ const Error = ({ error, reset }: { error: Error; reset: () => void }) => {
         muted
         loop
         autoPlay
-        className="h-full w-full -z-20 object-cover absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 "
+        className="absolute left-1/2 top-1/2 -z-20 h-full w-full -translate-x-1/2 -translate-y-1/2 transform object-cover"
       />
       <video
         src="/vhs-overlay.mp4"
         muted
         loop
         autoPlay
-        className="h-full w-full opacity-75 -z-10 object-cover absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 "
+        className="absolute left-1/2 top-1/2 -z-10 h-full w-full -translate-x-1/2 -translate-y-1/2 transform object-cover opacity-75"
       />
     </main>
   );

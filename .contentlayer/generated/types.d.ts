@@ -13,9 +13,10 @@ export type Doc = {
   _id: string
   _raw: Local.RawDocumentData
   type: 'Doc'
+  homePage: boolean
+  deprecated?: boolean | undefined
   projectName: string
   description?: string | undefined
-  vimeoPath: number
   videoPath: string
   path: string
   mobile?: boolean | undefined

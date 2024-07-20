@@ -37,10 +37,34 @@ export const projectColors = [
     bg3: "bg-[#292828]",
   },
   {
+    projectStyle: "pinkgrape",
+    bg1: "bg-cyan-300",
+    bg2: "bg-fuchsia-300",
+    bg3: "bg-orange-300",
+  },
+  {
+    projectStyle: "vaknavibbar",
+    bg1: "bg-cyan-300",
+    bg2: "bg-fuchsia-300",
+    bg3: "bg-orange-300",
+  },
+  {
+    projectStyle: "voir",
+    bg1: "bg-cyan-300",
+    bg2: "bg-fuchsia-300",
+    bg3: "bg-orange-300",
+  },
+  {
+    projectStyle: "voir2",
+    bg1: "bg-slate-50",
+    bg2: "bg-green-300",
+    bg3: "bg-yellow-900",
+  },
+  {
     projectStyle: "freshSoda",
-    bg1: "bg-[#FFD600]",
-    bg2: "bg-[#72FCE9]",
-    bg3: "bg-[#B8F827]",
+    bg1: "bg-orange-400",
+    bg2: "bg-yellow-400",
+    bg3: "bg-lime-400",
   },
   {
     projectStyle: "raspberry",
@@ -63,6 +87,9 @@ interface LineProps
   bg1: string;
   bg2: string;
   bg3: string;
+  rotation: "level" | "rotate45Right" | "rotate45Left";
+  device: "mobile" | "desktop";
+  lineSpacing: "angled" | "horizontal";
 }
 
 export default function ProjectLines({
@@ -76,7 +103,7 @@ export default function ProjectLines({
   lineSize,
   ...props
 }: LineProps) {
-  console.log(rotation);
+  console.log(bg1, bg2, bg3);
   return (
     <div
       className={`${cn(LineVariants({ device }))} ${cn(
@@ -85,21 +112,15 @@ export default function ProjectLines({
     >
       <div
         {...props}
-        className={`${cn(LineVariants({ lineSize }))} ${
-          projectColors.find((a) => a.projectStyle === projectStyle)?.bg1
-        } ${cn(LineVariants({ rotation }))}`}
+        className={`${cn(LineVariants({ lineSize }))} ${bg1} ${cn(LineVariants({ rotation }))}`}
       />
       <div
         {...props}
-        className={`${cn(LineVariants({ lineSize }))} ${
-          projectColors.find((a) => a.projectStyle === projectStyle)?.bg2
-        } ${cn(LineVariants({ rotation }))}`}
+        className={`${cn(LineVariants({ lineSize }))} ${bg2} ${cn(LineVariants({ rotation }))}`}
       />
       <div
         {...props}
-        className={`${cn(LineVariants({ lineSize }))} ${
-          projectColors.find((a) => a.projectStyle === projectStyle)?.bg3
-        } ${cn(LineVariants({ rotation }))}`}
+        className={`${cn(LineVariants({ lineSize }))} ${bg3} ${cn(LineVariants({ rotation }))}`}
       />
     </div>
   );

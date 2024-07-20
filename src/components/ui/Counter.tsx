@@ -1,19 +1,27 @@
-"use client"
+"use client";
 
 import { useEffect, useState } from "react";
 
-export default function Counter() {
+export default function Counter({
+  videoIsPlaying,
+}: {
+  videoIsPlaying: boolean;
+}) {
   const [counter, setCounter] = useState(0);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCounter((prevCounter) => prevCounter + 1);
-    }, 1000);
-    // Disable scrolling when the component mounts
 
+  useEffect(() => {
+    let interval: NodeJS.Timeout | null = null;
+    if (!videoIsPlaying) {
+      interval = setInterval(() => {
+        setCounter((prevCounter) => prevCounter + 1);
+      }, 1000);
+    }
     return () => {
-      clearInterval(interval);
+      if (interval) {
+        clearInterval(interval);
+      }
     };
-  }, []);
+  }, [videoIsPlaying]); // Depend on isPaused to re-run effect when it changes
 
   function formatTime(seconds: number) {
     const hours = Math.floor(seconds / 3600);

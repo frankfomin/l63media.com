@@ -1,8 +1,11 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { VariantProps, cva } from "class-variance-authority";
 import Link from "next/link";
-import React, { LinkHTMLAttributes, SVGProps } from "react";
+import React, { LinkHTMLAttributes, SVGProps, use } from "react";
 import ActiveText from "./ActiveText";
+import { usePathname } from "next/navigation";
 
 const svgVariants = cva("group-hover:text-paragraph", {
   variants: {
@@ -52,18 +55,17 @@ export default function AnimatedLink({
   target,
   ...props
 }: linkProps) {
+  const path = usePathname();
   return (
     <Link
-      className={`group flex items-center relative overflow-hidden ${className}`}
+      className={`group relative flex items-center overflow-hidden ${className}`}
       href={href}
       target={target}
       {...props}
     >
       {Array.from({ length: 2 }).map((_, i) => (
         <div
-          className={`transition-all duration-300 ease-in-out flex items-center 
-          ${i === 0 ? "absolute -translate-x-full" : " translate-x-0"}  
-          ${
+          className={`flex items-center transition-all duration-300 ease-in-out ${i === 0 ? "absolute -translate-x-full" : "translate-x-0"} ${
             i === 0
               ? "group-hover:translate-x-0"
               : "group-hover:translate-x-full"
@@ -80,7 +82,7 @@ export default function AnimatedLink({
             viewBox="0 0 24 24"
             strokeWidth="2"
             stroke="currentColor"
-            className={`${cn(svgVariants({ variant }))}`}
+            className={`${href === path && "stroke-paragraph"} ${cn(svgVariants({ variant }))}`}
           >
             <path
               strokeLinecap="round"

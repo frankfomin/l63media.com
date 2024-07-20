@@ -4,12 +4,13 @@ import ReactPlayer from "react-player/vimeo";
 import { useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
 
-type VideoPlayerProps = {
+export default function VideoPlayer({
+  title,
+  videoPath,
+}: {
   title: string;
-  vimeoPath?: number;
-};
-
-export default function VideoPlayer({ title, vimeoPath }: VideoPlayerProps) {
+  videoPath: string;
+}) {
   const videoTextRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const playButtonRef = useRef<HTMLDivElement>(null);
@@ -117,7 +118,7 @@ export default function VideoPlayer({ title, vimeoPath }: VideoPlayerProps) {
           y: 0,
           ease: "easeOut",
           delay: 0.05,
-        }
+        },
       );
       gsap.to(playButton, {
         opacity: 1,
@@ -152,19 +153,19 @@ export default function VideoPlayer({ title, vimeoPath }: VideoPlayerProps) {
   return (
     <>
       {isMounted ? (
-        <header className="flex items-center justify-center flex-col relative uppercase h-[100svh] ">
-          <div className="absolute w-[85%] max-w-[100rem] aspect-video rounded-[4rem]  flex justify-center items-center">
+        <header className="relative flex h-[100svh] flex-col items-center justify-center uppercase">
+          <div className="absolute flex aspect-video w-[85%] max-w-[100rem] items-center justify-center rounded-[4rem]">
             <div
               ref={pauseButtonRef}
               onClick={videoIsPlaying ? handlePause : handlePlay}
-              className=" absolute sm:-bottom- -bottom-16 sm:opacity-0 opacity-100 z-30"
+              className="sm:-bottom- absolute -bottom-16 z-30 opacity-100 sm:opacity-0"
             >
-              <div className=" hover:cursor-pointer relative overflow-hidden  rounded-[50%] border-4 p-1  flex justify-center items-center  ">
+              <div className="relative flex items-center justify-center overflow-hidden rounded-[50%] border-4 p-1 hover:cursor-pointer">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="white"
-                  className={`bi bi-play-fill ml-2 w-[4.5rem] h-[4.5rem] p-2 absolute transition-all ${
-                    muted ? "translate-x-0" : " translate-x-full"
+                  className={`bi bi-play-fill absolute ml-2 h-[4.5rem] w-[4.5rem] p-2 transition-all ${
+                    muted ? "translate-x-0" : "translate-x-full"
                   }`}
                   viewBox="0 0 16 16"
                 >
@@ -173,30 +174,30 @@ export default function VideoPlayer({ title, vimeoPath }: VideoPlayerProps) {
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="white"
-                  className={`bi bi-pause w-[4.5rem] h-[4.5rem] p-2 transition-all ${
+                  className={`bi bi-pause h-[4.5rem] w-[4.5rem] p-2 transition-all ${
                     muted ? "-translate-x-full" : "-translate-x-0"
                   } }`}
                   viewBox="0 0 16 16"
                 >
                   <path d="M6 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5zm4 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5z" />
                 </svg>
-                <div className=" bg-black rounded-[50%] w-full h-full -z-10 absolute opacity-80 left-0 top-0" />
+                <div className="absolute left-0 top-0 -z-10 h-full w-full rounded-[50%] bg-black opacity-80" />
               </div>
             </div>
           </div>
 
-          <div className="absolute sm:w-[85%] w-full  max-w-[100rem] aspect-video overflow-hidden sm:rounded-[4rem] rounded-3xl  flex justify-center items-center">
+          <div className="absolute flex aspect-video w-full max-w-[100rem] items-center justify-center overflow-hidden rounded-3xl sm:w-[85%] sm:rounded-[4rem]">
             <div
               ref={blurOverlayRef}
               onClick={videoIsPlaying ? handlePause : handlePlay}
-              className=" absolute w-full h-full z-20  sm:rounded-[4rem] overflow-hidden rounded-3xl hover:cursor-pointer"
+              className="absolute z-20 h-full w-full overflow-hidden rounded-3xl hover:cursor-pointer sm:rounded-[4rem]"
             >
-              <div className="shadow-[inset_0px_0px_10px_10px_#1d1a1a] sm:rounded-[4rem] rounded-3xl absolute h-full w-full" />
+              <div className="absolute h-full w-full rounded-3xl shadow-[inset_0px_0px_10px_10px_#1d1a1a] sm:rounded-[4rem]" />
             </div>
-            <div className="flex flex-col w-full items-center absolute">
+            <div className="absolute flex w-full flex-col items-center">
               <h1
                 ref={h1Ref}
-                className="  z-10 text-projectHeaderTitle font-playfair font-semibold whitespace-nowrap"
+                className="z-10 whitespace-nowrap font-playfair text-projectHeaderTitle font-semibold"
               >
                 {title}
               </h1>
@@ -204,34 +205,34 @@ export default function VideoPlayer({ title, vimeoPath }: VideoPlayerProps) {
                 <div
                   onClick={handlePlay}
                   ref={playButtonRef}
-                  className=" hover:cursor-pointer rounded-[50%] hidden sm:flex  border-4   justify-center items-center z-20"
+                  className="z-20 hidden items-center justify-center rounded-[50%] border-4 hover:cursor-pointer sm:flex"
                 >
                   <div className="relative">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="white"
-                      className="bi bi-play-fill ml-2 w-[4.5rem] h-[4.5rem] p-2"
+                      className="bi bi-play-fill ml-2 h-[4.5rem] w-[4.5rem] p-2"
                       viewBox="0 0 16 16"
                     >
                       <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
                     </svg>
-                    <div className=" bg-black rounded-[50%] w-full h-full -z-10 absolute opacity-80 left-0 top-0" />
+                    <div className="absolute left-0 top-0 -z-10 h-full w-full rounded-[50%] bg-black opacity-80" />
                   </div>
                 </div>
               )}
             </div>
             <div
               ref={videoTextRef}
-              className="flex flex-col z-10 absolute justify-between h-full md:px-28 md:py-16 sm:px-24 sm:py-10 px-8 py-8  w-full  sm:text-3xl text-2xl font-medium"
+              className="absolute z-10 flex h-full w-full flex-col justify-between px-8 py-8 text-2xl font-medium sm:px-24 sm:py-10 sm:text-3xl md:px-28 md:py-16"
             >
-              <div className="flex justify-between items-center">
-                <div className="flex items-center  ">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center">
                   <div> {videoIsPlaying ? "Pause" : "Play"}</div>
                   <svg
                     ref={pauseBlinkRef}
                     xmlns="http://www.w3.org/2000/svg"
                     fill="white"
-                    className="bi bi-play-fill w-10 h-10 "
+                    className="bi bi-play-fill h-10 w-10"
                     viewBox="0 0 16 16"
                   >
                     <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
@@ -239,9 +240,9 @@ export default function VideoPlayer({ title, vimeoPath }: VideoPlayerProps) {
                 </div>
                 <div>{currentDate.toLocaleDateString("en-US")}</div>
               </div>
-              <div className="flex justify-between ">
+              <div className="flex justify-between">
                 <div>SP</div>
-                {videoIsPlaying ? "00:00:00" : <Counter />}
+                <Counter videoIsPlaying={!videoIsPlaying} />
               </div>
             </div>
             <video
@@ -250,7 +251,7 @@ export default function VideoPlayer({ title, vimeoPath }: VideoPlayerProps) {
               muted
               autoPlay
               loop
-              className="w-full h-full absolute opacity-70  sm:rounded-[4rem] rounded-3xl aspect-video"
+              className="absolute aspect-video h-full w-full rounded-3xl opacity-70 sm:rounded-[4rem]"
               preload="auto"
               controlsList="nofullscreen"
             />

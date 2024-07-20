@@ -31,7 +31,7 @@ export default function NavMenu() {
 
   useEffect(() => {
     setIsOpen(false);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [path]);
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -177,18 +177,18 @@ export default function NavMenu() {
       ref={navMenuRef}
       className={`${
         clipStyle ? "clipBoxNavClosed" : "clipBoxNavOpen"
-      } uppercase h-[100svh] overflow-hidden fixed -top-full w-full bg-primary z-50 `}
+      } fixed -top-full z-50 h-[100svh] w-full overflow-hidden bg-primary uppercase`}
     >
-      <div className=" w-full h-full flex justify-center  relative ">
+      <div className="relative flex h-full w-full justify-center">
         <div
           ref={leftImageContainerRef}
-          className="hidden sm:flex absolute lg:-left-20 sm:-left-80 -left-96  -top-56 -z-10 gap-[0.6rem]  bg-black"
+          className="absolute -left-96 -top-56 -z-10 hidden gap-[0.6rem] bg-black sm:-left-80 sm:flex lg:-left-20"
         >
           <div className="flex bg-black">
-            <div className=" flex flex-col gap-24 whitespace-nowrap mx-5">
+            <div className="mx-5 flex flex-col gap-24 whitespace-nowrap">
               {Array.from({ length: 12 }, (_, i) => (
                 <div className="flex flex-col gap-14" key={i}>
-                  <div className="flex flex-col gap-2 w-0 items-center ">
+                  <div className="flex w-0 flex-col items-center gap-2">
                     <span className="rotate-90">25A</span>
                     <svg
                       width="19"
@@ -205,7 +205,7 @@ export default function NavMenu() {
                       />
                     </svg>
                   </div>
-                  <div className=" rotate-90 w-0">L63 media</div>
+                  <div className="w-0 rotate-90">L63 media</div>
                 </div>
               ))}
             </div>
@@ -213,18 +213,18 @@ export default function NavMenu() {
             <div className="flex flex-col gap-[1.05rem]">
               {Array.from({ length: 75 }, (_, i) => (
                 <div
-                  className="aspect-[1.9/1] bg-textColor sm:p-2 p-1 rounded-sm"
+                  className="aspect-[1.9/1] rounded-sm bg-textColor p-1 sm:p-2"
                   key={i}
                 />
               ))}
             </div>
           </div>
-          <div className="flex flex-col gap-[0.6rem] ">
+          <div className="flex flex-col gap-[0.6rem]">
             {navImages.map((image, i) => (
-              <div key={i} className="relative  ">
-                <div className="shadow-[inset_0px_0px_10px_10px_#000000] absolute h-full w-full" />
+              <div key={i} className="relative">
+                <div className="absolute h-full w-full shadow-[inset_0px_0px_10px_10px_#000000]" />
                 <Image
-                  className={` object-cover aspect-square `}
+                  className={`aspect-square object-cover`}
                   src={image.src}
                   width={400}
                   height={400}
@@ -237,15 +237,15 @@ export default function NavMenu() {
             <div className="flex flex-col gap-[1.05rem]">
               {Array.from({ length: 75 }, (_, i) => (
                 <div
-                  className="aspect-[1.9/1] bg-textColor sm:p-2 p-[0.4rem] rounded-sm"
+                  className="aspect-[1.9/1] rounded-sm bg-textColor p-[0.4rem] sm:p-2"
                   key={i}
                 />
               ))}
             </div>
-            <div className=" flex flex-col gap-24 whitespace-nowrap mx-5">
+            <div className="mx-5 flex flex-col gap-24 whitespace-nowrap">
               {Array.from({ length: 12 }, (_, i) => (
                 <div className="flex flex-col gap-14" key={i}>
-                  <div className="flex flex-col gap-2 w-0 items-center ">
+                  <div className="flex w-0 flex-col items-center gap-2">
                     <span className="rotate-90">25A</span>
                     <svg
                       width="19"
@@ -262,16 +262,13 @@ export default function NavMenu() {
                       />
                     </svg>
                   </div>
-                  <div className="rotate-90 w-0">L63 media</div>
+                  <div className="w-0 rotate-90">L63 media</div>
                 </div>
               ))}
             </div>
           </div>
         </div>
-        <div
-          className="flex flex-col gap-4 font-medium
-         justify-center sm:ml-72 h-full "
-        >
+        <div className="flex h-full flex-col justify-center gap-4 font-medium sm:ml-72">
           {linkArray.map((link, i) => (
             <div key={i} className="overflow-hidden">
               <AnimatedLink
@@ -283,11 +280,11 @@ export default function NavMenu() {
               </AnimatedLink>
             </div>
           ))}
-          <div className="overflow-hidden ">
+          <div className="overflow-hidden">
             <DropDown />
           </div>
         </div>
-        <div ref={myTextRef} className=" absolute bottom-10 right-10">
+        <div ref={myTextRef} className="absolute bottom-10 right-10">
           Design & Dev | Frank Fomin
         </div>
       </div>

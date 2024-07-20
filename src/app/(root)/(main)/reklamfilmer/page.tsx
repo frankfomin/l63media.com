@@ -23,16 +23,6 @@ export default function FilmPage() {
       <section className="flex flex-col items-center justify-center gap-16">
         <ProjectSection />
       </section>
-
-      <video
-        src="https://utfs.io/f/8a1b38a2-2440-43c1-b2ab-c4a5e57c5bbb-xirmq.mov"
-        muted
-        controls={true}
-        loop
-        autoPlay
-        playsInline
-        className="h-20 w-20"
-      />
     </main>
   );
 }

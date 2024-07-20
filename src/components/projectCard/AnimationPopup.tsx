@@ -16,7 +16,7 @@ export default function AnimationPopup({
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   function handleMouseMove(
-    event: React.MouseEvent<HTMLDivElement, MouseEvent>
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
   ) {
     const cardRect = event.currentTarget.getBoundingClientRect();
 
@@ -57,7 +57,7 @@ export default function AnimationPopup({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onMouseMove={handleMouseMove}
-      className="hover:cursor-pointer relative md:uppercase md:flex md:justify-between gapProjectCard md:bg-project md:items-center md:rounded-xl md:text-2xl hidden "
+      className="gapProjectCard relative hidden hover:cursor-pointer md:flex md:items-center md:justify-between md:rounded-xl md:bg-project md:text-2xl md:uppercase"
     >
       {children}
       <AnimatePresence>
@@ -79,29 +79,30 @@ export default function AnimationPopup({
             exit={{ opacity: 0.5, scale: 0 }}
             className="absolute z-10 w-80"
           >
-            <div className="relative flex justify-center items-center">
+            <div className="relative flex items-center justify-center">
               <video
-                src={`/videos/${videoPath}.mp4`}
-                className=" rounded-[3rem] object-cover aspect-square "
+                src={`https://utfs.io/f/${videoPath}`}
+                className="aspect-square rounded-[3rem] object-cover"
                 autoPlay
                 loop
                 muted
+                poster="/images/adam-diplom.webp"
                 preload="auto"
               />
-              <div className=" absolute">
-                <div className=" hover:cursor-pointer relative  rounded-[50%] border-4 p-1  flex justify-center items-center z-10">
+              <div className="absolute">
+                <div className="relative z-10 flex items-center justify-center rounded-[50%] border-4 p-1 hover:cursor-pointer">
                   <div className="">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="100"
                       height="100"
                       fill="white"
-                      className="bi bi-play-fill ml-2 "
+                      className="bi bi-play-fill ml-2"
                       viewBox="0 0 16 16"
                     >
                       <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
                     </svg>
-                    <div className=" bg-black rounded-[50%] w-full h-full -z-10 absolute opacity-80 left-0 top-0" />
+                    <div className="absolute left-0 top-0 -z-10 h-full w-full rounded-[50%] bg-black opacity-80" />
                   </div>
                 </div>
               </div>

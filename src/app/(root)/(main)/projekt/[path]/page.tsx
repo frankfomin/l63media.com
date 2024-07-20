@@ -5,6 +5,8 @@ import ProjectMobileHeader from "@/components/ProjectMobileHeader";
 import ProjectHeader from "@/components/ProjectHeader";
 import type { Metadata, ResolvingMetadata } from "next";
 import ProjectSection from "@/components/ProjectSection";
+import MobileVideoPlayer from "@/components/videoPlayers/MobileVideoPlayer";
+import VideoPlayer from "@/components/videoPlayers/VideoPlayer";
 
 type Params = {
   params: {
@@ -14,7 +16,7 @@ type Params = {
 
 export async function generateMetadata(
   { params }: Params,
-  parent: ResolvingMetadata
+  parent: ResolvingMetadata,
 ): Promise<Metadata> {
   const allProjects = allDocs.filter((doc) => doc.path === params.path);
 
@@ -40,18 +42,18 @@ export default async function ProjectPage({ params }: Params) {
   return (
     <main className="uppercase">
       {project.mobile ? (
-        <ProjectMobileHeader
+        <MobileVideoPlayer
+          videoPath={project.videoPath}
           title={project.projectName}
-          vimeoPath={project.vimeoPath}
         />
       ) : (
-        <ProjectHeader
+        <VideoPlayer
+          videoPath={project.videoPath}
           title={project.projectName}
-          vimeoPath={project.vimeoPath}
         />
       )}
-      <section className="flex flex-col items-center gap-16 mt-60">
-        <ProjectSection path={params.path} />
+      <section className="mt-60 flex flex-col items-center gap-16">
+        <ProjectSection />
       </section>
     </main>
   );

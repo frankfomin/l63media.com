@@ -4,15 +4,30 @@ import ProjectCard from "./projectCard/ProjectCard";
 import ProjectMobileCard from "./projectCard/ProjectMobileCard";
 
 function getAllProjects() {
-  const allProjects = allDocs.sort((a, b) => {
-    return a.order - b.order;
-  });
+  const allProjects = allDocs
+    .filter((project) => !project.deprecated)
+    .sort((a, b) => {
+      return a.order - b.order;
+    });
 
   return allProjects;
 }
 
-export default async function ProjectSection() {
-  const allProjects = getAllProjects();
+export default async function ProjectSection({
+  homePage,
+}: {
+  homePage?: boolean;
+}) {
+  let allProjects = getAllProjects().sort((a, b) => {
+    return a.order - b.order;
+  });
+
+  if (homePage) {
+    allProjects = allProjects.filter(
+      (project) => !project.deprecated && project.homePage,
+    );
+  }
+
   return (
     <div className="flex flex-col gap-6">
       {allProjects.map((project, i) => (

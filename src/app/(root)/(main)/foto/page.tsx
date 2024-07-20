@@ -1,4 +1,4 @@
-"use client";
+/* "use client";
 
 import Image from "next/image";
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
@@ -86,6 +86,40 @@ export default function PhotoPage() {
           />
         ))}
       </div>
+    </main>
+  );
+}
+ */
+
+import { productPhotos } from "@/constants/constants";
+import Image from "next/image";
+
+export default function PhotoPage() {
+  return (
+    <main className="flex flex-col items-center justify-center gap-14">
+      <header className="mt-24 flex flex-col items-center">
+        <h1 className="font-playfair text-longHeading font-semibold uppercase leading-tight">
+          Produktfoto
+        </h1>
+        <p className="text-balance tt flex max-w-4xl flex-col gap-6 text-center text-xl font-medium">
+          Produktfoton från L63 Media fokuserar på att återspegla bakomliggande
+          teman hos en produkt samt företaget på ett vis som fångar blickar, men
+          även framhäver produkten.
+        </p>
+      </header>
+      <section className="flex w-full flex-col items-center gap-6">
+        {productPhotos.map((photo) => (
+          <div key={photo.src} className="">
+            <Image
+              className={`${photo.ratio} max-h-[85vh] rounded-3xl object-cover`}
+              width={1500}
+              height={1500}
+              src={photo.src}
+              alt={photo.alt}
+            />
+          </div>
+        ))}
+      </section>
     </main>
   );
 }

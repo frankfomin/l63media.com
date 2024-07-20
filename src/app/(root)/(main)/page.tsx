@@ -12,26 +12,26 @@ export default async function HomePage() {
   return (
     <main className="flex flex-col gap-60">
       <Header />
-      <section className="flex flex-col items-center">
+      <section className="flex flex-col items-center px-8">
         <div className="flex w-full max-w-6xl flex-col gap-6">
           <div className="uppercase">
             <h4 className="font-playfair text-3xl font-semibold leading-none sm:text-5xl">
               Vad Gör
             </h4>
-            <h3 className="text-center font-playfair text-subHeading font-semibold leading-none sm:text-left">
+            <h3 className="font-playfair text-subHeading font-semibold leading-none sm:text-left">
               L63 Media?
             </h3>
           </div>
-          <div className="justify-between md:flex">
+          <div className="flex w-full flex-col justify-between gap-6 md:flex-row">
             <Image
-              className="rounded-xl"
+              className="max-h-[30vh] w-full rounded-xl object-cover md:max-h-[50vh]"
               src="/eros.jpg"
               width={500}
               height={500}
               alt=""
             />
             <div className="flex flex-col justify-between gap-6 md:px-10">
-              <div className="text-balance flex flex-col gap-6 text-xl font-medium">
+              <div className="flex flex-col gap-6 text-xl font-medium">
                 <p>
                   Driver du möjligtvis företag och vill sticka ut från mängden?
                   Vill du att din företagsimage och marknadsföring ska utstråla
@@ -95,7 +95,7 @@ export default async function HomePage() {
         <h4 className="text-center font-playfair text-subHeading font-semibold">
           Filmer
         </h4>
-        <ProjectSection />
+        <ProjectSection homePage />
         <Link className="flex justify-center" href="/reklamfilmer">
           <Button>Alla Filmer</Button>
         </Link>

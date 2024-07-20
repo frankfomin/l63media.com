@@ -30,11 +30,11 @@ export default function ProjectCard({
   return (
     <Link href={`/projekt/${path}`}>
       <AnimationPopup videoPath={videoPath}>
-        <div className=" rotate-90 flex flex-col-reverse items-center lg:gap-4 lg:pb-12 pb-2">
-          <div className=" text-5xl VHS font-semibold border-[1px]  text-center  ">
+        <div className="flex rotate-90 flex-col-reverse items-center pb-2 lg:gap-4 lg:pb-12">
+          <div className="VHS border-[1px] text-center text-5xl font-semibold">
             vhs
           </div>
-          <div className=" text-4xl T-120 font-medium lg:block hidden">
+          <div className="T-120 hidden text-4xl font-medium lg:block">
             T-120
           </div>
         </div>
@@ -42,7 +42,7 @@ export default function ProjectCard({
         <div className="projectCardText whitespace-nowrap font-playfair font-medium">
           {children}
         </div>
-        <div className="flex justify-center items-center gap-2 ">
+        <div className="flex items-center justify-center gap-2">
           <ProjectLines
             bg1={bg1}
             bg2={bg2}
@@ -53,7 +53,7 @@ export default function ProjectCard({
             device="desktop"
             lineSize="desktop"
           />
-          <div className="rotate-90  font-medium text-2xl text-center">
+          <div className="rotate-90 text-center text-2xl font-medium">
             video <br /> cassette
           </div>
         </div>

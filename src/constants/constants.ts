@@ -89,10 +89,54 @@ export const productPhotos = [
   {
     src: "/images/hanowa.webp",
     alt: "Adam Lindsköld",
+    ratio: "",
   },
   {
     src: "/images/iskaffe.webp",
     alt: "Adam Lindsköld",
+  },
+  {
+    src: "/images/voir-svart.webp",
+    alt: "Adam Lindsköld",
+  },
+  {
+    src: "/images/voir-vit.webp",
+    alt: "Adam Lindsköld",
+  },
+  {
+    src: "/images/freshsoda.webp",
+    alt: "Adam Lindsköld",
+  },
+  {
+    src: "/images/bicycle.webp",
+    alt: "Adam Lindsköld",
+  },
+  {
+    src: "/images/clean.webp",
+    alt: "Adam Lindsköld",
+  },
+] as ReadonlyArray<{ src: string; alt: string; ratio?: string; size?: string }>;
+
+export const videos = [
+  {
+    src: "8a1b38a2-2440-43c1-b2ab-c4a5e57c5bbb-xirmq.mov",
+  },
+  {
+    src: "615b1b1a-8a7f-4b1d-a479-d1f93b236674-48x9ij.mov",
+  },
+
+  {
+    src: "8a1b38a2-2440-43c1-b2ab-c4a5e57c5bbb-xirmq.mov",
+  },
+  {
+    src: "8a1b38a2-2440-43c1-b2ab-c4a5e57c5bbb-xirmq.mov",
+  },
+  {
+    src: "615b1b1a-8a7f-4b1d-a479-d1f93b236674-48x9ij.mov",
+  },
+
+  {
+    src: "8a1b38a2-2440-43c1-b2ab-c4a5e57c5bbb-xirmq.mov",
   },
 ];
 

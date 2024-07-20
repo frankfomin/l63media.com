@@ -80,11 +80,9 @@ export default function DropDown() {
         <AnimatedLink variant="lg" className="link w-min" href="/foto">
           Produktfoto
         </AnimatedLink>
-        <AnimatedLink
-          variant="lg"
-          className="link w-min"
-          href="/foto"
-        >Event/Övrigt</AnimatedLink>
+        <AnimatedLink variant="lg" className="link w-min" href="/eventovrigt">
+          Event/Övrigt
+        </AnimatedLink>
       </div>
     </div>
   );
