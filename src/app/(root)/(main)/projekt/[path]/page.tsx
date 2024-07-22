@@ -1,8 +1,6 @@
 import React, { Suspense } from "react";
 import { allDocs } from "contentlayer/generated";
 import { notFound } from "next/navigation";
-import ProjectMobileHeader from "@/components/ProjectMobileHeader";
-import ProjectHeader from "@/components/ProjectHeader";
 import type { Metadata, ResolvingMetadata } from "next";
 import ProjectSection from "@/components/ProjectSection";
 import MobileVideoPlayer from "@/components/videoPlayers/MobileVideoPlayer";

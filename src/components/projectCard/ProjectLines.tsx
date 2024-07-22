@@ -37,6 +37,12 @@ export const projectColors = [
     bg3: "bg-[#292828]",
   },
   {
+    projectStyle: "bicycle",
+    bg1: "bg-red-700",
+    bg2: "bg-orange-600",
+    bg3: "bg-stone-950",
+  },
+  {
     projectStyle: "pinkgrape",
     bg1: "bg-cyan-300",
     bg2: "bg-fuchsia-300",
@@ -44,15 +50,15 @@ export const projectColors = [
   },
   {
     projectStyle: "vaknavibbar",
-    bg1: "bg-cyan-300",
-    bg2: "bg-fuchsia-300",
-    bg3: "bg-orange-300",
+    bg1: "bg-orange-400",
+    bg2: "bg-amber-400",
+    bg3: "bg-lime-500",
   },
   {
     projectStyle: "voir",
-    bg1: "bg-cyan-300",
-    bg2: "bg-fuchsia-300",
-    bg3: "bg-orange-300",
+    bg1: "bg-green-500",
+    bg2: "bg-sky-500",
+    bg3: "bg-amber-900",
   },
   {
     projectStyle: "voir2",
@@ -112,15 +118,21 @@ export default function ProjectLines({
     >
       <div
         {...props}
-        className={`${cn(LineVariants({ lineSize }))} ${bg1} ${cn(LineVariants({ rotation }))}`}
+        className={`${cn(LineVariants({ lineSize }))} ${
+          projectColors.find((a) => a.projectStyle === projectStyle)?.bg1
+        } ${cn(LineVariants({ rotation }))}`}
       />
       <div
         {...props}
-        className={`${cn(LineVariants({ lineSize }))} ${bg2} ${cn(LineVariants({ rotation }))}`}
+        className={`${cn(LineVariants({ lineSize }))} ${
+          projectColors.find((a) => a.projectStyle === projectStyle)?.bg2
+        } ${cn(LineVariants({ rotation }))}`}
       />
       <div
         {...props}
-        className={`${cn(LineVariants({ lineSize }))} ${bg3} ${cn(LineVariants({ rotation }))}`}
+        className={`${cn(LineVariants({ lineSize }))} ${
+          projectColors.find((a) => a.projectStyle === projectStyle)?.bg3
+        } ${cn(LineVariants({ rotation }))}`}
       />
     </div>
   );

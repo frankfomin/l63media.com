@@ -38,25 +38,25 @@ export const logos = [
     src: "/images/logos/vaknaVibbar-logga.webp",
   }, */
   {
-    src: "/images/logos/vakin-logga.svg",
+    src: "/images/logos/vakin.svg",
     alt: "Vakin",
   },
   {
-    src: "/images/logos/volvo-logga.svg",
+    src: "/images/logos/volvo.svg",
     alt: "Volvo",
   },
   {
-    src: "/images/logos/engo-logga.webp",
+    src: "/images/logos/engo.webp",
     alt: "Engo UF",
   },
   {
-    src: "/images/logos/UmeTechTalents-logga.webp",
+    src: "/images/logos/umeTechTalents.png",
     alt: "Umeå Tech Talents",
     width: 50,
     height: 50,
   },
   {
-    src: "/images/logos/voir-logga.webp",
+    src: "/images/logos/voir.webp",
     alt: "Voir glasses",
   },
 ];
@@ -126,17 +126,32 @@ export const videos = [
   },
 
   {
-    src: "8a1b38a2-2440-43c1-b2ab-c4a5e57c5bbb-xirmq.mov",
-  },
-  {
-    src: "8a1b38a2-2440-43c1-b2ab-c4a5e57c5bbb-xirmq.mov",
-  },
-  {
     src: "615b1b1a-8a7f-4b1d-a479-d1f93b236674-48x9ij.mov",
+  },
+  {
+    src: "8a1b38a2-2440-43c1-b2ab-c4a5e57c5bbb-xirmq.mov",
+  },
+];
+
+export const eventVideos = [
+  {
+    src: "448d61bb-269d-48c0-9d16-3e46baffa164-mlyk6e.mp4",
+  },
+  {
+    src: "e9b6eb54-591b-4c63-92d2-a5105c15cb6e-l2ygnz.mp4",
+  },
+  {
+    src: "a3b96822-fc97-45de-91ef-feb2704b81f2-56kt36.mp4",
+  },
+  {
+    src: "bd045679-1ce3-40b3-90de-2c01a0131b1d-qq2cnm.mp4",
+  },
+  {
+    src: "48f4022c-0a87-47b7-a7e4-a8a41d254ea6-3oldmn.mp4",
   },
 
   {
-    src: "8a1b38a2-2440-43c1-b2ab-c4a5e57c5bbb-xirmq.mov",
+    src: "34043ce9-47d9-4046-8dd3-e93790ca453a-k80xec.mp4",
   },
 ];
 
