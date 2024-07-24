@@ -31,7 +31,7 @@ export default function PhotoScrollSlider() {
       <div className="rotate-[-1.5deg] overflow-hidden">
         <div
           ref={sliderRef}
-          className="relative flex w-max gap-3 bg-[#020202] p-3"
+          className="bg-secondary relative flex w-max gap-3 p-3"
         >
           {aboutImages.concat(aboutImages).map((image, index) => (
             <div

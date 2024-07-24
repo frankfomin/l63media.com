@@ -107,7 +107,7 @@ export default function PhotoPage() {
           även framhäver produkten.
         </p>
       </header>
-      <section className="flex w-full flex-col items-center gap-6">
+      <section className="flex w-full max-w-7xl flex-col items-center gap-6">
         {productPhotos.map((photo) => (
           <div key={photo.src} className="">
             <Image

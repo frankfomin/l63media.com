@@ -1,3 +1,11 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
+const colors = require("tailwindcss/colors");
+
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -9,7 +17,7 @@ module.exports = {
     extend: {
       animation: {
         scroll:
-          "scroll var(--animation-duration, 30s) var(--animation-direction, forwards) linear infinite",
+          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },
       keyframes: {
         scroll: {
@@ -32,6 +40,7 @@ module.exports = {
         textColor: "#F2ECEC",
         project: "#0D0D0C",
         paragraph: "#B1B1B1",
+        secondary: "#020202",
       },
       fontFamily: {
         montserrat: ["var(--font-montserrat)"],
@@ -64,5 +73,16 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [addVariablesForColors],
 };
+
+function addVariablesForColors({ addBase, theme }: any) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+ 
+  addBase({
+    ":root": newVars,
+  });
+}

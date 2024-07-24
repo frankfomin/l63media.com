@@ -119,17 +119,17 @@ export const productPhotos = [
 
 export const videos = [
   {
-    src: "8a1b38a2-2440-43c1-b2ab-c4a5e57c5bbb-xirmq.mov",
+    src: "ca4e4858-59b1-41ad-b804-6316068a8c01-1y4001.mp4",
   },
   {
-    src: "615b1b1a-8a7f-4b1d-a479-d1f93b236674-48x9ij.mov",
+    src: "08148303-1d54-4172-9538-317f33f53ff4-48x9ij.mp4",
   },
 
   {
-    src: "615b1b1a-8a7f-4b1d-a479-d1f93b236674-48x9ij.mov",
+    src: "448d61bb-269d-48c0-9d16-3e46baffa164-mlyk6e.mp4",
   },
   {
-    src: "8a1b38a2-2440-43c1-b2ab-c4a5e57c5bbb-xirmq.mov",
+    src: "e57b66a7-b090-4b69-98a0-eb22e91140fd-25pcy.mp4",
   },
 ];
 

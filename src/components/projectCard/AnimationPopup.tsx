@@ -57,7 +57,7 @@ export default function AnimationPopup({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onMouseMove={handleMouseMove}
-      className="gapProjectCard relative hidden hover:cursor-pointer md:flex md:items-center md:justify-between md:rounded-xl md:bg-project md:text-2xl md:uppercase"
+      className="relative hidden justify-center hover:cursor-pointer md:flex md:w-full md:items-center md:rounded-xl md:text-2xl md:uppercase"
     >
       {children}
       <AnimatePresence>
@@ -72,8 +72,8 @@ export default function AnimationPopup({
             animate={{
               opacity: 1,
               scale: 1,
-              y: mousePosition.y - 90,
-              x: mousePosition.x - 150,
+              y: mousePosition.y,
+              x: mousePosition.x - 750,
             }}
             transition={{ type: "tween" }}
             exit={{ opacity: 0.5, scale: 0 }}

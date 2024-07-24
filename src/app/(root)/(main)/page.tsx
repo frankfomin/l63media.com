@@ -7,13 +7,15 @@ import PhotoScrollSlider from "@/components/PhotoScrollSlider";
 import ProjectSection from "@/components/ProjectSection";
 import Image from "next/image";
 import { logos } from "@/constants/constants";
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cars";
+import MovingLogos from "@/components/ui/MovingLogos";
 
 export default async function HomePage() {
   return (
     <main className="flex flex-col gap-60">
       <Header />
       <section className="flex flex-col items-center px-8">
-        <div className="flex w-full max-w-[100rem] flex-col gap-6">
+        <div className="flex w-full max-w-7xl flex-col gap-6">
           <div className="uppercase">
             <h4 className="font-playfair text-3xl font-semibold leading-none sm:text-5xl">
               Vad Gör
@@ -32,7 +34,7 @@ export default async function HomePage() {
             />
             <div className="flex flex-col justify-between gap-6 md:px-10">
               <div className="flex flex-col gap-6 text-xl font-medium">
-                <p>
+                <p className="font-playfair text-3xl">
                   Driver du möjligtvis företag och vill sticka ut från mängden?
                   Vill du att din företagsimage och marknadsföring ska utstråla
                   professionalitet? Önskar du helt enkelt film eller foto för
@@ -61,20 +63,7 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
-      <section className="flex flex-col items-center gap-6">
-        <div className="flex gap-20">
-          {logos.map((logo) => (
-            <Image
-              className="object-contain"
-              key={logo.src}
-              src={logo.src}
-              width={logo.width || 200}
-              height={logo.height || 200}
-              alt={logo.alt}
-            />
-          ))}
-        </div>
-      </section>
+      <MovingLogos />
       <section className="relative flex flex-col items-center gap-6 overflow-hidden">
         <h2 className="text-center font-playfair text-subHeading font-semibold">
           OM MIG
@@ -91,7 +80,7 @@ export default async function HomePage() {
         </Link>
       </section>
 
-      <section className="flex flex-col items-center gap-6 uppercase">
+      <section className="flex w-full flex-col items-center gap-6 uppercase">
         <h4 className="text-center font-playfair text-subHeading font-semibold">
           Filmer
         </h4>
@@ -100,7 +89,7 @@ export default async function HomePage() {
           <Button>Alla Filmer</Button>
         </Link>
       </section>
-      <section className="flex flex-col gap-6 text-center">
+      <section className="flex flex-col gap-6">
         <h5 className="font-playfair text-subHeading font-semibold">FOTO</h5>
         <PhotoSlider />
         <Link className="flex justify-center" href="/foto">

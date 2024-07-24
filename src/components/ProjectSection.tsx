@@ -23,13 +23,11 @@ export default async function ProjectSection({
   });
 
   if (homePage) {
-    allProjects = allProjects.filter(
-      (project) => !project.deprecated && project.homePage,
-    );
+    allProjects = allProjects.filter((project) => project.homePage);
   }
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex w-full flex-col items-center gap-6">
       {allProjects.map((project, i) => (
         <React.Fragment key={i}>
           <ProjectCard
