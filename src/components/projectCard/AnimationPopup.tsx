@@ -15,42 +15,35 @@ export default function AnimationPopup({
   const [isHovered, setIsHovered] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  function handleMouseMove(
-    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
-  ) {
-    const cardRect = event.currentTarget.getBoundingClientRect();
-
-    const relX = event.clientX - cardRect.left;
-    const relY = event.clientY - cardRect.top;
-
-    if (
-      event.clientX > cardRect.left ||
-      event.clientX < cardRect.right ||
-      event.clientY > cardRect.top ||
-      event.clientY < cardRect.bottom
-    ) {
-      setIsHovered(true);
-    }
-
-    if (
-      event.clientX < cardRect.left ||
-      event.clientX > cardRect.right ||
-      event.clientY < cardRect.top ||
-      event.clientY > cardRect.bottom
-    ) {
-      setIsHovered(false);
-    }
-
-    setMousePosition({ x: relX, y: relY });
-  }
-
-  function handleMouseLeave() {
-    setIsHovered(false);
-  }
-
-  function handleMouseEnter() {
+  const handleMouseEnter = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+  ) => {
     setIsHovered(true);
-  }
+    updateMousePosition(e);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    updateMousePosition(e);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  const updateMousePosition = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+  ) => {
+    setMousePosition({
+      x: e.clientX,
+      y: e.clientY,
+    });
+  };
+
+  const popupStyle = {
+    top: `${mousePosition.y}px`,
+    left: `${mousePosition.x}px`,
+    transform: "translate(-50%, -50%)",
+  };
 
   return (
     <div
@@ -63,6 +56,7 @@ export default function AnimationPopup({
       <AnimatePresence>
         {isHovered && (
           <motion.div
+            style={popupStyle}
             initial={{
               scale: 0,
               opacity: 0.5,

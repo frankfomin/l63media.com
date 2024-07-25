@@ -14,7 +14,7 @@ export default async function HomePage() {
   return (
     <main className="flex flex-col gap-60">
       <Header />
-      <section className="flex flex-col items-center px-8">
+      <section className="flex flex-col items-center px-6">
         <div className="flex w-full max-w-7xl flex-col gap-6">
           <div className="uppercase">
             <h4 className="font-playfair text-3xl font-semibold leading-none sm:text-5xl">
@@ -32,7 +32,7 @@ export default async function HomePage() {
               height={500}
               alt=""
             />
-            <div className="flex flex-col justify-between gap-6 md:px-10">
+            <div className="flex flex-col justify-between gap-6">
               <div className="flex flex-col gap-6 text-xl font-medium">
                 <p className="font-playfair text-3xl">
                   Driver du möjligtvis företag och vill sticka ut från mängden?
@@ -69,7 +69,7 @@ export default async function HomePage() {
           OM MIG
         </h2>
         <PhotoScrollSlider />
-        <p className="text-balance text-center text-lg font-medium sm:max-w-3xl sm:text-2xl">
+        <p className="text-balance text-center text-lg font-medium px-6 sm:max-w-3xl sm:text-2xl">
           Adam Lindsköld är en filmskapare och marknadsförare från Umeå. Så
           länge han kan minnas har han varit engagerad i digitalt skapande och
           har skapat en mängd olika projekt med främst fokus på reklamfilm och
