@@ -56,7 +56,7 @@ export default function Nav() {
   }
 
   return (
-    <nav className="bg-primar fixed z-50 flex w-full justify-center rounded-2xl px-6 py-6 backdrop-blur-md">
+    <nav className="bg-primary top-0 fixed z-50 flex w-full justify-center rounded-2xl px-6 py-6 backdrop-blur-md">
       <div className="flex w-full max-w-7xl justify-between">
         <Link href="/">
           <AidsSvg />

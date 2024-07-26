@@ -34,7 +34,7 @@ const Error = ({ error, reset }: { error: Error; reset: () => void }) => {
       </div>
       <div className="mx-40 flex justify-between text-3xl font-medium">
         <div>SP</div>
-        <Counter />
+        <Counter videoIsPlaying />
       </div>
       <video
         src="/Untitled.mp4"
