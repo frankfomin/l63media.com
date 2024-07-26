@@ -29,7 +29,7 @@ export default function Error() {
       </div>
       <div className="flex justify-between mx-40 text-3xl font-medium">
         <div>SP</div>
-        <Counter />
+        <Counter videoIsPlaying />
       </div>
       <video
         src="/videos/heroVideo.mp4"

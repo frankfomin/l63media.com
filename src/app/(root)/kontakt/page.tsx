@@ -33,7 +33,7 @@ export default function ContactPage() {
           <div>Samarbeta</div>
         </div>
       </section>
-      <hr className="bg-paragraph w-[60%]" />
+      <hr className="bg-paragraph w-full max-w-7xl px-6" />
       <section>
         <ContactForm />
       </section>
