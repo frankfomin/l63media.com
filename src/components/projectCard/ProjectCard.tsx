@@ -29,35 +29,36 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   return (
     <AnimationPopup videoPath={videoPath}>
-      <Link href={`/projekt/${path}`}>
-        <article className="flex w-full max-w-7xl items-center justify-between gap-10 rounded-2xl bg-project">
-          <div className="flex rotate-90 flex-col-reverse items-center pb-2 lg:gap-4 lg:pb-12">
-            <div className="VHS border-[1px] text-center text-5xl font-semibold">
-              vhs
-            </div>
-            <div className="T-120 hidden text-4xl font-medium lg:block">
-              T-120
-            </div>
+      <Link
+        href={`/projekt/${path}`}
+        className="flex w-full max-w-7xl items-center justify-between gap-10 rounded-2xl bg-project"
+      >
+        <div className="flex rotate-90 flex-col-reverse items-center pb-2 lg:gap-4 lg:pb-12">
+          <div className="VHS border-[1px] text-center text-5xl font-semibold">
+            vhs
           </div>
-          <div className="whitespace-nowrap font-playfair text-8xl text-projectHeaderTitle font-medium uppercase">
-            {children}
+          <div className="T-120 hidden text-4xl font-medium lg:block">
+            T-120
           </div>
-          <div className="flex items-center justify-center gap-2">
-            <ProjectLines
-              bg1={bg1}
-              bg2={bg2}
-              bg3={bg3}
-              projectStyle={projectStyle}
-              rotation={rotation as any}
-              lineSpacing={lineSpacing as any}
-              device="desktop"
-              lineSize="desktop"
-            />
-            <div className="rotate-90 text-center text-2xl font-medium">
-              video <br /> cassette
-            </div>
+        </div>
+        <div className="whitespace-nowrap font-playfair text-8xl text-projectHeaderTitle font-medium uppercase">
+          {children}
+        </div>
+        <div className="flex items-center justify-center gap-2">
+          <ProjectLines
+            bg1={bg1}
+            bg2={bg2}
+            bg3={bg3}
+            projectStyle={projectStyle}
+            rotation={rotation as any}
+            lineSpacing={lineSpacing as any}
+            device="desktop"
+            lineSize="desktop"
+          />
+          <div className="rotate-90 text-center text-2xl font-medium">
+            video <br /> cassette
           </div>
-        </article>
+        </div>
       </Link>
     </AnimationPopup>
   );
