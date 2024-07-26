@@ -56,7 +56,7 @@ export default function Nav() {
   }
 
   return (
-    <nav className="bg-primary top-0 fixed z-50 flex w-full justify-center rounded-2xl px-6 py-6 backdrop-blur-md">
+    <nav className="fixed top-0 z-50 flex w-full justify-center rounded-2xl px-6 py-4 backdrop-blur-md">
       <div className="flex w-full max-w-7xl justify-between">
         <Link href="/">
           <AidsSvg />
@@ -81,10 +81,14 @@ export default function Nav() {
             <line x1="21" y1="14" x2="3" y2="14"></line>
             <line x1="21" y1="18" x2="7" y2="18"></line>
           </svg> */}
-          <p className="absolute text-xl font-medium" ref={menuIconRef}>MENY</p>
-          <p className="absolut text-xl font-medium" ref={closeIconRef}>STÄNG</p>
+          <p className="absolute text-xl font-medium" ref={menuIconRef}>
+            MENY
+          </p>
+          <p className="absolut text-xl font-medium" ref={closeIconRef}>
+            STÄNG
+          </p>
 
-         {/*  <svg
+          {/*  <svg
             ref={closeIconRef}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
