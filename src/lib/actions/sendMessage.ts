@@ -7,15 +7,17 @@ import { redirect } from "next/navigation";
 import axios from "axios";
 import { redis } from "../redis";
 import { EmailTemplate } from "@/components/email-template";
+import { cookies, headers } from "next/headers";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function sendMessage(data: z.infer<typeof contactSchema>) {
   try {
-    const ip = await axios.get("https://api.ipify.org?format=json");
-    const ipAddress = ip.data.ip;
+    const header = headers();
+    const cookie = cookies();
+    const ip = (header.get("x-forwarded-for") ?? "127.0.0.1").split(",")[0];
+    const currentRequestCount = Number(cookie.get(`reqCount-${ip}`)?.value);
 
-    const currentRequestCount = await redis.incr(ipAddress);
     if (currentRequestCount > 2) {
       return {
         rateLimit: {
@@ -24,9 +26,12 @@ export async function sendMessage(data: z.infer<typeof contactSchema>) {
       };
     }
 
-    if (currentRequestCount <= 2) {
-      await redis.expire(ipAddress, 300);
-    }
+    const sumReqCount = currentRequestCount + 1;
+    cookie.set({
+      name: `reqCount-${ip}`,
+      value: sumReqCount.toString(),
+      expires: Date.now() + 10 * 60 * 1000,
+    });
 
     const result = contactSchema.safeParse(data);
 

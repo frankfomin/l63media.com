@@ -92,8 +92,12 @@ export default function PhotoPage() {
  */
 
 import { productPhotos } from "@/constants/constants";
+import { Metadata } from "next";
 import Image from "next/image";
 
+export const metadata: Metadata = {
+  title: `\u{1F4F7} Produktfoto | Adam Lindsköld`,
+};
 export default function PhotoPage() {
   return (
     <main className="flex flex-col items-center justify-center gap-14">

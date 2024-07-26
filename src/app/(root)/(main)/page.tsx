@@ -15,7 +15,7 @@ export default async function HomePage() {
     <main className="flex flex-col gap-60">
       <Header />
       <section className="flex flex-col items-center px-6">
-        <div className="flex w-full max-w-7xl flex-col gap-6">
+        <div className="flex w-full max-w-[120rem] flex-col gap-6">
           <div className="uppercase">
             <h4 className="font-playfair text-3xl font-semibold leading-none sm:text-5xl">
               Vad Gör
@@ -90,7 +90,7 @@ export default async function HomePage() {
         </Link>
       </section>
       <section className="flex flex-col gap-6">
-        <h5 className="font-playfair text-subHeading font-semibold">FOTO</h5>
+        <h5 className="font-playfair text-center text-subHeading font-semibold">FOTO</h5>
         <PhotoSlider />
         <Link className="flex justify-center" href="/foto">
           <Button>Alla Foton</Button>

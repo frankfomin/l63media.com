@@ -50,7 +50,7 @@ export default function AnimationPopup({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onMouseMove={handleMouseMove}
-      className="relative hidden justify-center hover:cursor-pointer md:flex md:w-full md:items-center md:rounded-xl md:text-2xl md:uppercase"
+      className="relative px-6 hidden justify-center hover:cursor-pointer md:flex md:w-full md:items-center md:rounded-xl md:text-2xl md:uppercase"
     >
       {children}
       <AnimatePresence>
