@@ -6,14 +6,17 @@ import { useState } from "react";
 type AnimationPopup = {
   children: React.ReactNode;
   videoPath?: string;
+  index: number;
 };
 
 export default function AnimationPopup({
   children,
   videoPath,
+  index,
 }: AnimationPopup) {
   const [isHovered, setIsHovered] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [cardSize, setCardSize] = useState({ width: 0, height: 0 });
 
   const handleMouseEnter = (
     e: React.MouseEvent<HTMLDivElement, MouseEvent>,
@@ -37,46 +40,43 @@ export default function AnimationPopup({
       x: e.clientX,
       y: e.clientY,
     });
+    setCardSize({
+      width: e.currentTarget.offsetWidth,
+      height: e.currentTarget.offsetHeight,
+    });
   };
-
-  const popupStyle = {
-    top: `${mousePosition.y}px`,
-    left: `${mousePosition.x}px`,
-    transform: "translate(-50%, -50%)",
-  };
-
+  console.log(index);
   return (
     <div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onMouseMove={handleMouseMove}
-      className="relative px-6 hidden justify-center hover:cursor-pointer md:flex md:w-full md:items-center md:rounded-xl md:text-2xl md:uppercase"
+      className="relative hidden w-full max-w-7xl justify-center bg-pink-500 px-6 hover:cursor-pointer md:flex md:items-center md:rounded-xl md:text-2xl md:uppercase"
     >
       {children}
       <AnimatePresence>
         {isHovered && (
           <motion.div
-            style={popupStyle}
             initial={{
               scale: 0,
               opacity: 0.5,
-              x: mousePosition.x,
-              y: mousePosition.y,
+              x: mousePosition.x - cardSize.width / 2 - 300,
+              y: mousePosition.y - cardSize.height * (index + 3),
             }}
             animate={{
               opacity: 1,
               scale: 1,
-              y: mousePosition.y,
-              x: mousePosition.x - 750,
+              x: mousePosition.x - cardSize.width / 2 - 300,
+              y: mousePosition.y - cardSize.height * (index + 3),
             }}
             transition={{ type: "tween" }}
-            exit={{ opacity: 0.5, scale: 0 }}
-            className="absolute z-10 w-80"
+            exit={{ opacity: 0, scale: 0 }}
+            className="absolute left-1/2 top-1/2 z-10 w-80 -translate-x-1/2 -translate-y-1/2 transform"
           >
             <div className="relative flex items-center justify-center">
               <video
                 src={`https://utfs.io/f/${videoPath}`}
-                className="aspect-square rounded-[3rem] object-cover"
+                className="aspect-square rounded-2xl object-cover"
                 autoPlay
                 loop
                 muted

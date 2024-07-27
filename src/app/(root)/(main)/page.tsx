@@ -15,52 +15,58 @@ export default async function HomePage() {
     <main className="flex flex-col gap-60">
       <Header />
       <section className="flex flex-col items-center px-6">
-        <div className="flex w-full max-w-[120rem] flex-col gap-6">
-          <div className="uppercase">
-            <h4 className="font-playfair text-3xl font-semibold leading-none sm:text-5xl">
-              Vad Gör
-            </h4>
-            <h3 className="font-playfair text-subHeading font-semibold leading-none sm:text-left">
-              L63 Media?
-            </h3>
-          </div>
-          <div className="flex w-full flex-col justify-between gap-6 md:flex-row">
+        <div className="grid w-full max-w-[120rem] grid-cols-1 gap-6 lg:grid-cols-2">
+          <div className="flex flex-col gap-6">
+            <div className="uppercase">
+              <h4 className="font-playfair text-3xl font-semibold leading-none sm:text-5xl">
+                Vad Gör
+              </h4>
+              <h3 className="font-playfair text-subHeading font-semibold leading-none sm:text-left">
+                L63 Media?
+              </h3>
+            </div>
             <Image
-              className="max-h-[30vh] w-full rounded-xl object-cover md:max-h-[50vh]"
-              src="/eros.jpg"
-              width={500}
-              height={500}
-              alt=""
+              src="https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Adam Lindsköld"
+              width={1000}
+              height={1000}
+              className="aspect-square w-full rounded-2xl object-cover lg:hidden"
             />
-            <div className="flex flex-col justify-between gap-6">
-              <div className="flex flex-col gap-6 text-xl font-medium">
-                <p className="font-playfair text-3xl">
+            <div className="flex h-full flex-col justify-between gap-6">
+              <div className="flex flex-col gap-6">
+                <p className="lg:text-balance font-playfair text-xl font-semibold sm:text-3xl">
                   Driver du möjligtvis företag och vill sticka ut från mängden?
                   Vill du att din företagsimage och marknadsföring ska utstråla
-                  professionalitet? Önskar du helt enkelt film eller foto för
-                  just ditt ändamål?
+                  professionalitet?
                 </p>
-                <p>
+                <p className="lg:text-balance font-semibold sm:text-2xl">
+                  Önskar du helt enkelt film eller foto för just ditt ändamål?
                   L63 Media är ett foto- och filmproduktionsbolag som erbjuder
                   högkvalitativa produktioner med ett effektivt resultat och ett
                   smidigt samarbete.
                 </p>
-                <p>
+                <p className="lg:text-balance font-semibold sm:text-2xl">
                   Med många nöjda kunder och en inriktning på främst
                   reklamfilmer samt produktfoto, kan L63 Media garantera att
-                  möta kundens ändamål.
+                  möta kundens ändamål. Tveka inte att höra av dig vid intresse,
+                  frågor eller funderingar!
                 </p>
               </div>
-              <div className="grid gap-6">
-                <h5 className="font-playfair text-4xl font-semibold uppercase">
+              <div className="grid gap-3 sm:gap-6">
+                <h3 className="font-playfair text-2xl font-semibold uppercase sm:text-4xl">
                   Snabbt, Smidigt & Högkvalitativt
-                </h5>
-                <Link href="/kontakt">
-                  <Button>Kontakt</Button>
-                </Link>
+                </h3>
+                <Button>Kontakt</Button>
               </div>
             </div>
           </div>
+          <Image
+            src="https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Adam Lindsköld"
+            width={1000}
+            height={1000}
+            className="hidden w-full rounded-2xl object-cover lg:block lg:max-h-[80vh]"
+          />
         </div>
       </section>
       <MovingLogos />
@@ -69,7 +75,7 @@ export default async function HomePage() {
           OM MIG
         </h2>
         <PhotoScrollSlider />
-        <p className="text-balance text-center text-lg font-medium px-6 sm:max-w-3xl sm:text-2xl">
+        <p className="text-balance max-w-4xl px-6 text-center text-2xl font-semibold">
           Adam Lindsköld är en filmskapare och marknadsförare från Umeå. Så
           länge han kan minnas har han varit engagerad i digitalt skapande och
           har skapat en mängd olika projekt med främst fokus på reklamfilm och
@@ -90,7 +96,9 @@ export default async function HomePage() {
         </Link>
       </section>
       <section className="flex flex-col gap-6">
-        <h5 className="font-playfair text-center text-subHeading font-semibold">FOTO</h5>
+        <h5 className="text-center font-playfair text-subHeading font-semibold">
+          FOTO
+        </h5>
         <PhotoSlider />
         <Link className="flex justify-center" href="/foto">
           <Button>Alla Foton</Button>

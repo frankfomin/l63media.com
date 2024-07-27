@@ -31,7 +31,7 @@ export const aboutImages = [
 
 export const logos = [
   {
-    src: "/images/logos/cleanDrink-logga.webp",
+    src: "/images/logos/cleanDrink.webp",
     alt: "Clean Drink",
   },
   /*   {

@@ -14,6 +14,7 @@ type ProjectCardProps = {
   rotation: string;
   videoPath: string;
   lineSpacing: string;
+  index: number;
 };
 
 export default function ProjectCard({
@@ -26,12 +27,13 @@ export default function ProjectCard({
   rotation,
   videoPath,
   lineSpacing,
+  index,
 }: ProjectCardProps) {
   return (
-    <AnimationPopup videoPath={videoPath}>
+    <AnimationPopup index={index} videoPath={videoPath}>
       <Link
         href={`/projekt/${path}`}
-        className="flex w-full max-w-7xl items-center justify-between gap-10 rounded-2xl bg-project"
+        className="flex w-full items-center justify-between gap-10 rounded-2xl bg-project"
       >
         <div className="flex rotate-90 flex-col-reverse items-center pb-2 lg:gap-4 lg:pb-12">
           <div className="VHS border-[1px] text-center text-5xl font-semibold">
