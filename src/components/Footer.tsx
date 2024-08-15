@@ -54,7 +54,7 @@ export default function Footer() {
           </AnimatedLink>
         </div>
         <div className="flex flex-col gap-1">
-          <p className="block sm:hidden">Contact:</p>
+          <p className="block sm:hidden">Kontakt:</p>
           <Link
             className="sm:text:2xl text-base lg:text-4xl"
             href="mailto: l63mediase@gmail.com"
