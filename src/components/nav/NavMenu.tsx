@@ -177,7 +177,7 @@ export default function NavMenu() {
       ref={navMenuRef}
       className={`${
         clipStyle ? "clipBoxNavClosed" : "clipBoxNavOpen"
-      } fixed -top-full z-50 min-h-[100dvh] w-full overflow-hidden bg-primary uppercase`}
+      } fixed -top-full z-50 h-[100dvh] w-full overflow-hidden bg-primary uppercase`}
     >
       <div className="relative flex h-full w-full justify-center">
         <div
