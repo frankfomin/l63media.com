@@ -5,7 +5,7 @@ import AnimatedLink from "./ui/AnimatedLink";
 
 export default function Footer() {
   return (
-    <footer className="relative mt-60 flex min-h-[100dvh] w-full flex-col items-center justify-between rounded-[2rem] bg-black font-playfair uppercase sm:rounded-[6rem]">
+    <footer className="relative mt-60 flex min-h-screen w-full flex-col items-center justify-between rounded-[2rem] bg-black font-playfair uppercase sm:rounded-[6rem]">
       <div />
       <div />
       <div className="flex items-center justify-center text-subHeading leading-none">
