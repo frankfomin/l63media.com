@@ -57,7 +57,7 @@ export default function Header() {
   }, []);
   return (
     <header ref={headerRef} className="clipBox relative opacity-0">
-      <div className="flex h-full min-h-screen flex-col items-center justify-center">
+      <div className="flex h-screen flex-col items-center justify-center">
         <div className="overflow-hidden sm:pb-4">
           {/*  <h1
             ref={textRef}
