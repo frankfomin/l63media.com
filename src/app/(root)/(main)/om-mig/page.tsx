@@ -10,19 +10,19 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="mt-24 flex w-full flex-col items-center gap-60">
-      <header className="relative grid max-w-[120rem] grid-cols-2 place-items-center gap-6 px-6">
+    <main className="flex w-full flex-col items-center gap-60">
+      <header className="relative grid h-screen max-w-[100rem] grid-cols-1 place-items-center gap-6 px-6 py-6 sm:grid-cols-2">
         <div className="absolute left-1/2 top-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 transform flex-col gap-6 whitespace-nowrap font-semibold">
           <h1 className="text-center font-playfair text-longHeading uppercase leading-none">
             Adam Lindsköld
           </h1>
-          <p className="text-center text-xl">
+          <p className="text-center font-semibold sm:text-2xl">
             Filmskapare och fotograf från Umeå
           </p>
         </div>
         {videos.map((video, i) => (
           <div
-            className={`relative max-h-[45vh] overflow-hidden rounded-3xl sm:block ${i < 2 && "hidden"}`}
+            className={`relative h-full max-h-screen w-full overflow-hidden rounded-3xl ${i < 2 && "hidden"}`}
             key={i}
           >
             <div className="absolute left-1/2 top-1/2 h-[100%] w-[100%] -translate-x-1/2 -translate-y-1/2 transform rounded-3xl shadow-[inset_0px_0px_50px_50px_#1d1a1a]"></div>
@@ -33,7 +33,7 @@ export default function AboutPage() {
               loop
               autoPlay
               playsInline
-              className="absolute aspect-[9/16] rounded-3xl object-cover opacity-[3%] sm:aspect-video"
+              className="absolute aspect-video h-full rounded-3xl object-cover opacity-[3%]"
             />
             <video
               id={i.toString()}
@@ -42,7 +42,7 @@ export default function AboutPage() {
               loop
               autoPlay
               playsInline
-              className="aspect-[9/16] rounded-3xl object-cover mix-blend-overlay blur-[2px] sm:aspect-video"
+              className="aspect-video h-full rounded-3xl object-cover mix-blend-overlay blur-[2px]"
             />
           </div>
         ))}
