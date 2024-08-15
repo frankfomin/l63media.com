@@ -66,6 +66,7 @@ export default function NavMenu() {
           top: 0,
           duration: 0.2,
           ease: "easeOut",
+          opacity: 1,
         });
         gsap.from(links, {
           ease: "easeOut",
@@ -80,6 +81,7 @@ export default function NavMenu() {
         });
       } else if (!isOpen) {
         gsap.to(navMenu, {
+          opacity: 0,
           top: "-100%",
           duration: 0.2,
           ease: "easeOut",
@@ -177,7 +179,7 @@ export default function NavMenu() {
       ref={navMenuRef}
       className={`${
         clipStyle ? "clipBoxNavClosed" : "clipBoxNavOpen"
-      } fixed -top-full z-50 h-[100dvh] w-full overflow-hidden bg-primary uppercase`}
+      } fixed -top-full z-50 h-screen w-full overflow-hidden bg-primary uppercase`}
     >
       <div className="relative flex h-full w-full justify-center">
         <div
