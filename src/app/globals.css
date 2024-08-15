@@ -12,8 +12,9 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0px 1000px transparent inset;
-  -webkit-text-fill-color: #F2ECEC;
+  -webkit-text-fill-color: #f2ecec;
   transition: background-color 5000s ease-in-out 0s;
+  /* hide scrollbar but allow scrolling */
 }
 
 /* Change the background color and text color of autofilled textareas */
@@ -22,14 +23,8 @@ textarea:-webkit-autofill:hover,
 textarea:-webkit-autofill:focus,
 textarea:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0px 1000px transparent inset;
-  -webkit-text-fill-color: #F2ECEC;
+  -webkit-text-fill-color: #f2ecec;
   transition: background-color 5000s ease-in-out 0s;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-body {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
 }
 
 .projectCardText {
