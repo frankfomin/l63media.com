@@ -124,11 +124,11 @@ export default function Header() {
           Adam Lindsköld
         </span>
         <div className="overflow-hidden">
-          <div className="absolute left-1/2 top-1/2 -z-10 h-[100%] w-[100%] -translate-x-1/2 -translate-y-1/2 transform rounded-[2rem] shadow-[inset_0px_0px_10px_10px_#1d1a1a] sm:rounded-[4rem] sm:shadow-[inset_0px_0px_24px_24px_#1d1a1a]"></div>
+          <div className="absolute left-1/2 top-1/2 -z-10 h-[101%] w-[101%] -translate-x-1/2 -translate-y-1/2 transform rounded-[2rem] shadow-[inset_0px_0px_10px_10px_#1d1a1a] sm:rounded-[4rem] sm:shadow-[inset_0px_0px_24px_24px_#1d1a1a]"></div>
 
           <div className="absolute left-1/2 top-1/2 -z-20 h-full w-full -translate-x-1/2 -translate-y-1/2 transform rounded-[2rem] bg-black opacity-20 sm:rounded-[4rem]"></div>
           <video
-            src="/videos/heroVideo.mp4"
+            src="https://utfs.io/f/d4276f38-f80a-46fe-a880-58a29676198d-rfmh49.mp4"
             muted
             controls={false}
             loop
