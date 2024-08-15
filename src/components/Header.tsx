@@ -67,7 +67,7 @@ export default function Header() {
           </h1> */}
           <svg
             ref={textRef}
-            className="w-[25vw] opacity-95"
+            className="w-40 opacity-95 sm:w-[25vw]"
             viewBox="0 0 48 48"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
