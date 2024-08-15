@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main className="mt-24 flex w-full flex-col items-center gap-60">
-      <header className="relative grid max-w-[120rem] px-6 grid-cols-2 place-items-center gap-6">
+      <header className="relative grid max-w-[120rem] grid-cols-2 place-items-center gap-6 px-6">
         <div className="absolute left-1/2 top-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 transform flex-col gap-6 whitespace-nowrap font-semibold">
           <h1 className="text-center font-playfair text-longHeading uppercase leading-none">
             Adam Lindsköld
@@ -21,7 +21,10 @@ export default function AboutPage() {
           </p>
         </div>
         {videos.map((video, i) => (
-          <div className="relative overflow-hidden max-h-[45vh] rounded-3xl" key={i}>
+          <div
+            className={`relative max-h-[45vh] overflow-hidden rounded-3xl sm:block ${i < 2 && "hidden"}`}
+            key={i}
+          >
             <div className="absolute left-1/2 top-1/2 h-[100%] w-[100%] -translate-x-1/2 -translate-y-1/2 transform rounded-3xl shadow-[inset_0px_0px_50px_50px_#1d1a1a]"></div>
             <video
               id={i.toString()}
@@ -29,7 +32,8 @@ export default function AboutPage() {
               muted
               loop
               autoPlay
-              className="absolute aspect-video rounded-3xl object-cover opacity-[3%]"
+              playsInline
+              className="absolute aspect-[9/16] rounded-3xl object-cover opacity-[3%] sm:aspect-video"
             />
             <video
               id={i.toString()}
@@ -37,7 +41,8 @@ export default function AboutPage() {
               muted
               loop
               autoPlay
-              className="aspect-video rounded-3xl object-cover mix-blend-overlay blur-[2px]"
+              playsInline
+              className="aspect-[9/16] rounded-3xl object-cover mix-blend-overlay blur-[2px] sm:aspect-video"
             />
           </div>
         ))}
@@ -47,7 +52,7 @@ export default function AboutPage() {
         <h2 className="font-playfair text-subHeading font-semibold uppercase">
           Om Adam
         </h2>
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid gap-6 md:grid-cols-2">
           <div className="relative">
             <div className="absolute left-1/2 top-1/2 h-[100%] w-[101%] -translate-x-1/2 -translate-y-1/2 transform rounded-2xl shadow-[inset_0px_0px_7px_7px_#1d1a1a]"></div>
             <Image
@@ -59,12 +64,12 @@ export default function AboutPage() {
             />
           </div>
           <div className="flex flex-col items-end gap-6">
-            <p className="text-xl font-semibold">
+            <p className="lg:text-balance font-semibold sm:text-2xl">
               Så länge han kan minnas har han varit engagerad i foto samt
               digitalt skapande och har producerat en mängd olika projekt med
               främst fokus på reklamfilm och produktfoto.
             </p>
-            <p className="text-xl font-semibold">
+            <p className="lg:text-balance font-semibold sm:text-2xl">
               Han har även blivit tilldelad priset ”Årets Reklamfilm 2023” samt
               2024 av Ung Företagsamhet Västerbotten. Med över en kvarts miljon
               visningar och 40 000 gilla markeringar på sociala medier kan Adam
@@ -75,7 +80,7 @@ export default function AboutPage() {
         </div>
       </section>
       <MovingLogos />
-      <section className="grid max-w-[120rem] px-6 grid-cols-3 place-items-center gap-6">
+      {/*  <section className="grid max-w-[120rem] grid-cols-3 place-items-center gap-6 px-6">
         <Image
           src="/images/adam-kamera-solnedgang.webp"
           alt="Adam Lindsköld"
@@ -97,7 +102,7 @@ export default function AboutPage() {
           height={1000}
           className="aspect-[3/4] rounded-2xl object-cover"
         />
-      </section>
+      </section> */}
     </main>
   );
 }

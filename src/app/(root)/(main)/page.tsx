@@ -56,7 +56,9 @@ export default async function HomePage() {
                 <h3 className="font-playfair text-2xl font-semibold uppercase sm:text-4xl">
                   Snabbt, Smidigt & Högkvalitativt
                 </h3>
-                <Button>Kontakt</Button>
+                <Link href="/kontakt">
+                  <Button>Kontakt</Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -65,7 +67,7 @@ export default async function HomePage() {
             alt="Adam Lindsköld"
             width={1000}
             height={1000}
-            className="hidden w-full rounded-2xl object-cover lg:block lg:max-h-[80vh]"
+            className="hidden h-full w-full rounded-2xl object-cover lg:block"
           />
         </div>
       </section>
@@ -75,7 +77,7 @@ export default async function HomePage() {
           OM MIG
         </h2>
         <PhotoScrollSlider />
-        <p className="text-balance max-w-4xl px-6 text-center text-2xl font-semibold">
+        <p className="lg:text-balance max-w-4xl px-6 text-center font-semibold sm:text-2xl">
           Adam Lindsköld är en filmskapare och marknadsförare från Umeå. Så
           länge han kan minnas har han varit engagerad i digitalt skapande och
           har skapat en mängd olika projekt med främst fokus på reklamfilm och

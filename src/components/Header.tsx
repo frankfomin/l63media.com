@@ -57,7 +57,7 @@ export default function Header() {
   }, []);
   return (
     <header ref={headerRef} className="clipBox relative opacity-0">
-      <div className="flex h-full min-h-[100svh] flex-col items-center justify-center">
+      <div className="flex h-full min-h-screen flex-col items-center justify-center">
         <div className="overflow-hidden sm:pb-4">
           {/*  <h1
             ref={textRef}
@@ -124,9 +124,9 @@ export default function Header() {
           Adam Lindsköld
         </span>
         <div className="overflow-hidden">
-          <div className="absolute left-1/2 top-1/2 -z-10 h-[100%] w-[100%] -translate-x-1/2 -translate-y-1/2 transform rounded-[2rem] shadow-[inset_0px_0px_10px_10px_#1d1a1a] xs:shadow-[inset_0px_0px_20px_20px_#1d1a1a] sm:rounded-[4rem]"></div>
+          <div className="absolute left-1/2 top-1/2 -z-10 h-[100%] w-[100%] -translate-x-1/2 -translate-y-1/2 transform rounded-[2rem] shadow-[inset_0px_0px_10px_10px_#1d1a1a] sm:rounded-[4rem] sm:shadow-[inset_0px_0px_24px_24px_#1d1a1a]"></div>
 
-          <div className="absolute left-1/2 top-1/2 -z-20 h-[99%] w-[99%] -translate-x-1/2 -translate-y-1/2 transform rounded-[2rem] bg-black opacity-20 sm:rounded-[4rem]"></div>
+          <div className="absolute left-1/2 top-1/2 -z-20 h-full w-full -translate-x-1/2 -translate-y-1/2 transform rounded-[2rem] bg-black opacity-20 sm:rounded-[4rem]"></div>
           <video
             src="/videos/heroVideo.mp4"
             muted
@@ -134,7 +134,7 @@ export default function Header() {
             loop
             autoPlay
             playsInline
-            className="absolute left-1/2 top-1/2 -z-30 h-[99%] w-[99%] -translate-x-1/2 -translate-y-1/2 transform rounded-[2rem] object-cover sm:rounded-[4rem]"
+            className="absolute left-1/2 top-1/2 -z-30 h-full w-full -translate-x-1/2 -translate-y-1/2 transform rounded-[2rem] object-cover sm:rounded-[4rem]"
           />
         </div>
       </div>

@@ -6,52 +6,58 @@ import { useState } from "react";
 type AnimationPopup = {
   children: React.ReactNode;
   videoPath?: string;
-  index: number;
 };
 
 export default function AnimationPopup({
   children,
   videoPath,
-  index,
 }: AnimationPopup) {
   const [isHovered, setIsHovered] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [cardSize, setCardSize] = useState({ width: 0, height: 0 });
 
-  const handleMouseEnter = (
-    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
-  ) => {
-    setIsHovered(true);
-    updateMousePosition(e);
-  };
+  function handleMouseMove(
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
+  ) {
+    const cardRect = event.currentTarget.getBoundingClientRect();
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    updateMousePosition(e);
-  };
+    const relX = event.clientX - cardRect.left;
+    const relY = event.clientY - cardRect.top;
 
-  const handleMouseLeave = () => {
+    if (
+      event.clientX > cardRect.left ||
+      event.clientX < cardRect.right ||
+      event.clientY > cardRect.top ||
+      event.clientY < cardRect.bottom
+    ) {
+      setIsHovered(true);
+    }
+
+    if (
+      event.clientX < cardRect.left ||
+      event.clientX > cardRect.right ||
+      event.clientY < cardRect.top ||
+      event.clientY > cardRect.bottom
+    ) {
+      setIsHovered(false);
+    }
+
+    setMousePosition({ x: relX, y: relY });
+  }
+
+  function handleMouseLeave() {
     setIsHovered(false);
-  };
+  }
 
-  const updateMousePosition = (
-    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
-  ) => {
-    setMousePosition({
-      x: e.clientX,
-      y: e.clientY,
-    });
-    setCardSize({
-      width: e.currentTarget.offsetWidth,
-      height: e.currentTarget.offsetHeight,
-    });
-  };
-  console.log(index);
+  function handleMouseEnter() {
+    setIsHovered(true);
+  }
+
   return (
     <div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onMouseMove={handleMouseMove}
-      className="relative hidden w-full max-w-7xl justify-center bg-pink-500 px-6 hover:cursor-pointer md:flex md:items-center md:rounded-xl md:text-2xl md:uppercase"
+      className="relative hidden hover:cursor-pointer md:flex md:items-center md:justify-between md:rounded-xl md:bg-project md:text-2xl md:uppercase"
     >
       {children}
       <AnimatePresence>
@@ -60,27 +66,26 @@ export default function AnimationPopup({
             initial={{
               scale: 0,
               opacity: 0.5,
-              x: mousePosition.x - cardSize.width / 2 - 300,
-              y: mousePosition.y - cardSize.height * (index + 3),
+              x: mousePosition.x,
+              y: mousePosition.y,
             }}
             animate={{
               opacity: 1,
               scale: 1,
-              x: mousePosition.x - cardSize.width / 2 - 300,
-              y: mousePosition.y - cardSize.height * (index + 3),
+              y: mousePosition.y - 85,
+              x: mousePosition.x - 160,
             }}
             transition={{ type: "tween" }}
-            exit={{ opacity: 0, scale: 0 }}
-            className="absolute left-1/2 top-1/2 z-10 w-80 -translate-x-1/2 -translate-y-1/2 transform"
+            exit={{ opacity: 0.5, scale: 0 }}
+            className="absolute z-10 w-80"
           >
             <div className="relative flex items-center justify-center">
               <video
                 src={`https://utfs.io/f/${videoPath}`}
-                className="aspect-square rounded-2xl object-cover"
+                className="aspect-square rounded-[3rem] object-cover"
                 autoPlay
                 loop
                 muted
-                poster="/images/adam-diplom.webp"
                 preload="auto"
               />
               <div className="absolute">

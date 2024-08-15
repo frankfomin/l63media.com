@@ -31,7 +31,6 @@ export default async function ProjectSection({
       {allProjects.map((project, i) => (
         <React.Fragment key={i}>
           <ProjectCard
-            index={i}
             videoPath={project.videoPath}
             path={project.path}
             bg1={project.bg1}

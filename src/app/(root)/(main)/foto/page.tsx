@@ -105,13 +105,13 @@ export default function PhotoPage() {
         <h1 className="font-playfair text-longHeading font-semibold uppercase leading-tight">
           Produktfoto
         </h1>
-        <p className="text-balance tt flex max-w-4xl flex-col gap-6 text-center text-xl font-medium">
+        <p className="text-balance flex flex-col text-center font-medium sm:text-2xl">
           Produktfoton från L63 Media fokuserar på att återspegla bakomliggande
           teman hos en produkt samt företaget på ett vis som fångar blickar, men
           även framhäver produkten.
         </p>
       </header>
-      <section className="flex w-full max-w-7xl flex-col items-center gap-6">
+      <section className="flex w-full max-w-7xl flex-col items-center gap-6 px-6">
         {productPhotos.map((photo) => (
           <div key={photo.src} className="">
             <Image

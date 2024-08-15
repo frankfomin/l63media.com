@@ -15,7 +15,7 @@ export default function FilmPage() {
           <h1 className="text-center font-playfair text-longHeading font-semibold uppercase leading-tight">
             Reklamfilmer
           </h1>
-          <p className="text-balance flex flex-col text-center text-xl font-semibold">
+          <p className="text-balance flex flex-col text-center font-medium sm:text-2xl">
             Reklamfilmer från L63 Media fokuserar på att fånga tittarens
             intresse och även behålla det med hjälp av ett starkt visuellt
             intryck, samt hög produktionskvalitet.
