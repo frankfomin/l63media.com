@@ -35,16 +35,18 @@ export default function Footer() {
         </div>
       </div>
       <div />
-      <div className="flex w-full flex-row-reverse items-end justify-between gap-4 px-12 py-12 font-montserrat">
+      <div className="flex w-full flex-row-reverse items-end justify-between gap-4 px-6 py-6 font-montserrat sm:px-12 sm:py-12">
         <div className="flex flex-col gap-1 sm:flex-row sm:gap-5">
-          <AnimatedLink
-            className=""
-            variant="md"
-            target="_blank"
-            href="https://www.tiktok.com"
-          >
-            TikTok
-          </AnimatedLink>
+          <div className="flex justify-end">
+            <AnimatedLink
+              className=""
+              variant="md"
+              target="_blank"
+              href="https://www.tiktok.com"
+            >
+              TikTok
+            </AnimatedLink>
+          </div>
           <AnimatedLink
             variant="md"
             target="_blank"
