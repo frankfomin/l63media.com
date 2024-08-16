@@ -5,7 +5,7 @@ import AnimatedLink from "./ui/AnimatedLink";
 
 export default function Footer() {
   return (
-    <footer className="relative mt-60 flex min-h-screen w-full flex-col items-center justify-between rounded-[2rem] bg-black font-playfair uppercase sm:rounded-[6rem]">
+    <footer className="relative mt-60 flex min-h-screen w-full flex-col items-center justify-between rounded-[3rem] bg-black font-playfair uppercase">
       <div />
       <div />
       <div className="flex items-center justify-center text-subHeading leading-none">
@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="flex w-full items-center justify-between">
             <h1>Låt</h1>
             <Image
-              src="/images/adam-kamera-alv.webp"
+              src="/images/adam-kamera-solnedgang.webp"
               width={400}
               height={400}
               alt="cool image"
@@ -56,12 +56,12 @@ export default function Footer() {
           </AnimatedLink>
         </div>
         <div className="flex flex-col-reverse gap-1 xs:flex-col">
-          <p className="block text-sm sm:hidden">Kontakt:</p>
+          <p className="block text-sm sm:hidden">Mail</p>
           <Link
             className="sm:text:2xl text-sm lg:text-4xl"
             href="mailto: l63mediase@gmail.com"
           >
-            l63mediase@gmail.com
+            kontakt@l63media.com
           </Link>
         </div>
       </div>

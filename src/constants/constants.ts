@@ -1,31 +1,41 @@
 export const aboutImages = [
   {
-    src: "/images/adam-diplom.webp",
-    alt: "Adam med diplom",
-  },
-  {
     src: "/images/adam-kamera.webp",
-    alt: "Adam med kamera",
-  },
-  {
-    src: "/images/adam-kamera-solnedgang.webp",
-    alt: "Adam med kamera vid solnedgång",
-  },
-  {
-    src: "/images/eros.webp",
     alt: "Adam Lindsköld",
   },
+
   {
-    src: "/images/hanowa.webp",
+    src: "/images/freshsoda.webp",
     alt: "Adam Lindsköld",
-  },
-  {
-    src: "/images/adam-kamera-alv.webp",
-    alt: "Adam med kamera vid älven",
   },
   {
     src: "/images/dcor.webp",
     alt: "Adam Lindsköld",
+  },
+  {
+    src: "/images/adam-selfie.webp",
+    alt: "Adam Lindsköld",
+  },
+
+  /*   {
+    src: "/images/adam-kamera-solnedgang.webp",
+    alt: "Adam med kamera vid solnedgång",
+  }, */
+  /*   {
+    src: "/images/eros.webp",
+    alt: "Adam Lindsköld",
+  }, */
+  /*   {
+    src: "/images/hanowa.webp",
+    alt: "Adam Lindsköld",
+  }, */
+  {
+    src: "/images/adam-diplom.webp",
+    alt: "Adam med diplom",
+  },
+  {
+    src: "/images/adam-kamera-alv.webp",
+    alt: "Adam med kamera vid älven",
   },
 ];
 
@@ -34,9 +44,10 @@ export const logos = [
     src: "/images/logos/cleanDrink.webp",
     alt: "Clean Drink",
   },
-  /*   {
+  {
     src: "/images/logos/vaknaVibbar-logga.webp",
-  }, */
+    alt: "Vakna Vibbar",
+  },
   {
     src: "/images/logos/vakin.svg",
     alt: "Vakin",
@@ -129,9 +140,11 @@ export const videos = [
 
   {
     src: "448d61bb-269d-48c0-9d16-3e46baffa164-mlyk6e.mp4",
+    class: "hidden sm:block",
   },
   {
     src: "e57b66a7-b090-4b69-98a0-eb22e91140fd-25pcy.mp4",
+    class: "hidden sm:block",
   },
 ];
 

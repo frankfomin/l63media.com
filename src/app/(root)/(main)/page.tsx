@@ -30,7 +30,7 @@ export default async function HomePage() {
               alt="Adam Lindsköld"
               width={1000}
               height={1000}
-              className="aspect-square max-h-[75vh] w-full rounded-2xl object-cover lg:hidden"
+              className="aspect-square max-h-[75vh] w-full rounded-3xl object-cover lg:hidden"
             />
             <div className="flex h-full flex-col justify-between gap-6">
               <div className="flex flex-col gap-6">
@@ -68,7 +68,7 @@ export default async function HomePage() {
               alt="Adam Lindsköld"
               fill
               quality={100}
-              className="hidden h-full w-full rounded-2xl object-cover lg:block"
+              className="hidden h-full w-full rounded-3xl object-cover lg:block"
             />
           </div>
         </div>

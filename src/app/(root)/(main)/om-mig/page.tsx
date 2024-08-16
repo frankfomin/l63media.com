@@ -7,12 +7,15 @@ import React from "react";
 export const metadata: Metadata = {
   title: "Om mig | Adam Lindsköld",
 };
-
-export default function AboutPage() {
+/* ${i < 2 && "hidden"}
+ */ export default function AboutPage() {
   return (
     <main className="flex w-full flex-col items-center gap-60">
-      <header className="relative grid h-screen max-w-[120rem] grid-cols-1 place-items-center sm:grid-cols-2">
-        <div className="absolute left-1/2 top-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 transform flex-col gap-6 whitespace-nowrap font-semibold">
+      <header className="relative grid h-screen max-w-[120rem] grid-cols-1 place-items-center sm:grid-cols-2 xl:grid-cols-4">
+        <div
+          className={`absolute left-1/2 top-1/2 z-10 h-[100%] w-[100%] -translate-x-1/2 -translate-y-1/2 transform shadow-[inset_0px_0px_10px_10px_#1d1a1a]`}
+        />
+        <div className="absolute left-1/2 top-1/2 z-50 flex -translate-x-1/2 -translate-y-1/2 transform flex-col gap-6 whitespace-nowrap font-semibold">
           <h1 className="text-center font-playfair text-longHeading uppercase leading-none">
             Adam Lindsköld
           </h1>
@@ -22,10 +25,9 @@ export default function AboutPage() {
         </div>
         {videos.map((video, i) => (
           <div
-            className={`relative h-full max-h-screen w-full overflow-hidden rounded-3xl ${i < 2 && "hidden"}`}
+            className={`relative ${video.class} h-full max-h-screen w-full overflow-hidden rounded-3xl ${i === 0 ? "sm:rounded-l-3xl" : "sm:rounded-none"} ${i === 3 ? "sm:rounded-r-3xl" : "sm:rounded-none"}`}
             key={i}
           >
-            <div className="absolute left-1/2 top-1/2 h-[100%] w-[100%] -translate-x-1/2 -translate-y-1/2 transform rounded-3xl shadow-[inset_0px_0px_50px_50px_#1d1a1a]"></div>
             <video
               id={i.toString()}
               src={`/videos/retro-overlay.mp4`}
@@ -33,7 +35,7 @@ export default function AboutPage() {
               loop
               autoPlay
               playsInline
-              className="absolute aspect-video h-full rounded-3xl object-cover opacity-[3%]"
+              className={`absolute aspect-video h-full rounded-3xl object-cover opacity-[3%] ${i === 0 ? "sm:rounded-l-3xl" : "sm:rounded-none"} ${i === 3 ? "sm:rounded-r-3xl" : "sm:rounded-none"}`}
             />
             <video
               id={i.toString()}
@@ -42,7 +44,7 @@ export default function AboutPage() {
               loop
               autoPlay
               playsInline
-              className="aspect-video h-full rounded-3xl object-cover mix-blend-overlay blur-[2px]"
+              className={`aspect-video h-full rounded-3xl object-cover mix-blend-overlay blur-[2px] ${i === 0 ? "sm:rounded-l-3xl" : "sm:rounded-none"} ${i === 3 ? "sm:rounded-r-3xl" : "rounded-none"}`}
             />
           </div>
         ))}
@@ -54,13 +56,13 @@ export default function AboutPage() {
         </h2>
         <div className="grid gap-6 md:grid-cols-2">
           <div className="relative">
-            <div className="absolute left-1/2 top-1/2 h-[100%] w-[101%] -translate-x-1/2 -translate-y-1/2 transform rounded-2xl shadow-[inset_0px_0px_7px_7px_#1d1a1a]"></div>
+            <div className="absolute left-1/2 top-1/2 h-[100%] w-[101%] -translate-x-1/2 -translate-y-1/2 transform rounded-3xl shadow-[inset_0px_0px_7px_7px_#1d1a1a]"></div>
             <Image
               src="/images/adam-selfie.webp"
               alt="Adam Lindsköld"
               width={1000}
               height={1000}
-              className="aspect-square rounded-2xl object-cover"
+              className="aspect-square rounded-3xl object-cover"
             />
           </div>
           <div className="flex flex-col items-end gap-6">

@@ -60,7 +60,7 @@ export default function Nav() {
   }
 
   return (
-    <nav className="fixed top-0 z-50 flex w-full justify-center rounded-2xl px-6 py-6 sm:px-12">
+    <nav className="fixed top-0 z-50 flex w-full justify-center rounded-2xl px-6 py-6">
       <div className="flex w-full justify-between">
         <Link href="/">
           <AidsSvg />

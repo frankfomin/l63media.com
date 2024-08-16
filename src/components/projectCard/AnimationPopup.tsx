@@ -57,7 +57,7 @@ export default function AnimationPopup({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onMouseMove={handleMouseMove}
-      className="relative hidden hover:cursor-pointer md:flex md:items-center md:justify-between md:rounded-xl md:bg-project md:text-2xl md:uppercase"
+      className="relative hidden hover:cursor-pointer md:flex md:items-center md:justify-between md:rounded-3xl md:bg-project md:text-2xl md:uppercase"
     >
       {children}
       <AnimatePresence>
@@ -81,13 +81,21 @@ export default function AnimationPopup({
           >
             <div className="relative flex items-center justify-center">
               <video
+                src={`/videos/retro-overlay.mp4`}
+                muted
+                loop
+                autoPlay
+                className="absolute z-50 aspect-square rounded-3xl object-cover opacity-[10%]"
+              />
+              <video
                 src={`https://utfs.io/f/${videoPath}`}
-                className="aspect-square rounded-[3rem] object-cover"
+                className="aspect-square rounded-3xl object-cover"
                 autoPlay
                 loop
                 muted
                 preload="auto"
               />
+
               <div className="absolute">
                 <div className="relative z-10 flex items-center justify-center rounded-[50%] border-4 p-1 hover:cursor-pointer">
                   <div className="">
