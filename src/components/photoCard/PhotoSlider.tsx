@@ -34,18 +34,19 @@ export default function PhotoSlider2() {
         },
       }}
     >
-      <motion.div className=" bg-[#020202]" whileTap={{ cursor: "grabbing" }}>
+      <motion.div className="bg-[#020202]" whileTap={{ cursor: "grabbing" }}>
         <PhotoCardWrapper>
           <SplideTrack className="">
             {productPhotos.map((image, index) => (
               <SplideSlide key={index} className="relative">
-                <div className="flex-shrink-0 relative w-full h-full overflow-hidden">
-                  <div className="shadow-[inset_0px_0px_10px_10px_#000000] absolute h-full w-full" />
+                <div className="relative h-full w-full flex-shrink-0 overflow-hidden">
+                  <div className="absolute h-full w-full shadow-[inset_0px_0px_10px_10px_#000000]" />
                   <Image
-                    className="md:aspect-[3/3.5] photoSliderWidth aspect-square w-full object-cover h-full rounded-md"
-                    src={image.src} // Display the first image from the array
+                    className="aspect-square h-full w-full rounded-md object-cover md:aspect-[3/3.5]"
+                    src={image.src}
                     width={500}
                     height={500}
+                    quality={100}
                     alt={image.alt}
                   />
                 </div>
@@ -57,5 +58,3 @@ export default function PhotoSlider2() {
     </Splide>
   );
 }
-
-

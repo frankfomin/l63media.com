@@ -21,7 +21,7 @@ export default function Footer() {
             />
             <h2>Oss</h2>
           </div>
-          <div className="sm:text:2xl mt-4 flex w-full items-center justify-center gap-4 font-montserrat text-xl font-normal opacity-100 lg:mt-8 lg:text-4xl">
+          <div className="sm:text:2xl mt-4 flex w-full items-center justify-center gap-4 font-montserrat text-base font-normal opacity-100 lg:mt-8 lg:text-4xl">
             <span className="opacity-60">{`63°49'44.002"N`}</span>
             <span className="opacity-70">Umeå</span>
             <span className="opacity-60">{`20°15'25.268"E`}</span>
@@ -55,10 +55,10 @@ export default function Footer() {
             Instagram
           </AnimatedLink>
         </div>
-        <div className="flex flex-col gap-1">
-          <p className="block sm:hidden">Kontakt:</p>
+        <div className="flex flex-col-reverse gap-1 xs:flex-col">
+          <p className="block text-sm sm:hidden">Kontakt:</p>
           <Link
-            className="sm:text:2xl text-base lg:text-4xl"
+            className="sm:text:2xl text-sm lg:text-4xl"
             href="mailto: l63mediase@gmail.com"
           >
             l63mediase@gmail.com

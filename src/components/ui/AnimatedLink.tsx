@@ -26,9 +26,9 @@ const svgVariants = cva("group-hover:text-paragraph", {
 const linkVariants = cva("group-hover:text-paragraph ", {
   variants: {
     variant: {
-      xs: " text-base",
+      xs: "text-base",
       sm: "text-2xl sm:text-base text-sm",
-      md: "lg:text-4xl sm:text:2xl text-base",
+      md: "lg:text-4xl sm:text:2xl text-sm",
       lg: "lg:text-5xl sm:text-4xl text-3xl",
       xl: "text-7xl",
       xxl: "lg:text-8xl sm:text-7xl text-5xl",

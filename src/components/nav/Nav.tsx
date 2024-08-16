@@ -18,6 +18,8 @@ export default function Nav() {
     const closeIcon = closeIconRef.current;
     if (menuIcon && closeIcon) {
       if (isOpen) {
+        document.body.style.overflow = "hidden";
+
         gsap.to(menuIcon, {
           opacity: 0,
           ease: "easeOut",
@@ -27,6 +29,8 @@ export default function Nav() {
           ease: "easeOut",
         });
       } else {
+        document.body.style.overflow = "auto";
+
         gsap.to(menuIcon, {
           opacity: 1,
           ease: "easeOut",
@@ -56,7 +60,7 @@ export default function Nav() {
   }
 
   return (
-    <nav className="fixed top-0 z-50 flex w-full justify-center rounded-2xl px-10 py-10 sm:px-12 sm:py-12">
+    <nav className="fixed top-0 z-50 flex w-full justify-center rounded-2xl px-6 py-6 sm:px-12">
       <div className="flex w-full justify-between">
         <Link href="/">
           <AidsSvg />
@@ -84,7 +88,10 @@ export default function Nav() {
           <p className="absolute text-xl font-medium" ref={menuIconRef}>
             MENY
           </p>
-          <p className="absolut text-xl font-medium" ref={closeIconRef}>
+          <p
+            className="absolut text-xl font-medium opacity-0"
+            ref={closeIconRef}
+          >
             STÄNG
           </p>
 

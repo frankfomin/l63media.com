@@ -82,23 +82,16 @@ export const navImages = [
 ];
 
 export const productPhotos = [
-  {
+  /*   {
     src: "/images/eros.webp",
     alt: "Adam Lindsköld",
-  },
-  {
-    src: "/images/hanowa.webp",
-    alt: "Adam Lindsköld",
-    ratio: "",
-  },
-  {
+  }, */
+
+  /*   {
     src: "/images/iskaffe.webp",
     alt: "Adam Lindsköld",
-  },
-  {
-    src: "/images/voir-svart.webp",
-    alt: "Adam Lindsköld",
-  },
+  }, */
+
   {
     src: "/images/voir-vit.webp",
     alt: "Adam Lindsköld",
@@ -112,7 +105,16 @@ export const productPhotos = [
     alt: "Adam Lindsköld",
   },
   {
+    src: "/images/hanowa.webp",
+    alt: "Adam Lindsköld",
+    ratio: "",
+  },
+  {
     src: "/images/clean.webp",
+    alt: "Adam Lindsköld",
+  },
+  {
+    src: "/images/voir-svart.webp",
     alt: "Adam Lindsköld",
   },
 ] as ReadonlyArray<{ src: string; alt: string; ratio?: string; size?: string }>;

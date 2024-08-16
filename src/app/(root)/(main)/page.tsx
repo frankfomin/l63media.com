@@ -26,21 +26,21 @@ export default async function HomePage() {
               </h3>
             </div>
             <Image
-              src="https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="/images/bicycle.webp"
               alt="Adam Lindsköld"
               width={1000}
               height={1000}
-              className="aspect-square w-full rounded-2xl object-cover lg:hidden"
+              className="aspect-square max-h-[75vh] w-full rounded-2xl object-cover lg:hidden"
             />
             <div className="flex h-full flex-col justify-between gap-6">
               <div className="flex flex-col gap-6">
                 <p className="lg:text-balance font-playfair text-xl font-semibold sm:text-3xl">
                   Driver du möjligtvis företag och vill sticka ut från mängden?
                   Vill du att din företagsimage och marknadsföring ska utstråla
-                  professionalitet?
+                  professionalitet? Önskar du helt enkelt film eller foto för
+                  just ditt ändamål?
                 </p>
                 <p className="lg:text-balance font-semibold sm:text-2xl">
-                  Önskar du helt enkelt film eller foto för just ditt ändamål?
                   L63 Media är ett foto- och filmproduktionsbolag som erbjuder
                   högkvalitativa produktioner med ett effektivt resultat och ett
                   smidigt samarbete.
@@ -62,13 +62,15 @@ export default async function HomePage() {
               </div>
             </div>
           </div>
-          <Image
-            src="https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Adam Lindsköld"
-            width={1000}
-            height={1000}
-            className="hidden h-full w-full rounded-2xl object-cover lg:block"
-          />
+          <div className="relative">
+            <Image
+              src="/images/bicycle.webp"
+              alt="Adam Lindsköld"
+              fill
+              quality={100}
+              className="hidden h-full w-full rounded-2xl object-cover lg:block"
+            />
+          </div>
         </div>
       </section>
       <MovingLogos />

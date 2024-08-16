@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main className="flex w-full flex-col items-center gap-60">
-      <header className="relative grid h-screen max-w-[100rem] grid-cols-1 place-items-center gap-2 px-2 py-2 sm:grid-cols-2 sm:gap-6 sm:px-6 sm:py-6">
+      <header className="relative grid h-screen max-w-[120rem] grid-cols-1 place-items-center sm:grid-cols-2">
         <div className="absolute left-1/2 top-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 transform flex-col gap-6 whitespace-nowrap font-semibold">
           <h1 className="text-center font-playfair text-longHeading uppercase leading-none">
             Adam Lindsköld
