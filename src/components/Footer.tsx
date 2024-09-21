@@ -42,7 +42,7 @@ export default function Footer() {
               className=""
               variant="md"
               target="_blank"
-              href="https://www.tiktok.com"
+              href="https://www.tiktok.com/@a.lindskold"
             >
               TikTok
             </AnimatedLink>
@@ -50,7 +50,7 @@ export default function Footer() {
           <AnimatedLink
             variant="md"
             target="_blank"
-            href="https://www.instagram.com/"
+            href="https://www.instagram.com/l63.media"
           >
             Instagram
           </AnimatedLink>

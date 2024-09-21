@@ -20,9 +20,9 @@ export default function PhotoPage() {
       </header>
       <section className="flex w-full max-w-[120rem] flex-col items-center gap-6 px-6">
         {productPhotos.map((photo) => (
-          <div key={photo.src} className="">
+          <div key={photo.src}>
             <Image
-              className={`${photo.ratio} max-h-[85vh] max-w-7xl rounded-3xl object-cover`}
+              className={`max-h-screen min-h-[80vh] w-min rounded-3xl object-contain`}
               width={1500}
               height={1500}
               src={photo.src}

@@ -118,6 +118,7 @@ export const productPhotos = [
   {
     src: "/images/hanowa.webp",
     alt: "Adam Lindsköld",
+    class: "col-span-2",
     ratio: "",
   },
   {
@@ -128,7 +129,13 @@ export const productPhotos = [
     src: "/images/voir-svart.webp",
     alt: "Adam Lindsköld",
   },
-] as ReadonlyArray<{ src: string; alt: string; ratio?: string; size?: string }>;
+] as ReadonlyArray<{
+  src: string;
+  alt: string;
+  ratio?: string;
+  size?: string;
+  class?: string;
+}>;
 
 export const videos = [
   {
