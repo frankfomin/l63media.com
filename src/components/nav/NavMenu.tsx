@@ -286,7 +286,7 @@ export default function NavMenu() {
             <DropDown />
           </div>
         </div>
-        <div ref={myTextRef} className="absolute bottom-10 right-10">
+        <div ref={myTextRef} className="absolute bottom-6 right-6">
           Design & Dev | Frank Fomin
         </div>
       </div>

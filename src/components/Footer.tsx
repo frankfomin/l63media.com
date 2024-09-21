@@ -16,7 +16,7 @@ export default function Footer() {
               src="/images/adam-kamera-solnedgang.webp"
               width={400}
               height={400}
-              alt="cool image"
+              alt="Adam Lindsköld kamera solnedgång"
               className="aspect-[1.5/1] w-image rounded-xl object-cover"
             />
             <h2>Oss</h2>

@@ -25,13 +25,15 @@ export default async function HomePage() {
                 L63 Media?
               </h3>
             </div>
-            <Image
-              src="/images/bicycle.webp"
-              alt="Adam Lindsköld"
-              width={1000}
-              height={1000}
-              className="aspect-square max-h-[75vh] w-full rounded-3xl object-cover lg:hidden"
-            />
+            <div className="relative">
+              <Image
+                src="/images/bicycle.webp"
+                alt="Adam Lindsköld"
+                width={1000}
+                height={1000}
+                className="aspect-square max-h-[80vh] w-full rounded-3xl object-cover lg:hidden"
+              />
+            </div>
             <div className="flex h-full flex-col justify-between gap-6">
               <div className="flex flex-col gap-6">
                 <p className="lg:text-balance font-playfair text-xl font-semibold sm:text-3xl">
@@ -68,12 +70,14 @@ export default async function HomePage() {
               alt="Adam Lindsköld"
               fill
               quality={100}
-              className="hidden h-full w-full rounded-3xl object-cover lg:block"
+              className="hidden max-h-[90vh] rounded-3xl object-cover lg:block"
             />
           </div>
         </div>
       </section>
-      <MovingLogos />
+      <section className="flex justify-center">
+        <MovingLogos />
+      </section>
       <section className="relative flex flex-col items-center gap-6 overflow-hidden">
         <h2 className="text-center font-playfair text-subHeading font-semibold">
           OM MIG

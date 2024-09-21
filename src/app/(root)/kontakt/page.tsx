@@ -8,52 +8,49 @@ export const metadata: Metadata = {
   title: "Kontakt | Adam Lindsköld",
 };
 
-
 export default function ContactPage() {
   return (
-    <main className="uppercase flex items-center flex-col gap-24 mt-24">
-      <section className=" font-playfair text-subHeading leading-none flex justify-center items-center">
-        <div className=" flex flex-col items-center">
-          <div className="flex justify-between  items-center w-full">
+    <main className="mt-24 flex flex-col items-center gap-24 uppercase">
+      <section className="flex items-center justify-center font-playfair text-subHeading leading-none">
+        <div className="flex flex-col items-center">
+          <div className="flex w-full items-center justify-between">
             <h1>Låt</h1>
             <Image
-              src="/images/adam-kamera-alv.webp"
+              src="/images/adam-kamera-solnedgang.webp"
               width={400}
               height={400}
               alt="Adam Lindsköld"
-              className="aspect-[1.5/1]  w-image object-cover rounded-xl"
+              className="aspect-[1.5/1] w-image rounded-xl object-cover"
             />
             <h2>Oss</h2>
           </div>
-          <div className=" mt-4 lg:mt-8 font-montserrat font-normal opacity-100 lg:text-4xl sm:text:2xl text-base flex justify-center gap-4  w-full items-center">
+          <div className="sm:text:2xl mt-4 flex w-full items-center justify-center gap-4 font-montserrat text-base font-normal opacity-100 lg:mt-8 lg:text-4xl">
             <span className="opacity-60">{`63°49'44.002"N`}</span>
-            <span className=" opacity-70">Umeå</span>
+            <span className="opacity-70">Umeå</span>
             <span className="opacity-60">{`20°15'25.268"E`}</span>
           </div>
           <div>Samarbeta</div>
         </div>
       </section>
-      <hr className="bg-paragraph w-full max-w-7xl px-6" />
+      {/*       <hr className="bg-paragraph w-full max-w-7xl px-6" />
+       */}{" "}
       <section>
         <ContactForm />
       </section>
-      <hr className="bg-paragraph w-[60%]" />
-      <footer className="flex w-full items-center sm:justify-between sm:flex-row flex-col sm:gap-0 gap-4 sm:px-14 px-4 sm:mb-14 mb-4 font-montserrat ">
-        <Link
-          className="lg:text-4xl sm:text:2xl text-base"
-          href="mailto: l63mediase@gmail.com"
-        >
-          l63mediase@gmail.com
-        </Link>
-        <div className="flex sm:gap-5 gap-1">
-          <AnimatedLink
-            className=""
-            variant="md"
-            target="_blank"
-            href="https://www.tiktok.com"
-          >
-            TikTok
-          </AnimatedLink>
+      {/*       <hr className="w-[60%] bg-paragraph" />
+       */}{" "}
+      <footer className="flex w-full flex-row-reverse items-end justify-between gap-4 px-6 py-6 font-montserrat sm:px-12 sm:py-12">
+        <div className="flex flex-col gap-1 sm:flex-row sm:gap-5">
+          <div className="flex justify-end">
+            <AnimatedLink
+              className=""
+              variant="md"
+              target="_blank"
+              href="https://www.tiktok.com"
+            >
+              TikTok
+            </AnimatedLink>
+          </div>
           <AnimatedLink
             variant="md"
             target="_blank"
@@ -61,6 +58,15 @@ export default function ContactPage() {
           >
             Instagram
           </AnimatedLink>
+        </div>
+        <div className="flex flex-col-reverse gap-1 xs:flex-col">
+          <p className="block text-sm sm:hidden">Mail</p>
+          <Link
+            className="sm:text:2xl text-sm lg:text-4xl"
+            href="mailto: l63mediase@gmail.com"
+          >
+            kontakt@l63media.com
+          </Link>
         </div>
       </footer>
     </main>
