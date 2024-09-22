@@ -8,7 +8,7 @@ export default function AnimatedArrow() {
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth="2"
-        className="sm:w-8 md:w-10 w-6 z-10 group-hover:translate-x-full group-hover:opacity-0 opacity-100 group-hover:-translate-y-full transition-all duration-200 ease-in-out  stroke-current "
+        className="z-10 w-6 stroke-current opacity-100 transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:translate-x-full group-hover:opacity-0 sm:w-8 md:w-10"
       >
         <path
           strokeLinecap="round"
@@ -21,7 +21,7 @@ export default function AnimatedArrow() {
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth="2"
-        className="absolute sm:w-8 md:w-10 w-6 z-10 -translate-x-full opacity-0 group-hover:opacity-100 group-hover:translate-x-0 group-hover:-translate-y-full  transition-all duration-200 ease-in-out  stroke-current "
+        className="absolute z-10 w-6 -translate-x-full stroke-current opacity-0 transition-all duration-200 ease-in-out group-hover:-translate-y-full group-hover:translate-x-0 group-hover:opacity-100 sm:w-8 md:w-10"
       >
         <path
           strokeLinecap="round"

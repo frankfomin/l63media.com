@@ -28,19 +28,22 @@ export default function ProjectMobileCard({
   videoPath,
 }: ProjectMobileCardProps) {
   return (
-    <Link className="flex flex-col items-center" href={`/projekt/${path}`}>
-      <div className="md:hidden  xs:max-w-max  bg-black uppercase rounded-lg ">
-        <div className="text-mobileCardTitle text-center font-medium font-playfair ">
+    <Link
+      className="flex flex-col items-center justify-evenly px-6"
+      href={`/projekt/${path}`}
+    >
+      <div className="rounded-3xl bg-black uppercase md:hidden">
+        <div className="text-center font-playfair text-mobileCardTitle font-semibold">
           {children}
         </div>
         <div className="relative">
-          <div className="shadow-[inset_0px_0px_10px_0px_#000000] absolute h-full w-full" />
+          <div className="absolute h-full w-full shadow-[inset_0px_0px_3px_3px_#020202]" />
 
           <Image
             width={300}
             height={300}
-            className=" w-full object-cover max-h-[30rem]"
-            alt="cool image"
+            className="aspect-square max-h-[30rem] w-full object-cover"
+            alt={children as string}
             src={imagePath}
           />
         </div>
@@ -55,15 +58,15 @@ export default function ProjectMobileCard({
           lineSize="mobile"
         />
 
-        <div className=" flex items-center sm:justify-normal pb-2 px-2 w-full justify-between xs:gap-10 gap-2 ">
-          <div className="border-[1px] text-3xl leading-none line font-semibold">
+        <div className="flex w-full items-center justify-between gap-2 px-2 pb-2 xs:gap-10 sm:justify-normal">
+          <div className="line border-[1px] text-3xl font-semibold leading-none">
             VHS
           </div>
-          <div className=" text-right">
-            <div className=" xs:text-2xl text-base xs:whitespace-nowrap  font-medium text-center ">
+          <div className="text-right">
+            <div className="text-center text-base font-medium xs:whitespace-nowrap xs:text-2xl">
               video cassette
             </div>
-            <div className=" xs:text-sm text-xs leading-none  flex justify-between text-paragraph ">
+            <div className="flex justify-between text-xs leading-none text-paragraph xs:text-sm">
               <span>recording</span>
               <span>and</span>
               <span>playback</span>
