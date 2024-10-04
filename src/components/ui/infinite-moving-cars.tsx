@@ -84,8 +84,8 @@ export const InfiniteMovingCards = ({
             className={`object-contain ${i === logos.length - 1 ? "mr-4" : ""}`}
             key={logo.src}
             src={logo.src}
-            width={logo.width || 150}
-            height={logo.height || 150}
+            width={150}
+            height={150}
             alt={logo.alt}
           />
         ))}
