@@ -14,12 +14,14 @@ type ProjectCardProps = {
   rotation: string;
   videoPath: string;
   lineSpacing: string;
+  imagePath: string;
 };
 
 export default function ProjectCard({
   children,
   path,
   projectStyle,
+  imagePath,
   bg1,
   bg2,
   bg3,
@@ -29,7 +31,7 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   return (
     <Link className="w-full max-w-7xl" href={`/projekt/${path}`}>
-      <AnimationPopup videoPath={videoPath}>
+      <AnimationPopup imagePath={imagePath} videoPath={videoPath}>
         <div className="flex rotate-90 flex-col-reverse items-center pb-2 lg:gap-4 lg:pb-12">
           <div className="VHS border-[1px] text-center text-5xl font-semibold">
             vhs

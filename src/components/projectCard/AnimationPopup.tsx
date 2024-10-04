@@ -5,12 +5,14 @@ import { useState } from "react";
 
 type AnimationPopup = {
   children: React.ReactNode;
-  videoPath?: string;
+  videoPath: string;
+  imagePath: string;
 };
 
 export default function AnimationPopup({
   children,
   videoPath,
+  imagePath,
 }: AnimationPopup) {
   const [isHovered, setIsHovered] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -91,6 +93,7 @@ export default function AnimationPopup({
                 src={`https://utfs.io/f/${videoPath}`}
                 className="aspect-square rounded-3xl object-cover"
                 autoPlay
+                poster={imagePath}
                 loop
                 muted
                 preload="auto"

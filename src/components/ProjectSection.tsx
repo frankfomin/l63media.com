@@ -39,6 +39,7 @@ export default async function ProjectSection({
             projectStyle={project.projectStyle}
             rotation={project.rotation}
             lineSpacing={project.lineSpacing}
+            imagePath={project.imagePath}
           >
             {project.projectName}
           </ProjectCard>
@@ -51,11 +52,7 @@ export default async function ProjectSection({
             projectStyle={project.projectStyle}
             rotation={project.rotation}
             lineSpacing={project.lineSpacing}
-            imagePath={
-              project.imagePath
-                ? project.imagePath
-                : "/images/cleanthumbnail.webp"
-            }
+            imagePath={project.imagePath}
           >
             {project.projectName}
           </ProjectMobileCard>

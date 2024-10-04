@@ -21,7 +21,7 @@ export type Doc = {
   path: string
   mobile?: boolean | undefined
   projectStyle: string
-  imagePath?: string | undefined
+  imagePath: string
   bg1: string
   bg2: string
   rotation: string
