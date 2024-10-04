@@ -1,26 +1,30 @@
 export const aboutImages = [
-  {
+  /*   {
     src: "/images/adam-kamera.webp",
     alt: "Adam Lindsköld",
-  },
+  }, */
 
   {
     src: "/images/freshsoda.webp",
     alt: "Adam Lindsköld",
   },
-  {
+  /*   {
     src: "/images/dcor.webp",
     alt: "Adam Lindsköld",
+  }, */
+  {
+    src: "/images/adam-kamera-solnedgang.webp",
+    alt: "Adam med kamera vid solnedgång",
   },
   {
     src: "/images/adam-selfie.webp",
     alt: "Adam Lindsköld",
   },
 
-  /*   {
-    src: "/images/adam-kamera-solnedgang.webp",
-    alt: "Adam med kamera vid solnedgång",
-  }, */
+  {
+    src: "/images/clean.webp",
+    alt: "Adam Lindsköld",
+  },
   /*   {
     src: "/images/eros.webp",
     alt: "Adam Lindsköld",
@@ -40,14 +44,14 @@ export const aboutImages = [
 ];
 
 export const logos = [
-  {
+  /*   {
     src: "/images/logos/cleanDrink.webp",
     alt: "Clean Drink",
-  },
-  {
+  }, */
+  /*  {
     src: "/images/logos/vaknaVibbar-logga.webp",
     alt: "Vakna Vibbar",
-  },
+  }, */
   {
     src: "/images/logos/vakin.svg",
     alt: "Vakin",
@@ -56,16 +60,16 @@ export const logos = [
     src: "/images/logos/volvo.svg",
     alt: "Volvo",
   },
-  {
+  /* {
     src: "/images/logos/engo.webp",
     alt: "Engo UF",
-  },
-  {
+  }, */
+  /*   {
     src: "/images/logos/umeTechTalents.png",
     alt: "Umeå Tech Talents",
     width: 50,
     height: 50,
-  },
+  }, */
   {
     src: "/images/logos/voir.webp",
     alt: "Voir glasses",
@@ -167,9 +171,9 @@ export const eventVideos = [
   {
     src: "a3b96822-fc97-45de-91ef-feb2704b81f2-56kt36.mp4",
   },
-  {
+  /*  {
     src: "bd045679-1ce3-40b3-90de-2c01a0131b1d-qq2cnm.mp4",
-  },
+  }, */
   {
     src: "48f4022c-0a87-47b7-a7e4-a8a41d254ea6-3oldmn.mp4",
   },

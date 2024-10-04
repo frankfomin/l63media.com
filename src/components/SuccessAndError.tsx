@@ -31,9 +31,10 @@ export default function SuccessAndError({
         <div>{currentDate.toLocaleDateString("en-US")}</div>
       </div>
       <div className="flex flex-col items-center gap-4 sm:gap-6">
-        <div className="flex flex-col items-center">
-          <h1 className="font. text-[12vw] font-semibold uppercase leading-none">
-            {title}
+        <div className="flex flex-col items-center gap-6">
+          <h1 className="text-center font-playfair text-subHeading font-semibold uppercase leading-none">
+            {title.split(" ")[0]} {title.split(" ")[1]} {title.split(" ")[2]}{" "}
+            <br /> {title.split(" ")[3]}
           </h1>
           <h2 className="text-2xl sm:text-4xl">{paragraphText}</h2>
         </div>
@@ -46,7 +47,7 @@ export default function SuccessAndError({
         <Counter videoIsPlaying />
       </div>
       <video
-        src="/videos/heroVideo.mp4"
+        src="https://utfs.io/f/d4276f38-f80a-46fe-a880-58a29676198d-rfmh49.mp4"
         muted
         loop
         autoPlay
