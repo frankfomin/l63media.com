@@ -1,4 +1,4 @@
-import MovingLogos from "@/components/ui/MovingLogos";
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { logos, videos } from "@/constants/constants";
 import { Metadata } from "next";
 import Image from "next/image";
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
           </div>
         </div>
       </section>
-      <MovingLogos />
+      <InfiniteMovingCards speed="fast" items={logos} />
       {/*  <section className="grid max-w-[120rem] grid-cols-3 place-items-center gap-6 px-6">
         <Image
           src="/images/adam-kamera-solnedgang.webp"

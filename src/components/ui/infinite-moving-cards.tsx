@@ -1,16 +1,20 @@
 "use client";
 
-import { logos } from "@/constants/constants";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 export const InfiniteMovingCards = ({
+  items,
   direction = "left",
   speed = "fast",
   pauseOnHover = true,
   className,
 }: {
+  items: {
+    src: string;
+    alt: string;
+  }[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
   pauseOnHover?: boolean;
@@ -57,7 +61,7 @@ export const InfiniteMovingCards = ({
   const getSpeed = () => {
     if (containerRef.current) {
       if (speed === "fast") {
-        containerRef.current.style.setProperty("--animation-duration", "20s");
+        containerRef.current.style.setProperty("--animation-duration", "10s");
       } else if (speed === "normal") {
         containerRef.current.style.setProperty("--animation-duration", "40s");
       } else {
@@ -69,25 +73,22 @@ export const InfiniteMovingCards = ({
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-20 max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)] sm:max-w-[120rem]",
+        "scroller relative z-20 max-w-[120rem] overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
         className,
       )}
     >
       <ul
         ref={scrollerRef}
         className={cn(
-          "flex w-max min-w-full shrink-0 animate-scroll flex-nowrap gap-32 py-4",
+          "flex w-max min-w-full shrink-0 flex-nowrap items-center gap-36 py-4",
+          start && "animate-scroll",
+          pauseOnHover && "hover:[animation-play-state:paused]",
         )}
       >
-        {logos.map((logo, i) => (
-          <Image
-            className={`object-contain ${i === logos.length - 1 ? "mr-4" : ""}`}
-            key={logo.src}
-            src={logo.src}
-            width={150}
-            height={150}
-            alt={logo.alt}
-          />
+        {items.map((item, i) => (
+          <li key={i} className="">
+            <Image src={item.src} alt={item.alt} width={150} height={150} />
+          </li>
         ))}
       </ul>
     </div>

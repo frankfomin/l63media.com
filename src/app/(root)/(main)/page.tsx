@@ -7,8 +7,7 @@ import PhotoScrollSlider from "@/components/PhotoScrollSlider";
 import ProjectSection from "@/components/ProjectSection";
 import Image from "next/image";
 import { logos } from "@/constants/constants";
-import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cars";
-import MovingLogos from "@/components/ui/MovingLogos";
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 
 export default async function HomePage() {
   return (
@@ -76,7 +75,7 @@ export default async function HomePage() {
         </div>
       </section>
       <section className="flex justify-center">
-        <MovingLogos />
+        <InfiniteMovingCards pauseOnHover={false} speed="fast" items={logos} />
       </section>
       <section className="relative flex flex-col items-center gap-6 overflow-hidden">
         <h2 className="text-center font-playfair text-subHeading font-semibold">
