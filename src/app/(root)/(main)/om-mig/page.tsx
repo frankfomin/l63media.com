@@ -13,9 +13,9 @@ export const metadata: Metadata = {
     <main className="flex w-full flex-col items-center gap-60">
       <header className="relative grid h-screen max-w-[120rem] grid-cols-1 place-items-center sm:grid-cols-2 xl:grid-cols-4">
         <div
-          className={`absolute left-1/2 top-1/2 z-10 h-[100%] w-[100%] -translate-x-1/2 -translate-y-1/2 transform shadow-[inset_0px_0px_10px_10px_#1d1a1a]`}
+          className={`absolute left-1/2 top-1/2 h-[100%] w-[100%] -translate-x-1/2 -translate-y-1/2 transform shadow-[inset_0px_0px_10px_10px_#1d1a1a]`}
         />
-        <div className="absolute left-1/2 top-1/2 z-50 flex -translate-x-1/2 -translate-y-1/2 transform flex-col gap-6 whitespace-nowrap font-semibold">
+        <div className="absolute left-1/2 top-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 transform flex-col gap-6 whitespace-nowrap font-semibold">
           <h1 className="text-center font-playfair text-longHeading uppercase leading-none">
             Adam Lindsköld
           </h1>

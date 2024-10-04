@@ -119,10 +119,11 @@ export default function Header() {
         </div>
         <span
           ref={spanRef}
-          className="text-xl capitalize opacity-0 sm:text-2xl"
+          className="lg:text-balance font-semibold sm:text-2xl"
         >
           Adam Lindsköld
         </span>
+
         <div className="overflow-hidden">
           <div className="absolute left-1/2 top-1/2 -z-10 h-[101%] w-[101%] -translate-x-1/2 -translate-y-1/2 transform rounded-[2rem] shadow-[inset_0px_0px_10px_10px_#1d1a1a] sm:rounded-[4rem] sm:shadow-[inset_0px_0px_24px_24px_#1d1a1a]"></div>
 
