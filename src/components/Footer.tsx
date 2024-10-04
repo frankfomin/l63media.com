@@ -59,7 +59,7 @@ export default function Footer() {
           <p className="block text-sm sm:hidden">Mail</p>
           <Link
             className="sm:text:2xl text-sm lg:text-4xl"
-            href="mailto: l63mediase@gmail.com"
+            href="mailto: kontakt@l63media.com"
           >
             kontakt@l63media.com
           </Link>
