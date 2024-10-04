@@ -6,7 +6,7 @@ export default function EventPage() {
     <main className="mt-24 flex w-full justify-center">
       <section className="w-full max-w-7xl">
         {/* when user clicks on video go to projekt\[path] ?slug event to hide projects */}
-        <div className="grid grid-cols-2 justify-center gap-6 px-6">
+        <div className="grid justify-center gap-6 px-6 sm:grid-cols-2">
           {eventVideos.map((video, i) => (
             <video
               id={i.toString()}
