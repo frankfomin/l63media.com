@@ -8,6 +8,10 @@ export const aboutImages = [
     src: "/images/freshsoda.webp",
     alt: "Adam Lindsköld",
   },
+  {
+    src: "/images/utifalt.webp",
+    alt: "Adam Lindsköld",
+  },
   /*   {
     src: "/images/dcor.webp",
     alt: "Adam Lindsköld",
