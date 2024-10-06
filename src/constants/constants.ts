@@ -5,10 +5,6 @@ export const aboutImages = [
   }, */
 
   {
-    src: "/images/freshsoda.webp",
-    alt: "Adam Lindsköld",
-  },
-  {
     src: "/images/utifalt.webp",
     alt: "Adam Lindsköld",
   },
@@ -25,10 +21,10 @@ export const aboutImages = [
     alt: "Adam Lindsköld",
   },
 
-  {
+  /*   {
     src: "/images/clean.webp",
     alt: "Adam Lindsköld",
-  },
+  }, */
   /*   {
     src: "/images/eros.webp",
     alt: "Adam Lindsköld",
@@ -37,6 +33,7 @@ export const aboutImages = [
     src: "/images/hanowa.webp",
     alt: "Adam Lindsköld",
   }, */
+
   {
     src: "/images/adam-diplom.webp",
     alt: "Adam med diplom",
@@ -168,6 +165,11 @@ export const videos = [
 export const eventVideos = [
   {
     src: "448d61bb-269d-48c0-9d16-3e46baffa164-mlyk6e.mp4",
+    class: "col-span-3 ",
+    /* Video i liggande format */
+  },
+  {
+    src: "448d61bb-269d-48c0-9d16-3e46baffa164-mlyk6e.mp4",
   },
   {
     src: "e9b6eb54-591b-4c63-92d2-a5105c15cb6e-l2ygnz.mp4",
@@ -185,7 +187,10 @@ export const eventVideos = [
   {
     src: "34043ce9-47d9-4046-8dd3-e93790ca453a-k80xec.mp4",
   },
-];
+] as ReadonlyArray<{
+  src: string;
+  class?: string;
+}>;
 
 export const projectColors = [
   {
