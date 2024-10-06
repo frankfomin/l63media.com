@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 /* ${i < 2 && "hidden"}
  */ export default function AboutPage() {
   return (
-    <main className="flex w-full flex-col items-center gap-60">
+    <main className="flex flex-col gap-60">
       <header className="relative grid h-screen max-w-[120rem] grid-cols-1 place-items-center sm:grid-cols-2 xl:grid-cols-4">
         <div
           className={`absolute left-1/2 top-1/2 h-[100%] w-[100%] -translate-x-1/2 -translate-y-1/2 transform shadow-[inset_0px_0px_10px_10px_#1d1a1a]`}
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
             Filmskapare och fotograf från Umeå
           </p>
         </div>
-        {videos.map((video, i) => (
+        {/*  {videos.map((video, i) => (
           <div
             className={`relative ${video.class} h-full max-h-screen w-full overflow-hidden rounded-3xl ${i === 0 ? "sm:rounded-l-3xl" : "sm:rounded-none"} ${i === 3 ? "sm:rounded-r-3xl" : "sm:rounded-none"}`}
             key={i}
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
               className={`aspect-video h-full rounded-3xl object-cover mix-blend-overlay blur-[2px] ${i === 0 ? "sm:rounded-l-3xl" : "sm:rounded-none"} ${i === 3 ? "sm:rounded-r-3xl" : "rounded-none"}`}
             />
           </div>
-        ))}
+        ))} */}
       </header>
 
       <section className="max-w-[120rem] px-6">
@@ -81,7 +81,9 @@ export const metadata: Metadata = {
           </div>
         </div>
       </section>
-      <InfiniteMovingCards speed="fast" items={logos} />
+      <section className="flex justify-center">
+        <InfiniteMovingCards pauseOnHover={false} speed="fast" items={logos} />
+      </section>
       {/*  <section className="grid max-w-[120rem] grid-cols-3 place-items-center gap-6 px-6">
         <Image
           src="/images/adam-kamera-solnedgang.webp"
