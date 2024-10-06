@@ -58,7 +58,7 @@ export const metadata: Metadata = {
           <div className="relative">
             <div className="absolute left-1/2 top-1/2 h-[100%] w-[101%] -translate-x-1/2 -translate-y-1/2 transform rounded-3xl shadow-[inset_0px_0px_7px_7px_#1d1a1a]"></div>
             <Image
-              src="/images/adam-selfie.webp"
+              src="/images/porträtthemsida.webp"
               alt="Adam Lindsköld"
               width={1000}
               height={1000}

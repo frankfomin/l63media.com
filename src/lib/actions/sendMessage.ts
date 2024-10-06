@@ -48,9 +48,9 @@ export async function sendMessage(data: z.infer<typeof contactSchema>) {
     const message = result.data.message;
 
     const { error } = await resend.emails.send({
-      from: "onboarding@resend.dev",
-      to: "frank.fomin@gmail.com",
-      subject: "Hello world",
+      from: "kontakt@l63media.com",
+      to: "kontakt@l63media.com",
+      subject: "Morsning korsning!",
       react: EmailTemplate({
         name,
         email,
