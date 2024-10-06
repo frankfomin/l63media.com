@@ -164,7 +164,7 @@ export const videos = [
 
 export const eventVideos = [
   {
-    src: "448d61bb-269d-48c0-9d16-3e46baffa164-mlyk6e.mp4",
+    src: "VHEXIRgNlD3O2KwkZqLWUovRPz5mF3r7wxJ4BV0edtjuSEbf",
     class: "col-span-3 ",
     /* Video i liggande format */
   },
