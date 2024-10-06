@@ -1,90 +1,90 @@
+// contentlayer.config.js
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
 import { boolean } from "zod";
-
-/** @type {import("contentlayer/source-files").ComputedFields} */
-const computedFields = {
+var computedFields = {
   slug: {
     type: "string",
-    resolve: (doc) => `/${doc._raw.flattenedPath}`,
+    resolve: (doc) => `/${doc._raw.flattenedPath}`
   },
   slugAsParams: {
     type: "string",
-    resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
-  },
+    resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/")
+  }
 };
-
-export const Doc = defineDocumentType(() => ({
+var Doc = defineDocumentType(() => ({
   name: "Doc",
   filePathPattern: "project/**/*.mdx",
   contentType: "mdx",
   fields: {
     homePage: {
       type: "boolean",
-      required: true,
+      required: true
     },
     deprecated: {
-      type: "boolean",
+      type: "boolean"
     },
     projectName: {
       type: "string",
-      required: true,
+      required: true
     },
     description: {
-      type: "string",
+      type: "string"
     },
     videoPath: {
       type: "string",
-      required: true,
+      required: true
     },
     path: {
       type: "string",
-      required: true,
+      required: true
     },
     mobile: {
-      type: "boolean",
+      type: "boolean"
     },
     projectStyle: {
       type: "string",
-      required: true,
+      required: true
     },
     imagePath: {
       type: "string",
-      required: true,
+      required: true
     },
-
     bg1: {
       type: "string",
-      required: true,
+      required: true
     },
     bg2: {
       type: "string",
-      required: true,
+      required: true
     },
     rotation: {
       type: "string",
-      required: true,
+      required: true
     },
     bg3: {
       type: "string",
-      required: true,
+      required: true
     },
     order: {
       type: "number",
-      required: true,
+      required: true
     },
     lineSpacing: {
       type: "string",
-      required: true,
+      required: true
     },
     specAd: {
-      type: "boolean",
-      required: true,
-    },
+      type: "boolean"
+    }
   },
-  computedFields,
+  computedFields
 }));
-
-export default makeSource({
+var contentlayer_config_default = makeSource({
   contentDirPath: "src/content",
-  documentTypes: [Doc],
+  documentTypes: [Doc]
 });
+export {
+  Doc,
+  contentlayer_config_default as default
+};
+//# sourceMappingURL=compiled-contentlayer-config-DOHSHQA4.mjs.map

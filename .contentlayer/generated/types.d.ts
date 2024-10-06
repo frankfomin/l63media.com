@@ -28,6 +28,7 @@ export type Doc = {
   bg3: string
   order: number
   lineSpacing: string
+  specAd: boolean
   /** MDX file body */
   body: MDX
   slug: string

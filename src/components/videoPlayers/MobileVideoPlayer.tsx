@@ -8,9 +8,11 @@ import Counter from "../ui/Counter";
 export default function MobileVideoPlayer({
   title,
   videoPath,
+  specAd,
 }: {
   title: string;
   videoPath: string;
+  specAd?: boolean;
 }) {
   const videoTextRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -155,10 +157,10 @@ export default function MobileVideoPlayer({
     <>
       {isMounted ? (
         <header className="relative flex h-[100svh] items-center justify-center uppercase">
-          <div className="absolute flex aspect-[9/16] h-[80%] max-w-[45rem] items-center justify-center rounded-[2rem]">
+          <div className="absolute flex aspect-[9/16] h-[80%] max-w-[45rem] items-center justify-center rounded-3xl">
             <div
               onClick={videoIsPlaying ? handlePause : handlePlay}
-              className="absolute h-full w-full rounded-[2rem] hover:cursor-pointer"
+              className="absolute h-full w-full rounded-3xl hover:cursor-pointer"
             />
             <div
               ref={pauseButtonRef}
@@ -215,13 +217,13 @@ export default function MobileVideoPlayer({
             )}
           </div>
 
-          <div className="pointer-events-none absolute -z-10 flex aspect-[9/16] h-[80%] max-w-[45rem] touch-none items-center justify-center overflow-hidden rounded-[2rem]">
+          <div className="pointer-events-none absolute -z-10 flex aspect-[9/16] h-[80%] max-w-[45rem] touch-none items-center justify-center overflow-hidden rounded-3xl">
             <div
               ref={blurOverlayRef}
               onClick={videoIsPlaying ? handlePause : handlePlay}
               className="absolute h-full w-[102%] hover:cursor-pointer"
             >
-              <div className="absolute h-full w-full rounded-[2rem] shadow-[inset_0px_0px_10px_10px_#1d1a1a]" />
+              <div className="absolute h-full w-full rounded-3xl shadow-[inset_0px_0px_10px_10px_#1d1a1a]" />
             </div>
             <video
               ref={videoRef}
@@ -244,8 +246,12 @@ export default function MobileVideoPlayer({
               width="100%"
               height="100%"
               playsInline
-              onEnded={() => console.log("penis")}
             />
+            {specAd && (
+              <p className="absolute right-0 top-0 p-projectHeaderPadding text-2xl font-semibold uppercase">
+                Spec ad
+              </p>
+            )}
             <div
               ref={videoTextRef}
               className="absolute z-50 flex h-full w-full flex-col justify-between p-projectHeaderPadding text-2xl font-medium"

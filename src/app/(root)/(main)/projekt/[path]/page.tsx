@@ -43,6 +43,7 @@ export default async function ProjectPage({ params }: Params) {
         <MobileVideoPlayer
           videoPath={project.videoPath}
           title={project.projectName}
+          specAd={project.specAd}
         />
       ) : (
         <VideoPlayer
