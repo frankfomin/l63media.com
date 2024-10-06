@@ -23,7 +23,7 @@ export const metadata: Metadata = {
             Filmskapare och fotograf från Umeå
           </p>
         </div>
-        {/*  {videos.map((video, i) => (
+        {videos.map((video, i) => (
           <div
             className={`relative ${video.class} h-full max-h-screen w-full overflow-hidden rounded-3xl ${i === 0 ? "sm:rounded-l-3xl" : "sm:rounded-none"} ${i === 3 ? "sm:rounded-r-3xl" : "sm:rounded-none"}`}
             key={i}
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
               className={`aspect-video h-full rounded-3xl object-cover mix-blend-overlay blur-[2px] ${i === 0 ? "sm:rounded-l-3xl" : "sm:rounded-none"} ${i === 3 ? "sm:rounded-r-3xl" : "rounded-none"}`}
             />
           </div>
-        ))} */}
+        ))}
       </header>
 
       <section className="max-w-[120rem] px-6">
