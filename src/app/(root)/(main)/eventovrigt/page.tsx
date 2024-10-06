@@ -13,12 +13,12 @@ export default function EventPage() {
               key={i}
               src={`https://utfs.io/f/${video.src}`}
               muted
-              poster="/images/adam-kamera-alv.webp"
+              poster="/images/loadingposter.jpg"
               loop
               autoPlay
               controls
               playsInline
-              className={`aspect-[9/16] max-h-[95vh] rounded-3xl object-cover`}
+              className={`aspect-[9/16] max-h-[95vh] rounded-3xl object-cover p-1`}
             />
           ))}
         </div>

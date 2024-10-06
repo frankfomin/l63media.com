@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="mt-24 flex flex-col items-center gap-24 uppercase">
-      <section className="flex items-center justify-center font-playfair text-subHeading leading-none">
+    <main className="mt-24 flex flex-col items-center gap-24">
+      <section className="flex items-center justify-center font-playfair text-subHeading uppercase leading-none">
         <div className="flex flex-col items-center">
           <div className="flex w-full items-center justify-between">
             <h1>Låt</h1>
@@ -39,7 +39,7 @@ export default function ContactPage() {
       </section>
       {/*       <hr className="w-[60%] bg-paragraph" />
        */}{" "}
-      <footer className="flex w-full flex-row-reverse items-end justify-between gap-4 px-6 py-6 font-montserrat sm:px-12 sm:py-12">
+      <footer className="flex w-full flex-row-reverse items-end justify-between gap-4 px-6 py-6 font-montserrat uppercase sm:px-12 sm:py-12">
         <div className="flex flex-col gap-1 sm:flex-row sm:gap-5">
           <div className="flex justify-end">
             <AnimatedLink
