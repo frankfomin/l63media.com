@@ -77,11 +77,7 @@ export const metadata: Metadata = {
               Lindsköld garantera ett professionellt resultat för kundens
               ändamål.
             </p>
-             <p className="lg:text-balance font-semibold sm:text-2xl">
-              L63 Media AB
-               Org nr. 559495-5147
-               Kungsgårdsvägen 34
-               903 55 Umeå
+             <p className="lg:text-balance font-semibold sm:text-2xl"><br />L63 Media AB<br /> Org.nr: 559495-5147<br /> Kungsgårdsvägen 34<br /> 903 55 Umeå
             </p>
           </div>
         </div>
