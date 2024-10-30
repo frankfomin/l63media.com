@@ -73,10 +73,15 @@ export const metadata: Metadata = {
             </p>
             <p className="lg:text-balance font-semibold sm:text-2xl">
               Han har även blivit tilldelad priset ”Årets Reklamfilm 2023” samt
-              2024 av Ung Företagsamhet Västerbotten. Med över en kvarts miljon
-              visningar och 40 000 gilla markeringar på sociala medier kan Adam
+              2024 av Ung Företagsamhet Västerbotten. Med en stor erfarenhet på inte minst sina egna sociala medier kan Adam
               Lindsköld garantera ett professionellt resultat för kundens
               ändamål.
+            </p>
+             <p className="lg:text-balance font-semibold sm:text-2xl">
+              L63 Media AB
+               Org nr. 559495-5147
+               Kungsgårdsvägen 34
+               903 55 Umeå
             </p>
           </div>
         </div>
