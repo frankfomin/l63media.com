@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 /* ${i < 2 && "hidden"}
  */ export default function AboutPage() {
   return (
-    <main className="flex flex-col gap-60">
+    <main className="flex flex-col items-center gap-60">
       <header className="relative grid h-screen max-w-[120rem] grid-cols-1 place-items-center sm:grid-cols-2 xl:grid-cols-4">
         <div
           className={`absolute left-1/2 top-1/2 h-[100%] w-[100%] -translate-x-1/2 -translate-y-1/2 transform shadow-[inset_0px_0px_10px_10px_#1d1a1a]`}
