@@ -46,7 +46,7 @@ export default function ContactPage() {
               className=""
               variant="md"
               target="_blank"
-              href="https://www.tiktok.com/@l63.media"
+              href="https://www.tiktok.com/@l63.media?is_from_webapp=1&sender_device=pc"
             >
               TikTok
             </AnimatedLink>
