@@ -49,7 +49,7 @@ export default async function HomePage() {
                 <p className="lg:text-balance font-semibold sm:text-2xl">
                   Med många nöjda kunder och en inriktning på främst
                   reklamfilmer samt produktfoto, kan L63 Media garantera att
-                  möta kundens ändamål. Tveka inte att höra av dig vid intresse,
+                  möta kundens behov. Tveka inte att höra av dig vid intresse,
                   frågor eller funderingar!
                 </p>
               </div>
