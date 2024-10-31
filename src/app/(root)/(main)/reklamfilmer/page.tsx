@@ -17,7 +17,7 @@ export default function FilmPage() {
           </h1>
           <p className="text-balance flex flex-col text-center font-medium sm:text-2xl">
             Reklamfilmer från L63 Media fokuserar på att fånga tittarens
-            intresse och även behålla det med hjälp av ett starkt visuellt
+            intresse men även behålla det med hjälp av ett starkt visuellt
             intryck, samt hög produktionskvalitet.
           </p>
         </header>
