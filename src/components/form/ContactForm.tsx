@@ -51,77 +51,76 @@ export default function ContactForm() {
   return (
     <>
       {errors.root && (
-        <p className="text-red-500 text-center mb-2">{`${errors.root.message}`}</p>
+        <p className="mb-2 text-center text-red-500">{`${errors.root.message}`}</p>
       )}
-      <form onSubmit={handleSubmit(onSubmit)} className="flex justify-center">
-        <div className="flex flex-col gap-4">
-          <div className="flex flex-col sm:flex-row gap-4">
-            <div className=" relative flex flex-col justify-center">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex justify-center font-semibold"
+      >
+        <div className="flex w-full flex-col gap-4 sm:w-auto">
+          <div className="flex flex-col gap-4 sm:flex-row">
+            <div className="relative flex flex-col justify-center">
               <input
                 {...register("name")}
                 placeholder="Name"
-                className={`peer transition-all placeholder:text-transparent py-3 px-4 text-xl
-            [&:not(:placeholder-shown)]:pb-1 [&:not(:placeholder-shown)]:pt-5 bg-transparent 
-            border rounded-xl outline-none text-textColor ${
-              errors.name ? "border-red-500" : ""
-            }`}
+                className={`placehold peer rounded-xl border bg-transparent px-4 py-3 text-xl text-textColor outline-none transition-all placeholder:text-transparent [&:not(:placeholder-shown)]:pb-1 [&:not(:placeholder-shown)]:pt-5 ${
+                  errors.name ? "border-red-500" : ""
+                }`}
                 type="text"
               />
 
-              <label className="absolute py-3  px-4  peer-placeholder-shown:translate-y-0 -translate-y-3 peer-placeholder-shown:text-xl text-sm  pointer-events-none transition-all ease-motion ">
-                Ditt Namn
+              <label className="ease-motion pointer-events-none absolute -translate-y-3 px-4 py-3 text-sm transition-all peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-xl">
+                Namn
               </label>
               {/*   {errors.name && (
                 <p className=" text-red-500">{`${errors.name.message}`}</p>
               )} */}
             </div>
-            <div className=" relative flex items-center">
+            <div className="relative flex items-center">
               <input
                 {...register("email")}
                 placeholder="Email"
-                className={`peer w-full transition-all placeholder:text-transparent py-3 px-4 text-xl
-            [&:not(:placeholder-shown)]:pb-1 [&:not(:placeholder-shown)]:pt-5 bg-transparent 
-            border rounded-xl outline-none text-textColor ${
-              errors.email ? "border-red-500" : ""
-            }`}
+                className={`peer w-full rounded-xl border bg-transparent px-4 py-3 text-xl text-textColor outline-none transition-all placeholder:text-transparent [&:not(:placeholder-shown)]:pb-1 [&:not(:placeholder-shown)]:pt-5 ${
+                  errors.email ? "border-red-500" : ""
+                }`}
                 type="text"
               />
-              <label className="absolute py-3 px-4  peer-placeholder-shown:translate-y-0 -translate-y-3 peer-placeholder-shown:text-xl text-sm  pointer-events-none transition-all ease-motion ">
-                Din mail
+              <label className="ease-motion pointer-events-none absolute -translate-y-3 px-4 py-3 text-sm transition-all peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-xl">
+                Mail
               </label>
             </div>
           </div>
           <div
-            className={`flex flex-col justify-center border rounded-xl px-4 py-3 ${
+            className={`flex flex-col justify-center rounded-xl border px-4 py-3 ${
               errors.services ? "border-red-500" : ""
             }`}
           >
-            <label className="  text-xl  pointer-events-none transition-all ease-motion  ">
+            <label className="ease-motion pointer-events-none text-xl transition-all">
               Vilka tjänster söker du?
             </label>
             <input
               {...register("services")}
               placeholder="Produktfoto, Reklamfilmer..."
-              className="text-xl bg-transparent outline-none w-full placeholder-paragraph text-textColor"
+              className="w-full bg-transparent text-xl text-textColor placeholder-paragraph outline-none"
               type="text"
             />
           </div>
           <div
-            className={`flex flex-col justify-center border rounded-xl px-4 py-3   ${
+            className={`flex flex-col justify-center rounded-xl border px-4 py-3 ${
               errors.message ? "border-red-500" : ""
             }`}
           >
-            <label className="  text-xl  pointer-events-none transition-all ease-motion  ">
+            <label className="ease-motion pointer-events-none text-xl transition-all">
               Ditt Meddelande
             </label>
             <textarea
               {...register("message")}
               rows={8}
               placeholder="Hej Adam kan du hjälpa mig med..."
-              className="text-xl bg-transparent outline-none placeholder-paragraph text-textColor"
+              className="bg-transparent text-xl text-textColor placeholder-paragraph outline-none"
             />
           </div>
-          <div className=" flex justify-center">
+          <div className="flex justify-center">
             <Button disabled={isSubmitting} type="submit">
               Skicka
             </Button>
@@ -129,7 +128,7 @@ export default function ContactForm() {
         </div>
       </form>
       {errors.root && (
-        <p className=" text-red-500 text-center mb-2">{`${errors.root.message}`}</p>
+        <p className="mb-2 text-center text-red-500">{`${errors.root.message}`}</p>
       )}
     </>
   );

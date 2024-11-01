@@ -5,7 +5,7 @@ import Image from "next/image";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Om mig | Adam Lindsköld",
+  title: "Om mig | L63 Media",
 };
 /* ${i < 2 && "hidden"}
  */ export default function AboutPage() {
@@ -73,11 +73,12 @@ export const metadata: Metadata = {
             </p>
             <p className="lg:text-balance font-semibold sm:text-2xl">
               Han har även blivit tilldelad priset ”Årets Reklamfilm 2023” samt
-              2024 av Ung Företagsamhet Västerbotten. Med en stor erfarenhet av att engagera och intressera individer,
-              inte minst genom sina egna sociala medier, kan Adam Lindsköld garantera
-              ett effektfullt resultat för kundens ändamål.
+              2024 av Ung Företagsamhet Västerbotten. Med en stor erfarenhet av
+              att engagera och intressera individer, inte minst genom sina egna
+              sociala medier, kan Adam Lindsköld garantera ett effektfullt
+              resultat för kundens ändamål.
             </p>
-            <p className="lg:text-balance font-semibold sm:text-2xl">
+            <p className="lg:text-balance text-right font-semibold sm:text-2xl">
               L63 Media AB
               <br /> Org.nr: 559495-5147
               <br /> Kungsgårdsvägen 34

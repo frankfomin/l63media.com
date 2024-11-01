@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: `\u{1F4F7} Produktfoto | Adam Lindsköld`,
+  title: `\u{1F4F7} Produktfoto | L63 Media`,
 };
 export default function PhotoPage() {
   return (

@@ -5,7 +5,7 @@ import ContactForm from "@/components/form/ContactForm";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Kontakt | Adam Lindsköld",
+  title: "Kontakt | L63 Media",
 };
 
 export default function ContactPage() {
@@ -34,7 +34,7 @@ export default function ContactPage() {
       </section>
       {/*       <hr className="bg-paragraph w-full max-w-7xl px-6" />
        */}{" "}
-      <section>
+      <section className="w-full px-6">
         <ContactForm />
       </section>
       {/*       <hr className="w-[60%] bg-paragraph" />

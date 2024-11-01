@@ -19,7 +19,7 @@ export async function generateMetadata(
   const allProjects = allDocs.filter((doc) => doc.path === params.path);
 
   return {
-    title: `${allProjects[0].projectName} | Adam Lindsköld`,
+    title: `${allProjects[0].projectName} | L63 Media`,
   };
 }
 

@@ -74,8 +74,21 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
-      <section className="flex justify-center">
-        <InfiniteMovingCards pauseOnHover={false} speed="fast" items={logos} />
+      <section className="flex flex-col gap-6 px-6">
+        <h2 className="text-center font-playfair text-subHeading font-semibold uppercase text-paragraph">
+          Urval av kunder
+        </h2>
+        <div className="flex justify-center gap-36">
+          {logos.map((logo) => (
+            <Image
+              key={logo.src}
+              src={logo.src}
+              alt={logo.alt}
+              width={150}
+              height={150}
+            />
+          ))}
+        </div>
       </section>
       <section className="relative flex flex-col items-center gap-6 overflow-hidden">
         <h2 className="text-center font-playfair text-subHeading font-semibold">

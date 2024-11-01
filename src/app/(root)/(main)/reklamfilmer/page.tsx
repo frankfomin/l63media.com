@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: `\u{1F3AC} Reklamfilmer | Adam Lindsköld`,
+  title: `\u{1F3AC} Reklamfilmer | L63 Media`,
 };
 
 export default function FilmPage() {
