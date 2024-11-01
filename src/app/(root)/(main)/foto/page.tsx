@@ -12,7 +12,7 @@ export default function PhotoPage() {
         <h1 className="font-playfair text-longHeading font-semibold uppercase leading-tight">
           Produktfoto
         </h1>
-        <p className="text-balance flex flex-col text-center font-medium sm:text-2xl">
+        <p className="text-balance flex flex-col text-center font-semibold sm:text-2xl">
           Produktfoton från L63 Media fokuserar på att återspegla bakomliggande
           teman hos en produkt samt företaget på ett vis som fångar blickar, men
           även framhäver produkten.
