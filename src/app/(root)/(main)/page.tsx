@@ -99,7 +99,7 @@ export default async function HomePage() {
         </h4>
         <ProjectSection homePage />
         <Link className="flex justify-center" href="/reklamfilmer">
-          <Button>Alla Filmer</Button>
+          <Button>Mer</Button>
         </Link>
       </section>
       <section className="flex flex-col gap-6">
@@ -108,7 +108,7 @@ export default async function HomePage() {
         </h5>
         <PhotoSlider />
         <Link className="flex justify-center" href="/foto">
-          <Button>Alla Foton</Button>
+          <Button>Mer</Button>
         </Link>
       </section>
     </main>
