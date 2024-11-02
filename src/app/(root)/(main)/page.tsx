@@ -74,11 +74,11 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
-      <section className="flex flex-col gap-6 px-6">
+      <section className="flex flex-col gap-10 px-6">
         <h2 className="text-center font-playfair text-subHeading font-semibold uppercase text-paragraph">
           Urval av kunder
         </h2>
-        <div className="flex justify-center gap-36">
+        <div className="flex flex-wrap justify-center gap-20 sm:gap-36">
           {logos.map((logo) => (
             <Image
               key={logo.src}
