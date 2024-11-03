@@ -96,10 +96,7 @@ export default async function HomePage() {
         </h2>
         <PhotoScrollSlider />
         <p className="lg:text-balance max-w-4xl px-6 text-center font-semibold sm:text-2xl">
-          Adam Lindsköld är en filmskapare och marknadsförare från Umeå. Så
-          länge han kan minnas har han varit engagerad i digitalt skapande och
-          har skapat en mängd olika projekt med främst fokus på reklamfilm och
-          företagsimage.
+          Adam Lindsköld är en filmskapare och marknadsförare från Umeå. Så länge han kan minnas har han varit engagerad i foto samt digitalt skapande och har producerat en mängd olika projekt med främst fokus på reklamfilm och produktfoto.
         </p>
         <Link href="/om-mig">
           <Button>Läs mer</Button>
