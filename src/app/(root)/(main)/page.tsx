@@ -55,7 +55,7 @@ export default async function HomePage() {
               </div>
               <div className="grid gap-3 sm:gap-6">
                 <h3 className="font-playfair text-2xl font-semibold uppercase sm:text-4xl">
-                  Snabbt, Smidigt & Högkvalitativt
+                  Smidigt, Tydligt & Pålitligt
                 </h3>
                 <Link href="/kontakt">
                   <Button>Kontakt</Button>
