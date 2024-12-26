@@ -53,6 +53,7 @@ export const logos = [
     src: "/images/logos/vaknaVibbar-logga.webp",
     alt: "Vakna Vibbar",
   }, */
+  //what?
   {
     src: "/images/logos/vakin.svg",
     alt: "Vakin",
