@@ -62,6 +62,10 @@ export const logos = [
     src: "/images/logos/volvo.svg",
     alt: "Volvo",
   },
+  {
+    src: "/images/logos/ung.svg",
+    alt: "ung företagsamhet",
+  },
   /* {
     src: "/images/logos/engo.webp",
     alt: "Engo UF",
@@ -72,10 +76,10 @@ export const logos = [
     width: 50,
     height: 50,
   }, */
-  {
+  /*  {
     src: "/images/logos/voir.webp",
     alt: "Voir glasses",
-  },
+  }, */
 ];
 
 export const navImages = [
