@@ -15,15 +15,17 @@ function getAllProjects() {
 
 export default async function ProjectSection({
   homePage,
+  path,
 }: {
   homePage?: boolean;
+  path?: string;
 }) {
-  let allProjects = getAllProjects().sort((a, b) => {
-    return a.order - b.order;
-  });
+  let allProjects = getAllProjects();
 
   if (homePage) {
     allProjects = allProjects.filter((project) => project.homePage);
+  } else if (path) {
+    allProjects = allProjects.filter((project) => project.path !== path);
   }
 
   return (

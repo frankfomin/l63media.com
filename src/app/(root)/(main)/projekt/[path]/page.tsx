@@ -52,7 +52,7 @@ export default async function ProjectPage({ params }: Params) {
         />
       )}
       <section className="mt-60 flex flex-col items-center gap-16">
-        <ProjectSection />
+        <ProjectSection path={params.path} />
       </section>
     </main>
   );
