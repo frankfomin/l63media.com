@@ -32,21 +32,22 @@ export default async function HomePage() {
                 height={1000}
                 className="aspect-square max-h-[80vh] w-full rounded-3xl object-cover lg:hidden"
               />
+              <div className="absolute bottom-5 left-5 lg:hidden font-semibold">Spec AD</div>
             </div>
             <div className="flex h-full flex-col justify-between gap-6">
               <div className="flex flex-col gap-6">
-                <p className="lg:text-balance font-playfair text-xl font-semibold sm:text-3xl">
+                <p className="lg:text-balance font-semibold sm:text-2xl">
                   Driver du möjligtvis företag och vill sticka ut från mängden?
                   Vill du att din företagsimage och marknadsföring ska utstråla
                   professionalitet? Önskar du helt enkelt film eller foto för
                   just ditt ändamål?
                 </p>
-                <p className="lg:text-balance font-semibold sm:text-2xl">
+                <p className="lg:text-balance font-medium sm:text-2xl">
                   L63 Media är ett foto- och filmproduktionsbolag som erbjuder
                   högkvalitativa produktioner med ett effektivt resultat och ett
                   smidigt samarbete.
                 </p>
-                <p className="lg:text-balance font-semibold sm:text-2xl">
+                <p className="lg:text-balance font-medium sm:text-2xl">
                   Med många nöjda kunder och en inriktning på främst
                   reklamfilmer samt produktfoto, kan L63 Media garantera att
                   möta kundens behov. Tveka inte att höra av dig vid intresse,
@@ -71,11 +72,12 @@ export default async function HomePage() {
               quality={100}
               className="hidden max-h-[90vh] rounded-3xl object-cover lg:block"
             />
+            <div className="absolute bottom-5 lg:block hidden left-5 font-semibold">Spec AD</div>
           </div>
         </div>
       </section>
       <section className="flex flex-col gap-10 px-6">
-        <h2 className="text-center font-playfair text-subHeading font-semibold uppercase text-paragraph">
+        <h2 className="text-center font-playfair text-subHeading font-semibold uppercase">
           Urval av kunder
         </h2>
         <div className="flex flex-wrap justify-center gap-20 sm:gap-36">

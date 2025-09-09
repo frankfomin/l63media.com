@@ -30,7 +30,7 @@ export default function ProjectCard({
   lineSpacing,
 }: ProjectCardProps) {
   return (
-    <Link className="w-full max-w-7xl" href={`/projekt/${path}`}>
+    <Link className="w-full max-w-[120rem] px-6" href={`/projekt/${path}`}>
       <AnimationPopup imagePath={imagePath} videoPath={videoPath}>
         <div className="flex rotate-90 flex-col-reverse items-center pb-2 lg:gap-4 lg:pb-12">
           <div className="VHS border-[1px] text-center text-5xl font-semibold">
