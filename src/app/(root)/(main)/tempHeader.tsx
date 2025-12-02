@@ -144,36 +144,6 @@ export default function Header() {
           />
         </div>
       </div>
-      <div className="flex">
-        <div className="">
-          <div className="flex justify-end">
-            <AnimatedLink
-              className=""
-              variant="md"
-              target="_blank"
-              href="https://www.tiktok.com/@l63.media"
-            >
-              TikTok
-            </AnimatedLink>
-          </div>
-          <AnimatedLink
-            variant="md"
-            target="_blank"
-            href="https://www.instagram.com/l63.media"
-          >
-            Instagram
-          </AnimatedLink>
-        </div>
-        <div className="flex flex-col-reverse gap-1 xs:flex-col">
-          <p className="block text-sm sm:hidden">Mail</p>
-          <Link
-            className="sm:text:2xl text-sm lg:text-4xl"
-            href="mailto: kontakt@l63media.com"
-          >
-            kontakt@l63media.com
-          </Link>
-        </div>
-      </div>
     </header>
   );
 }

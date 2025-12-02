@@ -1,14 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Montserrat, Playfair_Display } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import {
-  noScrollbarsClassName,
-  RemoveScrollBar,
-  zeroRightClassName,
-} from "react-remove-scroll-bar";
-import RemoveScrollbarProvider from "@/components/providers/RemoveScrollbarProvider";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -38,8 +30,6 @@ export default function RootLayout({
         className={`${montserrat.variable} ${playfair.variable} bg-primary font-montserrat text-textColor`}
       >
         {children}
-        <Analytics />
-        <SpeedInsights />
       </body>
     </html>
   );
