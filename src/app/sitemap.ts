@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'monthly',
             priority: 1,
         },
-        {
+       /*  {
             url: `${process.env.NEXT_PUBLIC_BASE_URL}/om-mig`,
             lastModified: new Date(),
             changeFrequency: 'yearly',
@@ -57,7 +57,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'monthly',
             priority: 0.7,
         },
-        ...projectEntries,
+        ...projectEntries, */
 
 
     ]

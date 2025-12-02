@@ -28,9 +28,8 @@ const Error = ({ error, reset }: { error: Error; reset: () => void }) => {
         <div>{currentDate.toLocaleDateString("en-US")}</div>
       </div>
       <div className="flex flex-col items-center gap-4">
-        <h1 className="text-9xl font-semibold leading-none">Error 404</h1>
-        <h2 className="text-4xl">Är du vilse?</h2>
-        <Button>Gå tillbaka</Button>
+        <h1 className="text-9xl font-semibold leading-none">Något gick fel</h1>
+        <Button>Försök igen</Button>
       </div>
       <div className="mx-40 flex justify-between text-3xl font-medium">
         <div>SP</div>
