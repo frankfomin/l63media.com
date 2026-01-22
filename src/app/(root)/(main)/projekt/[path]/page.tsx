@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import type { Metadata, ResolvingMetadata } from "next";
 import ProjectSection from "@/components/ProjectSection";
 import MobileVideoPlayer from "@/components/videoPlayers/MobileVideoPlayer";
-import VideoPlayer from "@/components/videoPlayers/VideoPlayer";
 
 type Params = {
   params: {
@@ -32,25 +31,18 @@ async function getProjectFromParams(path: string) {
 
 export default async function ProjectPage({ params }: Params) {
   const project = await getProjectFromParams(params.path);
-
+  
   if (!project) {
     throw new Error();
   }
 
   return (
     <main className="uppercase">
-      {project.mobile ? (
-        <MobileVideoPlayer
-          videoPath={project.videoPath}
-          title={project.projectName}
-          specAd={project.specAd}
-        />
-      ) : (
-        <VideoPlayer
-          videoPath={project.videoPath}
-          title={project.projectName}
-        />
-      )}
+      <MobileVideoPlayer
+        videoPath={project.videoPath}
+        title={project.projectName}
+        specAd={project.specAd}
+      />  
       <section className="mt-60 flex flex-col items-center gap-16">
         <ProjectSection path={params.path} />
       </section>

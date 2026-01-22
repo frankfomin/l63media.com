@@ -1,5 +1,6 @@
 "use client";
 
+import { mediaBaseUrl } from "@/constants/constants";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
@@ -90,7 +91,7 @@ export default function AnimationPopup({
                 className="absolute z-50 aspect-square rounded-3xl object-cover opacity-[10%]"
               />
               <video
-                src={`https://utfs.io/f/${videoPath}`}
+                src={`${mediaBaseUrl}/${videoPath}`}
                 className="aspect-square rounded-3xl object-cover"
                 autoPlay
                 poster={imagePath}

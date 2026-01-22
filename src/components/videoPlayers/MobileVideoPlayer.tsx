@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import ReactPlayer from "react-player/vimeo";
 import { gsap } from "gsap";
 import Counter from "../ui/Counter";
+import { mediaBaseUrl } from "@/constants/constants";
 
 export default function MobileVideoPlayer({
   title,
@@ -237,7 +238,7 @@ export default function MobileVideoPlayer({
             />
             <video
               ref={videoPlayerRef}
-              src={`https://utfs.io/f/${videoPath}`}
+              src={`${mediaBaseUrl}/${videoPath}`}
               loop
               autoPlay
               muted={muted}
