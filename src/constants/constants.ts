@@ -151,20 +151,20 @@ export const productPhotos = [
 
 export const videos = [
   {
-    src: "ca4e4858-59b1-41ad-b804-6316068a8c01-1y4001.mp4",
+    src: "videos/yranfinal.mp4",
     class: "",
   },
   {
-    src: "08148303-1d54-4172-9538-317f33f53ff4-48x9ij.mp4",
+    src: "videos/bicycle.mp4",
     class: "",
   },
 
   {
-    src: "448d61bb-269d-48c0-9d16-3e46baffa164-mlyk6e.mp4",
+    src: "videos/vakinyran.mp4",
     class: "hidden sm:flex",
   },
   {
-    src: "e57b66a7-b090-4b69-98a0-eb22e91140fd-25pcy.mp4",
+    src: "videos/pinkgrape.mp4",
     class: "hidden sm:flex",
   },
 ];

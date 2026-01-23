@@ -1,5 +1,5 @@
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
-import { logos, videos } from "@/constants/constants";
+import { logos, mediaBaseUrl, videos } from "@/constants/constants";
 import { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
             />
             <video
               id={i.toString()}
-              src={`https://utfs.io/f/${video.src}`}
+              src={`${mediaBaseUrl}/${video.src}`}
               muted
               loop
               autoPlay
