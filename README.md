@@ -6,6 +6,7 @@ This website is portfolio website for L63 Media which showcases the companies wo
 - Typescript
 - Tailwind CSS
 - GSAP
+- Framer motion
 
 ## Features
 - Hover animations with GSAP and CSS
